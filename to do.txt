@@ -1,0 +1,36 @@
+-asset generator
+	-SpriteFile -> Done
+	-DirectionSpriteFile -> TODO
+-fix missile trigo
+	-Seems to work now
+-missile rect restriction for mouse
+	-Implemented ; not tested
+-Configuration file
+	-ActionBind File -> done
+	-Video config
+	-Choice to make
+		*One file for all config
+		OR
+		*One file for action bind and one other file for video setting
+			VideoSetting will be about 3 vars..
+		Divided we fall, united we stand ?!? lolzz
+-key down list -> put this handling into BaseGameState, with BaseGameAction
+-mouse down button list need to be done too, add a position test on MouseActionMap
+	-maybe a new MouseButtonEvent -> partialy done
+
+-maybe a engine Math toolkit
+	-Rad to Degree, angle abstract seems a good idea -> Done
+	-Trigo tools -> Pythagorus, with point and dimension -> done
+-add a time toolkit, for getting ms timestamp -> done
+	-maybe
+
+-refactor : typo with suscribe on all listener -> subscribe DAH!
+	-Need to change inputEquals, add InputType maybe,
+		-Need to change this to make an ActionMap composite, for multiple binding, for the same event
+	-Joystick Action Map : can wait
+	
+StiGame :
+	A header to rules them all ?!?
+		-Maybe, will see
+		
+-Reorganize virtual folders into IDE

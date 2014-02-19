@@ -1,0 +1,5 @@
+up0=sprites/vessel0/up0.png;
+left0=sprites/vessel0/left0.png;
+right0=sprites/vessel0/right0.png;
+down0=sprites/vessel0/down0.png;
+idle0=sprites/vessel0/up0.png;

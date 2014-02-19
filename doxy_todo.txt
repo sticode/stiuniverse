@@ -1,0 +1,74 @@
+--------------------
+All headers are listed here !
+Need to complete Doxy docs for Graphic API , not game specific (IE.: MainState, RedMissile, etc..)
+--------------------
+
+ActionMap.h
+AssetGenerator.h
+BaseGameState.h
+BaseMissile.h
+BatVessel.h -> not needed
+BigOrangeMissile.h -> not needed
+CheckEventArgs.h
+CheckEventListener.h
+CheckEventThrower.h
+ClonedSprite.h
+Dimension.h
+DirectionSprite.h
+DirectionSpriteFile.h
+DirectionSpriteFileCreator.h
+EventListener.h -> ok
+EventThrower.h -> ok
+GamePath.h -> ok
+GreenMissile.h -> not needed
+GuiButton.h -> ok
+GuiCheckBox.h -> ok
+GuiComboBox.h -> ok
+GuiHighlightItem.h -> ok
+GuiImage.h -> ok
+GuiImageButton.h -> ok
+GuiItem.h -> ok
+GuiKeyBind.h -> ok
+GuiLabel.h -> ok
+GuiRadioButton.h -> ok
+GuiRuntime.h -> ok
+GuiState.h -> ok
+GuiStyle.h -> ok
+ISprite.h -> ok
+KeyActionMap.h -> ok
+KeyEventArgs.h -> ok
+KeyEventListener.h -> ok
+KeyEventThrower.h -> ok
+MainMenuState.h -> not needed
+MainState.h -> not needed
+MouseActionMap.h -> ok
+MultiRect.h -> ok
+PCircle.h -> see SPrimitive
+PLine.h -> see SPrimitive
+PRect.h -> see SPrimitive
+RadioGroup.h -> ok
+RedMissile.h -> not needed
+SColor.h -> ok
+SelectionEventArgs.h -> ok
+SelectionEventListener.h -> ok
+SelectionEventThrower.h -> ok
+SEventArgs.h -> ok
+SFont.h -> ok
+SpaceMapFile.h -> not needed
+SpaceVessel.h -> not needed
+SPhysic.h -> skip, its empty
+SPoint.h -> ok
+SPrimitive.h -> ok
+Sprite.h -> ok
+SpriteFile.h -> ok
+SpriteFileCreator.h -> ok
+SpriteLibrary.h -> ok
+SRect.h -> ok
+Surface.h -> ok
+SVector.h -> ok
+TestState.h -> no need doc for this
+TextLogger.h -> ok
+Texture.h -> ok
+ValueObject.h -> ok
+VarFile.h -> ok
+Viewport.h -> ok
