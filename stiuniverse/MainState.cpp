@@ -159,10 +159,19 @@ void MainState::onEvent(SDL_Event *evt)
 
     if(evt->type == SDL_MOUSEBUTTONDOWN)
     {
+		if(gameMenu != 0)
+		{
+			if(gameMenu->isVisible())
+			{
+				return;
+			}
+		}
+		
         mouse_x = evt->button.x;
         mouse_y = evt->button.y;
+	
 
-
+		
         if(evt->button.button == SDL_BUTTON_LEFT)
         {
             //RedMissile *missile = new RedMissile(viewport->getRenderer(), mi_x, mi_y, angle);
