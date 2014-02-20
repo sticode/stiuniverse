@@ -5,6 +5,9 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 const int ComboBox::DefaultNbItems = 4;
 const int ComboBox::DefaultTextOffset = 4;
 
@@ -329,6 +332,8 @@ ComboBox::~ComboBox()
 
     //TO DO
     //dtor
+}
+
 }
 
 }

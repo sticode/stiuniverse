@@ -16,7 +16,7 @@ public:
 	~GuiState(void);
 	/// \brief Add a GuiItem
 	/// \param item GuiItem to add
-	void add(GuiItem *item);
+	void add(Gui::GuiItem *item);
 	/// \brief Starting the state
 	void onStart(void);
 	/// \brief Paint Event
@@ -42,7 +42,7 @@ public:
 	int getMouseY(void);
 protected:
 	/// \brief GuiItem list
-	std::list<GuiItem*> items;
+	std::list<Gui::GuiItem*> items;
 	/// \brief Is rendering
 	bool rendering;
 	/// \brief Surface Buffer
@@ -52,6 +52,6 @@ protected:
 	/// \brief Mouse Y Position
 	int mouse_y;
 	/// \brief Gui Style
-	GuiStyle *style;
+	Gui::Style *style;
 };
 }

@@ -2,7 +2,7 @@
 #include "Surface.h"
 #include "SColor.h"
 #include <string>
-#include "GuiStyle.h"
+#include "Style.h"
 #include "SRect.h"
 namespace StiGame
 {
@@ -45,7 +45,7 @@ public:
 	SColor *getForeground(void);
 	/// \brief Get the style of the item
 	/// \return GuiStyle pointer
-	GuiStyle *getStyle(void);
+	Style *getStyle(void);
 	/// \brief Get mouse over
 	bool getMouseOver(void);
 	/// \brief Set mouse over
@@ -63,7 +63,7 @@ protected:
 	/// \brief Foreground color
 	SColor *foreground;
 	/// \brief Item GuiStyle
-	GuiStyle *style;
+	Style *style;
 	/// \brief is mouse over
 	bool mouseOver;
 private:

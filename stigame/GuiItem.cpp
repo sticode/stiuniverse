@@ -65,7 +65,7 @@ void GuiItem::clear(void)
 	//clear your buffer here !
 }
 
-GuiStyle *GuiItem::getStyle(void)
+Style *GuiItem::getStyle(void)
 {
 	return style;
 }

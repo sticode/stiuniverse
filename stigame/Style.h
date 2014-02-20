@@ -38,9 +38,9 @@ private:
 	SFont *normalFont;
 public:
 	/// \brief Create a new GuiStyle
-	GuiStyle(void);
+	Style(void);
 	/// \brief Destructor
-	~GuiStyle(void);
+	~Style(void);
 	/// \brief Get Foreground Pointer
 	SColor *getForeground(void);
 	/// \brief Get Background Pointer

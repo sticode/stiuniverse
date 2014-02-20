@@ -2,26 +2,29 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 RadioGroup::RadioGroup()
 {
     //ctor
     active = 0;
 }
 
-void RadioGroup::addItem(GuiRadioButton *radio)
+void RadioGroup::addItem(RadioButton *radio)
 {
     radioButtons.push_back(radio);
     radio->setGroup(this);
 }
 
-void RadioGroup::removeItem(GuiRadioButton *radio)
+void RadioGroup::removeItem(RadioButton *radio)
 {
     radioButtons.remove(radio);
 }
 
-void RadioGroup::setActive(GuiRadioButton *radio)
+void RadioGroup::setActive(RadioButton *radio)
 {
-    std::list<GuiRadioButton*>::iterator lit(radioButtons.begin()), lend(radioButtons.end());
+    std::list<RadioButton*>::iterator lit(radioButtons.begin()), lend(radioButtons.end());
     active = radio;
     for(; lit!=lend; ++lit)
     {
@@ -42,7 +45,7 @@ void RadioGroup::setActive(GuiRadioButton *radio)
     }
 }
 
-GuiRadioButton *RadioGroup::getActive(void)
+RadioButton *RadioGroup::getActive(void)
 {
     return active;
 }
@@ -50,6 +53,8 @@ GuiRadioButton *RadioGroup::getActive(void)
 RadioGroup::~RadioGroup()
 {
     //dtor
+}
+
 }
 
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiStyle.h"
+#include "Style.h"
 namespace StiGame
 {
 /// \class GuiRuntime
@@ -10,7 +10,7 @@ private:
 	/// \brief Instance
 	static GuiRuntime *_instance;
 	/// \brief Gui Style
-	GuiStyle *style;
+	Gui::Style *style;
 
 protected:
 	/// \brief Create the GuiRuntime
@@ -31,11 +31,11 @@ public:
 	}
 	/// \brief Get Gui Style
 	/// \return Gui Style
-	GuiStyle *getStyle(void);
+	Gui::Style *getStyle(void);
 
-    void ForceStyle(GuiStyle *m_style)
+    void ForceStyle(Gui::Style *m_style)
     {
-        GuiStyle *oldstyle = style;
+        Gui::Style *oldstyle = style;
         style = m_style;
         delete oldstyle;
     }

@@ -38,18 +38,18 @@ void GuiOverlay::fixPosition(int m_width, int m_height)
 		{
 			delete (*lit)->render();
 		}
-	
+
 		if(width == 0)
 		{
 			width = (*lit)->getWidth() + DEFAULT_OFFSET*2;
 		}
-		
+
 		(*lit)->setX( (width - (*lit)->getWidth()) / 2 );
 		(*lit)->setY(n_height);
-			
+
 		n_height += ((*lit)->getHeight() + DEFAULT_OFFSET);
 	}
-	
+
 	height = n_height;
 
 	switch(position)
@@ -79,7 +79,7 @@ void GuiOverlay::fixPosition(int m_width, int m_height)
 			y = m_height - height;
 		break;
 	}
-	
+
 }
 
 void GuiOverlay::add(GuiItem *item)
@@ -87,7 +87,7 @@ void GuiOverlay::add(GuiItem *item)
 	items.push_back(item);
 }
 
-GuiItem* GuiOverlay::getLastItem(void)
+Gui::GuiItem* GuiOverlay::getLastItem(void)
 {
 	int y = -1;
 	GuiItem *item = 0;

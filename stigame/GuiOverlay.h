@@ -7,15 +7,15 @@
 namespace StiGame
 {
 
-enum OverlayPosition { OP_MIDDLE, 
-					OP_TOP_LEFT_CORNER, 
-					OP_TOP_RIGHT_CORNER, 
-					OP_BOTTOM_LEFT_CORNER, 
-					OP_BOTTOM_RIGHT_CORNER, 
+enum OverlayPosition { OP_MIDDLE,
+					OP_TOP_LEFT_CORNER,
+					OP_TOP_RIGHT_CORNER,
+					OP_BOTTOM_LEFT_CORNER,
+					OP_BOTTOM_RIGHT_CORNER,
 					OP_CUSTOM };
 
 class GuiOverlay :
-    public GuiItem
+    public Gui::GuiItem
 {
     public:
 		static const int DEFAULT_OFFSET;

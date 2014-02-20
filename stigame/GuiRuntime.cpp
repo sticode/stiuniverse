@@ -6,7 +6,7 @@ namespace StiGame
 
 GuiRuntime::GuiRuntime(void)
 {
-	style = new GuiStyle();
+	style = new Gui::Style();
 }
 
 
@@ -14,7 +14,7 @@ GuiRuntime::~GuiRuntime(void)
 {
 }
 
-GuiStyle *GuiRuntime::getStyle(void)
+Gui::Style *GuiRuntime::getStyle(void)
 {
 	return style;
 }
