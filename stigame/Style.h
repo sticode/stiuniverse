@@ -5,7 +5,11 @@
 namespace StiGame
 {
 
-class GuiStyle
+namespace Gui
+{
+/// \class Style
+/// \brief Default Color for Gui Element
+class Style
 {
 private:
 	/// \brief Foreground Color
@@ -64,6 +68,8 @@ public:
 	/// \brief Unload Ressources
 	void unload(void);
 };
+
+}
 
 }
 

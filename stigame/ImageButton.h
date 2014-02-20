@@ -4,9 +4,13 @@
 
 namespace StiGame
 {
-/// \class GuiImageButton
+
+namespace Gui
+{
+
+/// \class ImageButton
 /// \brief A Gui Button that use Image for rendering
-class GuiImageButton :
+class ImageButton :
 	public GuiItem,
 	public EventThrower
 {
@@ -14,9 +18,9 @@ public:
 	/// \brief Default Offset
 	static const int DEFAULT_OFFSET = 4;
 	/// \brief Create a new Image Button
-	GuiImageButton(void);
+	ImageButton(void);
 	/// \brief Destructor
-	~GuiImageButton(void);
+	~ImageButton(void);
 	/// \brief Autosize the button
 	void autosize(void);
 	/// \brief Get Button Image
@@ -54,6 +58,8 @@ protected:
 	/// \brief Offset Height
 	int offsetHeight;
 };
+
+}
 
 }
 

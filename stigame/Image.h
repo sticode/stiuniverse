@@ -2,16 +2,20 @@
 #include "GuiItem.h"
 namespace StiGame
 {
-/// \class GuiImage
+
+namespace Gui
+{
+
+/// \class Image
 /// \brief Class that permit user to draw an image on a GuiState
-class GuiImage :
+class Image :
 	public GuiItem
 {
 public:
     /// \brief Constructor
-	GuiImage(void);
+	Image(void);
 	/// \brief Destructor
-	~GuiImage(void);
+	~Image(void);
 	Surface *render(void);
 	/// \brief Set the image with the file path
 	/// \param m_imagePath Image path
@@ -32,4 +36,7 @@ protected:
 	/// \brief Draw the border
 	bool drawBorder;
 };
+
+}
+
 }

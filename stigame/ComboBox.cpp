@@ -1,14 +1,14 @@
-#include "GuiComboBox.h"
+#include "ComboBox.h"
 #include "PLine.h"
 
 #include <iostream>
 
 namespace StiGame {
 
-const int GuiComboBox::DefaultNbItems = 4;
-const int GuiComboBox::DefaultTextOffset = 4;
+const int ComboBox::DefaultNbItems = 4;
+const int ComboBox::DefaultTextOffset = 4;
 
-GuiComboBox::GuiComboBox() : GuiHighlightItem()
+ComboBox::ComboBox() : GuiHighlightItem()
 {
     name = "combobox";
     itemHover = -1;
@@ -28,7 +28,7 @@ GuiComboBox::GuiComboBox() : GuiHighlightItem()
     closedHeight = height;
 }
 
-void GuiComboBox::add(ValueObject *vo)
+void ComboBox::add(ValueObject *vo)
 {
     items.push_back(vo);
 
@@ -47,7 +47,7 @@ void GuiComboBox::add(ValueObject *vo)
     }
 }
 
-void GuiComboBox::showDroplist(void)
+void ComboBox::showDroplist(void)
 {
     currentItem = 0;
     drawDroplist = true;
@@ -63,7 +63,7 @@ void GuiComboBox::showDroplist(void)
 
 }
 
-void GuiComboBox::onMouseMotion(Point *relp)
+void ComboBox::onMouseMotion(Point *relp)
 {
     if(drawDroplist)
     {
@@ -71,7 +71,7 @@ void GuiComboBox::onMouseMotion(Point *relp)
     }
 }
 
-void GuiComboBox::onClick(Point *relp)
+void ComboBox::onClick(Point *relp)
 {
     //drop list close
     //need to determine if the click is for drop arrow
@@ -155,13 +155,13 @@ void GuiComboBox::onClick(Point *relp)
     }
 }
 
-void GuiComboBox::closeDroplist(void)
+void ComboBox::closeDroplist(void)
 {
     height = closedHeight;
     drawDroplist = false;
 }
 
-Surface *GuiComboBox::render(void)
+Surface *ComboBox::render(void)
 {
     Surface *buffer = new Surface(width, height);
 
@@ -226,7 +226,7 @@ Surface *GuiComboBox::render(void)
     return buffer;
 }
 
-void GuiComboBox::renderDroplist(Surface *buffer)
+void ComboBox::renderDroplist(Surface *buffer)
 {
     int nbtodraw = nbItemsToShow;
     int ic = items.size();
@@ -307,7 +307,7 @@ void GuiComboBox::renderDroplist(Surface *buffer)
     buffer->draw(&l3, foreground);
 }
 
-void GuiComboBox::remove(ValueObject *vo)
+void ComboBox::remove(ValueObject *vo)
 {
     items.remove(vo);
 
@@ -319,12 +319,12 @@ void GuiComboBox::remove(ValueObject *vo)
 
 }
 
-void GuiComboBox::setFont(SFont *m_font)
+void ComboBox::setFont(SFont *m_font)
 {
     font = m_font;
 }
 
-GuiComboBox::~GuiComboBox()
+ComboBox::~ComboBox()
 {
 
     //TO DO

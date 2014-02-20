@@ -1,5 +1,5 @@
-#ifndef GUIRADIOBUTTON_H
-#define GUIRADIOBUTTON_H
+#ifndef RADIOBUTTON_H
+#define RADIOBUTTON_H
 
 #include "GuiItem.h"
 #include "CheckEventThrower.h"
@@ -8,19 +8,23 @@
 
 namespace StiGame
 {
+
+namespace Gui
+{
+
 class RadioGroup;
 
-/// \class GuiRadioButton
+/// \class RadioButton
 /// \brief Gui Radio Button
-class GuiRadioButton :
+class RadioButton :
     public GuiItem,
     public CheckEventThrower
 {
     public:
 		/// \brief Create a new Gui Radio Button
-        GuiRadioButton();
+        RadioButton();
 		/// \brief Destructor
-        virtual ~GuiRadioButton();
+        virtual ~RadioButton();
 		/// \brief Render GuiItem
 		/// \return Rendered Surface
         virtual Surface* render(void);
@@ -65,6 +69,8 @@ class GuiRadioButton :
         static const int DefaultCaptionOffset;
     private:
 };
+
+}
 
 }
 

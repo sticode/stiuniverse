@@ -1,13 +1,16 @@
-#include "GuiKeyBind.h"
+#include "KeyBind.h"
 #include "PLine.h"
 
 namespace StiGame
 {
 
-const int GuiKeyBind::DefaultHeight = 20;
-const int GuiKeyBind::DefaultWidth = 60;
+namespace Gui
+{
 
-GuiKeyBind::GuiKeyBind() : GuiHighlightItem()
+const int KeyBind::DefaultHeight = 20;
+const int KeyBind::DefaultWidth = 60;
+
+KeyBind::KeyBind() : GuiHighlightItem()
 {
     //ctor
     width = DefaultWidth;
@@ -19,7 +22,7 @@ GuiKeyBind::GuiKeyBind() : GuiHighlightItem()
     focus = false;
 }
 
-void GuiKeyBind::renderCaption(void)
+void KeyBind::renderCaption(void)
 {
     if(stringBuffer != 0)
     {
@@ -29,7 +32,7 @@ void GuiKeyBind::renderCaption(void)
     stringBuffer = font->renderText(keyCaption, foreground);
 }
 
-Surface *GuiKeyBind::render(void)
+Surface *KeyBind::render(void)
 {
     if(stringBuffer == 0)
     {
@@ -86,7 +89,7 @@ Surface *GuiKeyBind::render(void)
     return buffer;
 }
 
-void GuiKeyBind::onClick(Point *relp)
+void KeyBind::onClick(Point *relp)
 {
     if(!focus)
     {
@@ -94,7 +97,7 @@ void GuiKeyBind::onClick(Point *relp)
     }
 }
 
-void GuiKeyBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
+void KeyBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
 {
     if(focus)
     {
@@ -103,12 +106,12 @@ void GuiKeyBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
     }
 }
 
-SDL_Keycode GuiKeyBind::getKey(void)
+SDL_Keycode KeyBind::getKey(void)
 {
     return key;
 }
 
-void GuiKeyBind::setKey(SDL_Keycode m_key)
+void KeyBind::setKey(SDL_Keycode m_key)
 {
     key = m_key;
 
@@ -117,11 +120,11 @@ void GuiKeyBind::setKey(SDL_Keycode m_key)
     renderCaption();
 }
 
-GuiKeyBind::~GuiKeyBind()
+KeyBind::~KeyBind()
 {
     //dtor
 }
 
-
+}
 
 }

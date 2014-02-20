@@ -6,6 +6,10 @@
 namespace StiGame
 {
 
+namespace Gui
+{
+
+
 /// \class GuiHighlightItem
 /// \brief Interface for highlight-able Item
 class GuiHighlightItem :
@@ -36,6 +40,8 @@ class GuiHighlightItem :
         SColor *highlightBackground;
     private:
 };
+
+}
 
 }
 #endif // GUIHIGHLIGHTITEM_H

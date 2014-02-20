@@ -1,12 +1,15 @@
-#include "GuiCheckBox.h"
+#include "CheckBox.h"
 
 
 namespace StiGame
 {
 
-const int GuiCheckBox::DefaultCaptionOffset = 4;
+namespace Gui
+{
 
-GuiCheckBox::GuiCheckBox() : GuiItem()
+const int CheckBox::DefaultCaptionOffset = 4;
+
+CheckBox::CheckBox() : GuiItem()
 {
     //ctor
     captionOffset = DefaultCaptionOffset;
@@ -18,13 +21,13 @@ GuiCheckBox::GuiCheckBox() : GuiItem()
     caption = "";
 }
 
-void GuiCheckBox::setCaption(std::string m_caption)
+void CheckBox::setCaption(std::string m_caption)
 {
     caption = m_caption;
     renderCaption();
 }
 
-void GuiCheckBox::onClick(Point *relp)
+void CheckBox::onClick(Point *relp)
 {
     //determine if the checkbox is clicked
     SRect *cbRect = surfaceEmpty->getSRect(width - surfaceEmpty->getWidth(), 0);
@@ -41,22 +44,22 @@ void GuiCheckBox::onClick(Point *relp)
     delete cbRect;
 }
 
-std::string GuiCheckBox::getCaption(void)
+std::string CheckBox::getCaption(void)
 {
     return caption;
 }
 
-void GuiCheckBox::setChecked(bool m_checked)
+void CheckBox::setChecked(bool m_checked)
 {
     checked = m_checked;
 }
 
-bool GuiCheckBox::isChecked(void)
+bool CheckBox::isChecked(void)
 {
     return checked;
 }
 
-void GuiCheckBox::renderCaption(void)
+void CheckBox::renderCaption(void)
 {
     if(stringBuffer != 0)
     {
@@ -69,7 +72,7 @@ void GuiCheckBox::renderCaption(void)
     height = surfaceEmpty->getWidth();
 }
 
-Surface *GuiCheckBox::render(void)
+Surface *CheckBox::render(void)
 {
     if(stringBuffer == 0)
     {
@@ -113,9 +116,11 @@ Surface *GuiCheckBox::render(void)
     return buffer;
 }
 
-GuiCheckBox::~GuiCheckBox()
+CheckBox::~CheckBox()
 {
     //dtor
+}
+
 }
 
 }

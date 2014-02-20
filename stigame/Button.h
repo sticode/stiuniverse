@@ -3,9 +3,13 @@
 #include "EventThrower.h"
 namespace StiGame
 {
-/// \class GuiButton
+
+namespace Gui
+{
+
+/// \class Button
 /// \brief Classic button that throw an event on clicking
-class GuiButton :
+class Button :
 	public GuiItem,
 	public EventThrower
 {
@@ -13,9 +17,9 @@ public:
 	/// \brief Default Text Offset
 	static const int DEFAULT_OFFSET = 4;
 	/// \brief Create a new Button
-	GuiButton(void);
+	Button(void);
 	/// \brief Destructor
-	virtual ~GuiButton(void);
+	virtual ~Button(void);
 	/// \brief Get Button Text Caption
 	/// \return String value
 	char* getCaption(void);
@@ -48,4 +52,7 @@ protected:
 	/// \brief Highlight Background Color
 	SColor *highlightBackground;
 };
+
+}
+
 }

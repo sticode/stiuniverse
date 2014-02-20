@@ -1,9 +1,13 @@
 
-#include "GuiButton.h"
+#include "Button.h"
 #include "PLine.h"
 namespace StiGame
 {
-GuiButton::GuiButton(void) : GuiItem("button")
+
+namespace Gui
+{
+
+Button::Button(void) : GuiItem("button")
 {
 	offsetWidth = DEFAULT_OFFSET;
 	offsetHeight = DEFAULT_OFFSET;
@@ -13,18 +17,18 @@ GuiButton::GuiButton(void) : GuiItem("button")
 	highlightBackground = style->getHighlightBackground();
 }
 
-void GuiButton::setCaption(char* m_caption)
+void Button::setCaption(char* m_caption)
 {
 	caption = m_caption;
 	renderCaption();
 }
 
-char* GuiButton::getCaption(void)
+char* Button::getCaption(void)
 {
 	return caption;
 }
 
-Surface* GuiButton::render(void)
+Surface* Button::render(void)
 {
 	if(width == 0 || height == 0)
 	{
@@ -87,14 +91,14 @@ Surface* GuiButton::render(void)
 	return buffer;
 }
 
-void GuiButton::onClick(Point *relp)
+void Button::onClick(Point *relp)
 {
 	//create a button event, but now
 	SEventArgs se = SEventArgs();
 	publish(this, &se);
 }
 
-void GuiButton::clear(void)
+void Button::clear(void)
 {
 	if(stringBuffer != 0)
 	{
@@ -103,7 +107,7 @@ void GuiButton::clear(void)
 	}
 }
 
-void GuiButton::autosize(void)
+void Button::autosize(void)
 {
 	if(stringBuffer == 0)
 	{
@@ -114,7 +118,7 @@ void GuiButton::autosize(void)
 	height = offsetHeight*2 + stringBuffer->getSDLSurface()->h;
 }
 
-void GuiButton::renderCaption(void)
+void Button::renderCaption(void)
 {
 	if(stringBuffer != 0)
 	{
@@ -125,8 +129,11 @@ void GuiButton::renderCaption(void)
 }
 
 
-GuiButton::~GuiButton(void)
+Button::~Button(void)
 {
 	clear();
 }
+
+}
+
 }

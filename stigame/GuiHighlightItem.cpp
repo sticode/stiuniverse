@@ -2,6 +2,9 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 GuiHighlightItem::GuiHighlightItem() : GuiItem()
 {
     //ctor
@@ -33,6 +36,8 @@ SColor *GuiHighlightItem::getHighlightForeground(void)
 GuiHighlightItem::~GuiHighlightItem()
 {
     //dtor
+}
+
 }
 
 }

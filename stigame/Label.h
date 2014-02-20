@@ -3,16 +3,19 @@
 
 namespace StiGame
 {
-/// \class GuiLabel
+
+namespace Gui
+{
+/// \class Label
 /// \brief Text Label
-class GuiLabel :
+class Label :
 	public GuiItem
 {
 public:
 	/// \brief Create a new Label
-	GuiLabel(void);
+	Label(void);
 	/// \brief Destructor
-	~GuiLabel(void);
+	~Label(void);
 	/// \brief Render the Label
 	/// \return Rendered Label
 	Surface* render(void);
@@ -45,5 +48,6 @@ protected:
 	/// \brief Caption Text
 	char* caption;
 };
+}
 }
 

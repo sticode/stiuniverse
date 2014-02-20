@@ -1,28 +1,31 @@
 
-#include "GuiImage.h"
+#include "Image.h"
 #include "PLine.h"
 namespace StiGame
 {
 
-GuiImage::GuiImage(void)
+namespace Gui
+{
+
+Image::Image(void)
 {
     imagePath = "";
     imageBuffer = 0;
     drawBorder = false;
 }
 
-void GuiImage::setDrawBorder(bool m_drawBorder)
+void Image::setDrawBorder(bool m_drawBorder)
 {
     drawBorder = m_drawBorder;
 }
 
-void GuiImage::setImage(char* m_imagePath)
+void Image::setImage(char* m_imagePath)
 {
     imagePath = m_imagePath;
     loadImage();
 }
 
-void GuiImage::loadImage(void)
+void Image::loadImage(void)
 {
     if(imageBuffer != 0)
     {
@@ -35,7 +38,7 @@ void GuiImage::loadImage(void)
     height = imageBuffer->getHeight();
 }
 
-Surface* GuiImage::render(void)
+Surface* Image::render(void)
 {
     if(imageBuffer == 0)
     {
@@ -73,7 +76,7 @@ Surface* GuiImage::render(void)
     return buffer;
 }
 
-void GuiImage::setAlpha(int n_alpha)
+void Image::setAlpha(int n_alpha)
 {
     if(imageBuffer != 0)
     {
@@ -82,8 +85,10 @@ void GuiImage::setAlpha(int n_alpha)
     }
 }
 
-GuiImage::~GuiImage(void)
+Image::~Image(void)
 {
+}
+
 }
 
 }

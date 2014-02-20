@@ -8,6 +8,9 @@
 namespace StiGame
 {
 
+namespace Gui
+{
+
 GuiItem::GuiItem(void)
 {
 	style = GuiRuntime::getInstance()->getStyle();
@@ -100,6 +103,8 @@ void GuiItem::setMouseOver(bool m_over)
 bool GuiItem::getMouseOver(void)
 {
 	return mouseOver;
+}
+
 }
 
 }

@@ -1,5 +1,5 @@
-#ifndef GUICOMBOBOX_H
-#define GUICOMBOBOX_H
+#ifndef COMBOBOX_H
+#define COMBOBOX_H
 #include <list>
 #include <map>
 #include "GuiHighlightItem.h"
@@ -9,17 +9,20 @@
 
 namespace StiGame {
 
-/// \class GuiComboBox
+namespace Gui
+{
+
+/// \class ComboBox
 /// \brief Combo Box Gui Item
-class GuiComboBox :
+class ComboBox :
     public GuiHighlightItem,
     public SelectionEventThrower
 {
     public:
 		/// \brief Create a new Combo Box
-        GuiComboBox();
+        ComboBox();
 		/// \brief Destructor
-        virtual ~GuiComboBox();
+        virtual ~ComboBox();
 		/// \brief Get Selected Item
 		/// \return Selected Value Object
         ValueObject *getSelectedItem(void);
@@ -95,4 +98,6 @@ class GuiComboBox :
 };
 
 }
-#endif // GUICOMBOBOX_H
+
+}
+#endif // COMBOBOX_H

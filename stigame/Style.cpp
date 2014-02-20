@@ -1,12 +1,15 @@
 #include <iostream>
-#include "GuiStyle.h"
+#include "Style.h"
 
 #include "GamePath.h"
 
 namespace StiGame
 {
 
-GuiStyle::GuiStyle(void)
+namespace Gui
+{
+
+Style::Style(void)
 {
 	foreground = SColor(200, 250, 250);
 	background = SColor(15, 15, 15);
@@ -23,72 +26,75 @@ GuiStyle::GuiStyle(void)
 	radioChecked = new Surface(GamePath::getFilepath(AssetGui, "radio_true.png").c_str());
 }
 
-Surface *GuiStyle::getRadio(void)
+Surface *Style::getRadio(void)
 {
     return radio;
 }
 
-Surface *GuiStyle::getRadioChecked(void)
+Surface *Style::getRadioChecked(void)
 {
     return radioChecked;
 }
 
-Surface *GuiStyle::getCheckbox(void)
+Surface *Style::getCheckbox(void)
 {
     return checkbox;
 }
 
-Surface *GuiStyle::getCheckboxChecked(void)
+Surface *Style::getCheckboxChecked(void)
 {
     return checkboxChecked;
 }
 
-Surface *GuiStyle::getDropListArrow(void)
+Surface *Style::getDropListArrow(void)
 {
     return dropListArrow;
 }
 
-SColor *GuiStyle::getBackground(void)
+SColor *Style::getBackground(void)
 {
 	return &background;
 }
 
-SColor *GuiStyle::getForeground(void)
+SColor *Style::getForeground(void)
 {
 	return &foreground;
 }
 
-SColor *GuiStyle::getHighlightBackground(void)
+SColor *Style::getHighlightBackground(void)
 {
 	return &highlightBackground;
 }
 
-SColor *GuiStyle::getHighlightForeground(void)
+SColor *Style::getHighlightForeground(void)
 {
 	return &highlightForeground;
 }
 
-SFont *GuiStyle::getNormalFont(void)
+SFont *Style::getNormalFont(void)
 {
 	return normalFont;
 }
 
-Surface *GuiStyle::getUpArrow(void)
+Surface *Style::getUpArrow(void)
 {
     return upArrow;
 }
 
-Surface *GuiStyle::getDownArrow(void)
+Surface *Style::getDownArrow(void)
 {
     return downArrow;
 }
 
-void GuiStyle::unload(void)
+void Style::unload(void)
 {
 	delete normalFont;
 }
 
-GuiStyle::~GuiStyle(void)
+Style::~Style(void)
 {
 }
+
+}
+
 }

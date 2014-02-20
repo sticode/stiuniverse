@@ -168,22 +168,22 @@
 		<Unit filename="GameUnit.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="GuiButton.cpp">
+		<Unit filename="Button.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiButton.h">
+		<Unit filename="Button.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiCheckBox.cpp">
+		<Unit filename="CheckBox.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiCheckBox.h">
+		<Unit filename="CheckBox.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiComboBox.cpp">
+		<Unit filename="ComboBox.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiComboBox.h">
+		<Unit filename="ComboBox.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="GuiHighlightItem.cpp">
@@ -192,16 +192,16 @@
 		<Unit filename="GuiHighlightItem.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiImage.cpp">
+		<Unit filename="Image.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiImage.h">
+		<Unit filename="Image.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiImageButton.cpp">
+		<Unit filename="ImageButton.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiImageButton.h">
+		<Unit filename="ImageButton.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="GuiItem.cpp">
@@ -210,16 +210,16 @@
 		<Unit filename="GuiItem.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiKeyBind.cpp">
+		<Unit filename="KeyBind.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiKeyBind.h">
+		<Unit filename="KeyBind.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiLabel.cpp">
+		<Unit filename="Label.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiLabel.h">
+		<Unit filename="Label.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="GuiOverlay.cpp">
@@ -228,10 +228,10 @@
 		<Unit filename="GuiOverlay.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="GuiRadioButton.cpp">
+		<Unit filename="RadioButton.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiRadioButton.h">
+		<Unit filename="RadioButton.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="GuiResourceFile.cpp">
@@ -252,10 +252,10 @@
 		<Unit filename="GuiState.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
-		<Unit filename="GuiStyle.cpp">
+		<Unit filename="Style.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
-		<Unit filename="GuiStyle.h">
+		<Unit filename="Style.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="ISprite.cpp">

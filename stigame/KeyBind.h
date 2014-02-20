@@ -1,5 +1,5 @@
-#ifndef GUIKEYBIND_H
-#define GUIKEYBIND_H
+#ifndef KEYBIND_H
+#define KEYBIND_H
 
 #include "GuiHighlightItem.h"
 #include "KeyEventListener.h"
@@ -11,18 +11,21 @@ namespace StiGame {
 *
 */
 
+namespace Gui
+{
 
-/// \class GuiKeyBind
+
+/// \class KeyBind
 /// \brief GuiItem to capture Key Pressed for a Key Bind
-class GuiKeyBind :
+class KeyBind :
     public GuiHighlightItem,
     public KeyEventListener
 {
     public:
 		/// \brief Create a new Gui Key Bind
-        GuiKeyBind();
+        KeyBind();
 		/// \brief Destructor
-        virtual ~GuiKeyBind();
+        virtual ~KeyBind();
 		/// \brief Render the Gui Key Bind
 		/// \return Rendered Gui Key Bind
         Surface *render(void);
@@ -58,6 +61,8 @@ class GuiKeyBind :
         bool focus;
     private:
 };
+
+}
 
 }
 #endif // GUIKEYBIND_H

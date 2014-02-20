@@ -6,6 +6,10 @@
 #include "SRect.h"
 namespace StiGame
 {
+
+namespace Gui
+{
+
 /// \class GuiItem
 /// \brief Base class for GuiItem
 class GuiItem :
@@ -66,5 +70,7 @@ private:
 	/// \brief initialization
 	void init(void);
 };
+
+}
 
 }

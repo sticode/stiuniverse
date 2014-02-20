@@ -1,12 +1,15 @@
-#include "GuiRadioButton.h"
+#include "RadioButton.h"
 #include "RadioGroup.h"
 
 namespace StiGame
 {
 
-const int GuiRadioButton::DefaultCaptionOffset = 4;
+namespace Gui
+{
 
-GuiRadioButton::GuiRadioButton() : GuiItem()
+const int RadioButton::DefaultCaptionOffset = 4;
+
+RadioButton::RadioButton() : GuiItem()
 {
     font = style->getNormalFont();
     surfaceEmpty = style->getRadio();
@@ -17,33 +20,33 @@ GuiRadioButton::GuiRadioButton() : GuiItem()
     group = 0;
 }
 
-void GuiRadioButton::setGroup(RadioGroup *m_group)
+void RadioButton::setGroup(RadioGroup *m_group)
 {
     group = m_group;
 }
 
-void GuiRadioButton::setCaption(std::string m_caption)
+void RadioButton::setCaption(std::string m_caption)
 {
     caption = m_caption;
     renderCaption();
 }
 
-std::string GuiRadioButton::getCaption(void)
+std::string RadioButton::getCaption(void)
 {
     return caption;
 }
 
-void GuiRadioButton::setChecked(bool m_checked)
+void RadioButton::setChecked(bool m_checked)
 {
     checked = m_checked;
 }
 
-bool GuiRadioButton::isChecked(void)
+bool RadioButton::isChecked(void)
 {
     return checked;
 }
 
-void GuiRadioButton::renderCaption(void)
+void RadioButton::renderCaption(void)
 {
     if(stringBuffer != 0)
     {
@@ -55,7 +58,7 @@ void GuiRadioButton::renderCaption(void)
     height = surfaceEmpty->getHeight();
 }
 
-void GuiRadioButton::onClick(Point *relp)
+void RadioButton::onClick(Point *relp)
 {
     //checking if the mouse click was in the radio image
 
@@ -80,7 +83,7 @@ void GuiRadioButton::onClick(Point *relp)
 
 }
 
-Surface *GuiRadioButton::render(void)
+Surface *RadioButton::render(void)
 {
     if(stringBuffer == 0)
     {
@@ -127,9 +130,11 @@ Surface *GuiRadioButton::render(void)
 
 }
 
-GuiRadioButton::~GuiRadioButton()
+RadioButton::~RadioButton()
 {
     //dtor
+
+}
 
 }
 

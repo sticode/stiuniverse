@@ -1,5 +1,5 @@
-#ifndef GUICHECKBOX_H
-#define GUICHECKBOX_H
+#ifndef CHECKBOX_H
+#define CHECKBOX_H
 #include "GuiItem.h"
 #include "CheckEventThrower.h"
 #include <string>
@@ -7,17 +7,20 @@
 namespace StiGame
 {
 
-/// \class GuiCheckBox
+namespace Gui
+{
+
+/// \class CheckBox
 /// \brief Check Box Gui Item
-class GuiCheckBox :
+class CheckBox :
     public GuiItem,
     public CheckEventThrower
 {
     public:
 		/// \brief Create a new Check Box
-        GuiCheckBox();
+        CheckBox();
 		/// \brief Destructor
-        virtual ~GuiCheckBox();
+        virtual ~CheckBox();
 		/// \brief Render Check Box
 		/// \return Rendered Check Box
         Surface *render(void);
@@ -60,4 +63,6 @@ class GuiCheckBox :
 
 }
 
-#endif // GUICHECKBOX_H
+}
+
+#endif // CHECKBOX_H

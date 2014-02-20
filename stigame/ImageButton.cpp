@@ -1,11 +1,14 @@
 
-#include "GuiImageButton.h"
+#include "ImageButton.h"
 #include "PLine.h"
 
 namespace StiGame
 {
 
-GuiImageButton::GuiImageButton(void)
+namespace Gui
+{
+
+ImageButton::ImageButton(void)
 {
 	image = 0;
 	imageHover = 0;
@@ -15,7 +18,7 @@ GuiImageButton::GuiImageButton(void)
 	highlightBackground = style->getHighlightBackground();
 }
 
-void GuiImageButton::autosize(void)
+void ImageButton::autosize(void)
 {
 	if(image != 0)
 	{
@@ -29,16 +32,16 @@ void GuiImageButton::autosize(void)
 	}
 }
 
-void GuiImageButton::setImage(Surface *m_image)
+void ImageButton::setImage(Surface *m_image)
 {
 	image = m_image;
 }
-void GuiImageButton::setImageHover(Surface *m_imageHover)
+void ImageButton::setImageHover(Surface *m_imageHover)
 {
 	imageHover = m_imageHover;
 }
 
-Surface *GuiImageButton::render(void)
+Surface *ImageButton::render(void)
 {
 	if(width == 0 || height == 0)
 	{
@@ -109,20 +112,22 @@ Surface *GuiImageButton::render(void)
 	return buffer;
 }
 
-void GuiImageButton::clear(void)
+void ImageButton::clear(void)
 {
 
 }
 
-void GuiImageButton::onClick(Point *relp)
+void ImageButton::onClick(Point *relp)
 {
 	SEventArgs evt = SEventArgs();
 	publish(this, &evt);
 }
 
-GuiImageButton::~GuiImageButton(void)
+ImageButton::~ImageButton(void)
 {
 	clear();
+}
+
 }
 
 }

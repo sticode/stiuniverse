@@ -1,10 +1,13 @@
 
-#include "GuiLabel.h"
+#include "Label.h"
 
 namespace StiGame
 {
 
-GuiLabel::GuiLabel(void)  : GuiItem("label")
+namespace Gui
+{
+
+Label::Label(void)  : GuiItem("label")
 {
 	caption = "";
 	font = style->getNormalFont();
@@ -14,27 +17,27 @@ GuiLabel::GuiLabel(void)  : GuiItem("label")
 
 
 
-GuiLabel::~GuiLabel(void)
+Label::~Label(void)
 {
 }
 
-void GuiLabel::setCaption(char* m_caption)
+void Label::setCaption(char* m_caption)
 {
 	caption = m_caption;
 	renderCaption();
 }
 
-char* GuiLabel::getCaption(void)
+char* Label::getCaption(void)
 {
 	return caption;
 }
 
-void GuiLabel::setFont(SFont *m_font)
+void Label::setFont(SFont *m_font)
 {
 	font = m_font;
 }
 
-void GuiLabel::renderCaption(void)
+void Label::renderCaption(void)
 {
 	if(stringBuffer != 0)
 	{
@@ -44,7 +47,7 @@ void GuiLabel::renderCaption(void)
 	stringBuffer = font->renderText(caption, foreground);
 }
 
-void GuiLabel::autosize(void)
+void Label::autosize(void)
 {
 	if(stringBuffer == 0)
 	{
@@ -55,17 +58,17 @@ void GuiLabel::autosize(void)
 	height = stringBuffer->getHeight();
 }
 
-void GuiLabel::setTransparent(bool m_transparent)
+void Label::setTransparent(bool m_transparent)
 {
 	transparent = m_transparent;
 }
 
-bool GuiLabel::getTransparent(void)
+bool Label::getTransparent(void)
 {
 	return transparent;
 }
 
-Surface *GuiLabel::render(void)
+Surface *Label::render(void)
 {
 	if(isEmpty())
 	{
@@ -102,6 +105,8 @@ Surface *GuiLabel::render(void)
 	delete src;
 
 	return buffer;
+}
+
 }
 
 }
