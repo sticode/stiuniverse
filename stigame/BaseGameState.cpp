@@ -132,6 +132,17 @@ void BaseGameState::onEvent(SDL_Event *evt)
         Uint8 mbutton = evt->button.button;
         mouseButtons.remove(mbutton);
     }
+	else if(evt->type == SDL_MOUSEMOTION)
+	{
+		if(gameMenu != 0)
+		{
+			if(gameMenu->isVisible() && gameMenu->contains(evt->motion.x, evt->motion.y))
+			{
+				Point relpt = Point(evt->motion.x - gameMenu->getX(), evt->motion.y - gameMenu->getY());
+				gameMenu->onMouseMotion(&relpt);
+			}
+		}
+	}
 
     if(handleQuit && evt->type == SDL_QUIT)
     {

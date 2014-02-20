@@ -35,4 +35,9 @@ int main(int argc, char** argv)
         gen.generateSprite(var1);
         std::cout << "generating sprite : " << var1 << std::endl;
     }
+	else if(option == "gui")
+	{
+		gen.generateGuiResource(var1);
+		std::cout << "generating gui resource : " << var1 << std::endl;
+	}
 }

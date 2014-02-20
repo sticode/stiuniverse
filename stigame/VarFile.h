@@ -2,6 +2,7 @@
 #define VARFILE_H
 
 #include <string>
+#include <list>
 #include <map>
 
 namespace StiGame
@@ -33,6 +34,8 @@ class VarFile
 		/// \param varname Variable Name
 		/// \return Exists or not
         bool isVarExists(std::string varname);
+		
+		std::list<std::string> getKeys(void);
 
         static int ParseInt(std::string i_str);
     protected:

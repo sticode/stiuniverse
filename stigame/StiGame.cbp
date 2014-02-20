@@ -234,6 +234,12 @@
 		<Unit filename="GuiRadioButton.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
+		<Unit filename="GuiResourceFile.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="GuiResourceFile.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="GuiRuntime.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>

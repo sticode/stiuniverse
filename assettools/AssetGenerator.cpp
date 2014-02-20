@@ -12,7 +12,7 @@
 #include "MouseActionMap.h"
 #include "CompActionMap.h"
 #include <iostream>
-
+#include "GuiResourceFile.h"
 namespace StiGame
 {
 
@@ -24,6 +24,30 @@ AssetGenerator::AssetGenerator()
 AssetGenerator::~AssetGenerator()
 {
     //dtor
+}
+
+void AssetGenerator::generateGuiResource(std::string vf_gui)
+{
+	std::string vfpath = GamePath::getFilepath(AssetRoot, vf_gui);
+
+	VarFile vf (vfpath.c_str());
+	vf.read();
+	GuiResourceFile grf = GuiResourceFile();
+
+	std::list<std::string> keys = vf.getKeys();
+
+	std::list<std::string>::iterator lit(keys.begin()), lend(keys.end());
+
+	for(;lit!=lend;++lit)
+	{
+		std::string rname = (*lit);
+		std::string rpath = vf.getValue(rname);
+
+		grf.addResource(rname, GamePath::getFilepath(AssetRoot, rpath));
+	}
+
+	grf.save(GamePath::getFilepath(AssetRoot, GuiResourceFile::FILENAME));
+
 }
 
 void AssetGenerator::generateBindings(void)

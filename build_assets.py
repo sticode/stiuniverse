@@ -35,3 +35,6 @@ if __name__ == '__main__':
 
         cmd = "assettools dsprite " + ds
         os.system(cmd)
+	
+	cmd = "assettools gui gui.var"
+	os.system(cmd)

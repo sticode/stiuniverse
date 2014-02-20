@@ -14,6 +14,7 @@ class AssetGenerator
         virtual ~AssetGenerator();
         void generateSprite(std::string vf_name);
         void generateDirectionSprite(std::string vf_name);
+		void generateGuiResource(std::string vf_gui);
         void generateBindings(void);
     protected:
     private:

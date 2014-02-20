@@ -44,6 +44,19 @@ void VarFile::put(std::string varname, std::string value)
     variables.insert(std::make_pair(varname, value));
 }
 
+std::list<std::string> VarFile::getKeys(void)
+{
+	std::list<std::string> keys;
+	
+	std::map<std::string, std::string>::iterator lit(variables.begin()), lend(variables.end());
+	
+	for(;lit!=lend;++lit)
+	{
+		keys.push_back(lit->first);
+	}
+	
+	return keys;
+}
 
 std::string VarFile::getValue(std::string varname)
 {

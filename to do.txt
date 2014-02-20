@@ -1,6 +1,10 @@
 -asset generator
 	-SpriteFile -> Done
-	-DirectionSpriteFile -> TODO
+	-DirectionSpriteFile -> Done
+
+-gui Resource file
+	-Maybe a namespace for Gui ?! big refactor
+
 -fix missile trigo
 	-Seems to work now
 -missile rect restriction for mouse
@@ -14,15 +18,9 @@
 		*One file for action bind and one other file for video setting
 			VideoSetting will be about 3 vars..
 		Divided we fall, united we stand ?!? lolzz
--key down list -> put this handling into BaseGameState, with BaseGameAction
 -mouse down button list need to be done too, add a position test on MouseActionMap
 	-maybe a new MouseButtonEvent -> partialy done
 
--maybe a engine Math toolkit
-	-Rad to Degree, angle abstract seems a good idea -> Done
-	-Trigo tools -> Pythagorus, with point and dimension -> done
--add a time toolkit, for getting ms timestamp -> done
-	-maybe
 
 -refactor : typo with suscribe on all listener -> subscribe DAH!
 	-Need to change inputEquals, add InputType maybe,

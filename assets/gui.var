@@ -1,0 +1,8 @@
+checkbox=gui/checkbox.png;
+checkbox_checked=gui/checkbox_checked.png;
+downarrow=gui/downarrow.png;
+uparrow=gui/uparrow.png;
+droplist_arrow=gui/droplist_arrow.png;
+droplist_arrow2=gui/droplist_arrow2.png;
+radio=gui/radio.png;
+radio_true=gui/radio_true.png;
