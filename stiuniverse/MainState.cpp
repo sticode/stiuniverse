@@ -27,6 +27,10 @@ MainState::MainState() : BaseGameState()
 	vessel = new BatVessel();
 }
 
+void MainState::quit(void)
+{
+    running = false;
+}
 
 void MainState::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
 {
@@ -166,25 +170,35 @@ void MainState::onEvent(SDL_Event *evt)
 				return;
 			}
 		}
-		
+
         mouse_x = evt->button.x;
         mouse_y = evt->button.y;
-	
 
-		
+        Point *spr_center = vessel->getSprite()->getCenter();
+
+        double d_x = mouse_x - spr_center->getX();
+        double d_y = mouse_y - spr_center->getY();
+        delete spr_center;
+
         if(evt->button.button == SDL_BUTTON_LEFT)
         {
             //RedMissile *missile = new RedMissile(viewport->getRenderer(), mi_x, mi_y, angle);
             //BaseMissile *missile = BaseMissile::CreateMissile(MT_RED, viewport->getRenderer(), mi_x, mi_y, angle);
             //missiles.push_back(missile);
-            throwMissile(MT_RED);
+            //throwMissile(MT_RED);
+
+            double angle = atan2(d_y, d_x);
+
+            missiles.push_back(vessel->throwMissile(0, viewport->getRenderer(), angle));
         }
         else if(evt->button.button == SDL_BUTTON_RIGHT)
         {
             //GreenMissile *missile = new GreenMissile(viewport->getRenderer(), mi_x, mi_y, angle);
 
             //missiles.push_back(BaseMissile::CreateMissile(MT_GREEN, viewport->getRenderer(), mi_x, mi_y, angle));
-            throwMissile(MT_GREEN);
+            double angle = atan2(d_y, d_x);
+
+            missiles.push_back(vessel->throwMissile(1, viewport->getRenderer(), angle));
         }
 
     }
@@ -270,11 +284,16 @@ MultiRect* MainState::getViewMultiRect()
 
 void MainState::onPaint(SDL_Renderer *renderer)
 {
+    if(!gameMenu->isVisible())
+    {
+
     tick++;
     tickViewMovement();
     tickActions();
 
     vessel->tick();
+
+    }
     //vessel_sprite.setX((width - vessel_sprite.getWidth()) / 2);
     //vessel_sprite.setY(height - vessel_sprite.getHeight() - 50);
     //sprite testing

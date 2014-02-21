@@ -2,7 +2,7 @@
 #define COMBOBOX_H
 #include <list>
 #include <map>
-#include "GuiHighlightItem.h"
+#include "HighlightItem.h"
 #include "SFont.h"
 #include "ValueObject.h"
 #include "SelectionEventThrower.h"
@@ -15,7 +15,7 @@ namespace Gui
 /// \class ComboBox
 /// \brief Combo Box Gui Item
 class ComboBox :
-    public GuiHighlightItem,
+    public HighlightItem,
     public SelectionEventThrower
 {
     public:

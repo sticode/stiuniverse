@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 
     Viewport *viewport = new Viewport(1000, 650);
     viewport->setResizable(true);
-    viewport->setFps(30);
+    viewport->setFps(40);
 
     MainMenuState ms = MainMenuState();
 

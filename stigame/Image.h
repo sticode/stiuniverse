@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiItem.h"
+#include "Item.h"
 namespace StiGame
 {
 
@@ -9,7 +9,7 @@ namespace Gui
 /// \class Image
 /// \brief Class that permit user to draw an image on a GuiState
 class Image :
-	public GuiItem
+	public Item
 {
 public:
     /// \brief Constructor

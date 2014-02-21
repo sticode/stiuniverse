@@ -8,7 +8,7 @@ namespace StiGame
 namespace Gui
 {
 
-ImageButton::ImageButton(void)
+ImageButton::ImageButton() : Item("ImageButton")
 {
 	image = 0;
 	imageHover = 0;

@@ -1,7 +1,7 @@
 #ifndef RADIOBUTTON_H
 #define RADIOBUTTON_H
 
-#include "GuiItem.h"
+#include "Item.h"
 #include "CheckEventThrower.h"
 #include <string>
 
@@ -17,7 +17,7 @@ class RadioGroup;
 /// \class RadioButton
 /// \brief Gui Radio Button
 class RadioButton :
-    public GuiItem,
+    public Item,
     public CheckEventThrower
 {
     public:

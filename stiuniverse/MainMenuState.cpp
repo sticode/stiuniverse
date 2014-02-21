@@ -8,14 +8,14 @@ MainMenuState::MainMenuState() : GuiState()
 {
     //ctor
 
-    btnStart = GuiButton();
+    btnStart = Gui::Button();
     btnStart.setCaption("Start game");
 
     btnStart.subscribe(this);
 
     btnStart.set(100,100);
 
-    btnQuit = GuiButton();
+    btnQuit = Gui::Button();
     btnQuit.setCaption("Quit");
 
     btnQuit.subscribe(this);

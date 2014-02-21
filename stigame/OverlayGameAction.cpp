@@ -1,6 +1,6 @@
 #include "OverlayGameAction.h"
 #include "KeyActionMap.h"
-#include "GuiOverlay.h"
+#include "OverlayMenu.h"
 
 #include <iostream>
 
@@ -43,7 +43,7 @@ void OverlayGameAction::doAction(void)
 {
     std::cout << "OVERLAY ACTION" << std::endl;
 
-	GuiOverlay *gameMenu = state->getGameMenu();
+	Gui::OverlayMenu *gameMenu = state->getGameMenu();
 	if(gameMenu == 0)
 	{
 		return;

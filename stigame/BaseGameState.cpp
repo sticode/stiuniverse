@@ -3,6 +3,7 @@
 #include "Viewport.h"
 #include "Texture.h"
 #include <iostream>
+
 namespace StiGame
 {
 
@@ -27,12 +28,12 @@ Viewport * BaseGameState::getViewport(void)
 	return viewport;
 }
 
-void BaseGameState::setGameMenu(GuiOverlay *m_gameMenu)
+void BaseGameState::setGameMenu(Gui::OverlayMenu *m_gameMenu)
 {
 	gameMenu = m_gameMenu;
 }
 
-GuiOverlay* BaseGameState::getGameMenu(void)
+Gui::OverlayMenu* BaseGameState::getGameMenu(void)
 {
 	return gameMenu;
 }
@@ -170,7 +171,7 @@ void BaseGameState::renderGameMenu(void)
 {
 	if(gameMenu != 0)
 	{
-	    if(gameMenu->getX() == 0 && gameMenu->getY() == 0 && gameMenu->getPosition() != OP_TOP_LEFT_CORNER)
+	    if(gameMenu->getX() == 0 && gameMenu->getY() == 0 && gameMenu->getPosition() != Gui::OP_TOP_LEFT_CORNER)
         {
             gameMenu->fixPosition(width, height);
         }

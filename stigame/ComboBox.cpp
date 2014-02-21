@@ -11,7 +11,7 @@ namespace Gui
 const int ComboBox::DefaultNbItems = 4;
 const int ComboBox::DefaultTextOffset = 4;
 
-ComboBox::ComboBox() : GuiHighlightItem()
+ComboBox::ComboBox() : HighlightItem()
 {
     name = "combobox";
     itemHover = -1;

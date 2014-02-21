@@ -9,7 +9,7 @@ namespace Gui
 
 const int RadioButton::DefaultCaptionOffset = 4;
 
-RadioButton::RadioButton() : GuiItem()
+RadioButton::RadioButton() : Item()
 {
     font = style->getNormalFont();
     surfaceEmpty = style->getRadio();

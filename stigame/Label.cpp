@@ -7,7 +7,7 @@ namespace StiGame
 namespace Gui
 {
 
-Label::Label(void)  : GuiItem("label")
+Label::Label(void)  : Item("Label")
 {
 	caption = "";
 	font = style->getNormalFont();

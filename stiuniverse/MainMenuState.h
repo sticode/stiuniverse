@@ -3,13 +3,13 @@
 
 #include "GuiState.h"
 #include "EventListener.h"
-#include "GuiButton.h"
+#include "Button.h"
 
 namespace StiGame
 {
 
 class MainMenuState :
-    public GuiState,
+    public Gui::GuiState,
     public EventListener
 {
     public:
@@ -17,8 +17,8 @@ class MainMenuState :
         virtual ~MainMenuState();
         void handleEvent(EventThrower *src, SEventArgs *evt);
     protected:
-        GuiButton btnStart;
-        GuiButton btnQuit;
+        Gui::Button btnStart;
+        Gui::Button btnQuit;
     private:
 };
 

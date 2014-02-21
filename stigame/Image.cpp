@@ -7,7 +7,7 @@ namespace StiGame
 namespace Gui
 {
 
-Image::Image(void)
+Image::Image() : Item("Image")
 {
     imagePath = "";
     imageBuffer = 0;

@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiItem.h"
+#include "Item.h"
 #include "EventThrower.h"
 
 namespace StiGame
@@ -11,7 +11,7 @@ namespace Gui
 /// \class ImageButton
 /// \brief A Gui Button that use Image for rendering
 class ImageButton :
-	public GuiItem,
+	public Item,
 	public EventThrower
 {
 public:

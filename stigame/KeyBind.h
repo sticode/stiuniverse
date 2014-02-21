@@ -1,7 +1,7 @@
 #ifndef KEYBIND_H
 #define KEYBIND_H
 
-#include "GuiHighlightItem.h"
+#include "HighlightItem.h"
 #include "KeyEventListener.h"
 #include <string>
 
@@ -18,7 +18,7 @@ namespace Gui
 /// \class KeyBind
 /// \brief GuiItem to capture Key Pressed for a Key Bind
 class KeyBind :
-    public GuiHighlightItem,
+    public HighlightItem,
     public KeyEventListener
 {
     public:

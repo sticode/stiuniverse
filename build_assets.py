@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
     elif mode == 'release':
         os.chdir('Release')
+        
 
     for s in sprites:
 
@@ -36,5 +37,5 @@ if __name__ == '__main__':
         cmd = "assettools dsprite " + ds
         os.system(cmd)
 	
-	cmd = "assettools gui gui.var"
+	cmd = "assettools res gui"
 	os.system(cmd)

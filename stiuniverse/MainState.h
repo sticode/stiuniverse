@@ -29,6 +29,7 @@ class MainState : public BaseGameState,
         void unload(void);
 
         void handleEvent(KeyEventThrower *src, KeyEventArgs *args);
+        void quit(void);
     protected:
         void createViewMovRects(void);
         void updateViewMovRects(void);

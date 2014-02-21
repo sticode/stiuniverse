@@ -1,7 +1,6 @@
 #pragma once
 #include "SDL.h"
 #include <string>
-#include <ctime>
 #include "BaseGameState.h"
 #include "Dimension.h"
 
@@ -140,9 +139,9 @@ public:
 	/// \brief Set window grab input
 	/// \param grab Grab or not
 	void setGrab(bool grab);
-	
+
 	bool isGrabbed(void);
-	
+
 	/// \brief Get SDL_Window pointer
 	/// \return SDL_Window pointer
 	SDL_Window* getWindow(void);

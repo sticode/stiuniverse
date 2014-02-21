@@ -1,15 +1,15 @@
 #ifndef GAMEOVERLAY_H
 #define GAMEOVERLAY_H
 
-#include "GuiOverlay.h"
-#include "GuiButton.h"
+#include "OverlayMenu.h"
+#include "Button.h"
 #include "EventListener.h"
 #include "MainState.h"
 
 namespace StiGame
 {
 class GameOverlay :
-    public GuiOverlay,
+    public Gui::OverlayMenu,
     public EventListener
 {
     public:
@@ -18,8 +18,8 @@ class GameOverlay :
         void handleEvent(EventThrower *src, SEventArgs *evt);
         void setState(MainState *m_state);
     protected:
-        GuiButton resumeButton;
-        GuiButton quitButton;
+        Gui::Button resumeButton;
+        Gui::Button quitButton;
         MainState *state;
     private:
 };

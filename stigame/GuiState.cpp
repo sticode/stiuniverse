@@ -6,6 +6,10 @@
 namespace StiGame
 {
 
+namespace Gui
+{
+
+
 GuiState::GuiState(void) : BaseGameState()
 {
 	rendering = false;
@@ -13,7 +17,7 @@ GuiState::GuiState(void) : BaseGameState()
 	sBuffer->setReleaseSurface(true);
 	mouse_x = 0;
 	mouse_y = 0;
-	style = GuiRuntime::getInstance()->getStyle();
+	style = Runtime::getInstance()->getStyle();
 }
 
 
@@ -31,7 +35,7 @@ int GuiState::getMouseY(void)
 	return mouse_y;
 }
 
-void GuiState::add(Gui::GuiItem *n_item)
+void GuiState::add(Item *n_item)
 {
 	items.push_back(n_item);
 }
@@ -53,7 +57,7 @@ void GuiState::onPaint(SDL_Renderer *renderer)
 	//rendering items
 	sBuffer->fill(style->getBackground());
 
-	std::list<Gui::GuiItem*>::iterator lit (items.begin()), lend(items.end());
+	std::list<Item*>::iterator lit (items.begin()), lend(items.end());
 
     MPoint *relp = new MPoint();
 
@@ -128,7 +132,7 @@ void GuiState::onEvent(SDL_Event* evt)
 		mouse_x = evt->button.x;
 		mouse_y = evt->button.y;
 
-		std::list<Gui::GuiItem*>::iterator lit (items.begin()), lend(items.end());
+		std::list<Item*>::iterator lit (items.begin()), lend(items.end());
 
 		for(;lit!=lend;++lit)
 		{
@@ -146,12 +150,14 @@ void GuiState::onEvent(SDL_Event* evt)
 
 void GuiState::unload(void)
 {
-	std::list<Gui::GuiItem*>::iterator lit (items.begin()), lend(items.end());
+	std::list<Item*>::iterator lit (items.begin()), lend(items.end());
 
 	for(;lit!=lend;++lit)
 	{
 		(*lit)->clear();
 	}
+}
+
 }
 
 }

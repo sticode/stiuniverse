@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiItem.h"
+#include "Item.h"
 
 namespace StiGame
 {
@@ -9,7 +9,7 @@ namespace Gui
 /// \class Label
 /// \brief Text Label
 class Label :
-	public GuiItem
+	public Item
 {
 public:
 	/// \brief Create a new Label

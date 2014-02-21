@@ -1,6 +1,6 @@
 
 #include "Viewport.h"
-#include "GuiRuntime.h"
+#include "Runtime.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "Sprite.h"
@@ -187,7 +187,7 @@ void Viewport::startLoop(void)
 		//quitting, unloading
 		currentState->unload();
 		//quick hack
-		GuiRuntime::getInstance()->getStyle()->unload();
+		Gui::Runtime::getInstance()->getStyle()->unload();
 	}
 }
 
@@ -265,7 +265,7 @@ void Viewport::initialize(void)
 
     //area = ViewportArea();
 
-	lastTick = clock();
+	lastTick = 0;
 	run = false;
 	currentState = 0;
 	SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
@@ -436,7 +436,7 @@ void Viewport::setGrab(bool grab)
 bool Viewport::isGrabbed(void)
 {
 	SDL_bool grabbed = SDL_GetWindowGrab(window);
-	
+
 	return (grabbed == SDL_TRUE);
 }
 

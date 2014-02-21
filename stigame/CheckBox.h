@@ -1,6 +1,6 @@
 #ifndef CHECKBOX_H
 #define CHECKBOX_H
-#include "GuiItem.h"
+#include "Item.h"
 #include "CheckEventThrower.h"
 #include <string>
 
@@ -13,7 +13,7 @@ namespace Gui
 /// \class CheckBox
 /// \brief Check Box Gui Item
 class CheckBox :
-    public GuiItem,
+    public Item,
     public CheckEventThrower
 {
     public:

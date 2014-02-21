@@ -3,15 +3,15 @@
 namespace StiGame
 {
 
-GameOverlay::GameOverlay() : GuiOverlay()
+GameOverlay::GameOverlay() : Gui::OverlayMenu()
 {
     //ctor
     state = 0;
 
-    resumeButton = GuiButton();
+    resumeButton = Gui::Button();
     resumeButton.setCaption("Resume");
 
-    quitButton = GuiButton();
+    quitButton = Gui::Button();
     quitButton.setCaption("Quit");
 
     resumeButton.subscribe(this);
@@ -32,6 +32,7 @@ void GameOverlay::handleEvent(EventThrower *src, SEventArgs *evt)
     else if(src == &quitButton)
     {
         state->closeGameMenu();
+        state->quit();
     }
 }
 

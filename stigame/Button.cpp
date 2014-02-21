@@ -7,7 +7,7 @@ namespace StiGame
 namespace Gui
 {
 
-Button::Button(void) : GuiItem("button")
+Button::Button(void) : Item("button")
 {
 	offsetWidth = DEFAULT_OFFSET;
 	offsetHeight = DEFAULT_OFFSET;

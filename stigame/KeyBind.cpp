@@ -10,7 +10,7 @@ namespace Gui
 const int KeyBind::DefaultHeight = 20;
 const int KeyBind::DefaultWidth = 60;
 
-KeyBind::KeyBind() : GuiHighlightItem()
+KeyBind::KeyBind() : HighlightItem()
 {
     //ctor
     width = DefaultWidth;

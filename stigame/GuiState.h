@@ -1,10 +1,14 @@
 #pragma once
 #include "Viewport.h"
-#include "GuiRuntime.h"
-#include "GuiItem.h"
+#include "Runtime.h"
+#include "Item.h"
 #include <list>
 namespace StiGame
 {
+
+namespace Gui
+{
+
 /// \class GuiState
 /// \brief Class that provide a base implementation for Gui item rendering
 class GuiState : public BaseGameState
@@ -16,7 +20,7 @@ public:
 	~GuiState(void);
 	/// \brief Add a GuiItem
 	/// \param item GuiItem to add
-	void add(Gui::GuiItem *item);
+	void add(Item *item);
 	/// \brief Starting the state
 	void onStart(void);
 	/// \brief Paint Event
@@ -42,7 +46,7 @@ public:
 	int getMouseY(void);
 protected:
 	/// \brief GuiItem list
-	std::list<Gui::GuiItem*> items;
+	std::list<Item*> items;
 	/// \brief Is rendering
 	bool rendering;
 	/// \brief Surface Buffer
@@ -54,4 +58,6 @@ protected:
 	/// \brief Gui Style
 	Gui::Style *style;
 };
+
+}
 }

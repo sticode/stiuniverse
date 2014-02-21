@@ -1,5 +1,5 @@
 #pragma once
-#include "GuiItem.h"
+#include "Item.h"
 #include "EventThrower.h"
 namespace StiGame
 {
@@ -10,7 +10,7 @@ namespace Gui
 /// \class Button
 /// \brief Classic button that throw an event on clicking
 class Button :
-	public GuiItem,
+	public Item,
 	public EventThrower
 {
 public:

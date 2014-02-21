@@ -3,7 +3,7 @@
 #include "KeyEventThrower.h"
 #include "BaseGameAction.h"
 #include "ActionBinding.h"
-#include "GuiOverlay.h"
+#include "OverlayMenu.h"
 #include <list>
 
 namespace StiGame
@@ -54,14 +54,14 @@ public:
 	Viewport* getViewport(void);
 
 	bool isHandleQuit(void);
-	
+
 	void renderGameMenu(void);
 	void openGameMenu(void);
 	void closeGameMenu(void);
-	
-	void setGameMenu(GuiOverlay *m_gameMenu);
-	GuiOverlay* getGameMenu(void);
-	
+
+	void setGameMenu(Gui::OverlayMenu *m_gameMenu);
+	Gui::OverlayMenu* getGameMenu(void);
+
 protected:
     void tickActions(void);
 
@@ -77,7 +77,7 @@ protected:
 	bool handleQuit;
     std::list<BaseGameAction*> actions;
     ActionBinding bindings;
-	GuiOverlay *gameMenu;
+	Gui::OverlayMenu *gameMenu;
 private:
     std::list<SDL_Keycode> keyDowns;
     std::list<Uint8> mouseButtons;
