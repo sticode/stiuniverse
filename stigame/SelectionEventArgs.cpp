@@ -3,6 +3,8 @@
 namespace StiGame
 {
 
+namespace Gui
+{
 
 SelectionEventArgs::SelectionEventArgs(ValueObject *m_selection)
 {
@@ -18,6 +20,8 @@ SelectionEventArgs::~SelectionEventArgs()
 ValueObject *SelectionEventArgs::getSelection(void)
 {
     return selection;
+}
+
 }
 
 }

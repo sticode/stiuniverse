@@ -300,6 +300,12 @@
 		<Unit filename="MultiRect.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="OverlayFrame.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="OverlayFrame.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="OverlayGameAction.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
@@ -455,6 +461,12 @@
 		</Unit>
 		<Unit filename="SpriteLibrary.h">
 			<Option virtualFolder="headers/sprites/" />
+		</Unit>
+		<Unit filename="StringRenderer.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="StringRenderer.h">
+			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="Style.cpp">
 			<Option virtualFolder="src/gui/" />

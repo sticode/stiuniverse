@@ -5,6 +5,10 @@
 
 namespace StiGame
 {
+
+namespace Gui
+{
+
 /// \class SelectionEventThrower
 /// \brief Selection Event thrower, when an item is selected by the user
 class SelectionEventThrower
@@ -29,6 +33,8 @@ class SelectionEventThrower
         virtual void publish(SelectionEventThrower *source, SelectionEventArgs *args);
     private:
 };
+
+}
 
 }
 

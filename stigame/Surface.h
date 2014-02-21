@@ -133,6 +133,7 @@ public:
 
 	void updateSDLRect(SDL_Rect *rect);
 	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);
+	void updateSDLRect(SDL_Rect *rect, Point *pt);
 };
 
 }

@@ -6,6 +6,9 @@
 namespace StiGame
 {
 
+namespace Gui
+{
+
 class SelectionEventThrower;
 
 /// \class SelectionEventListener
@@ -24,6 +27,8 @@ class SelectionEventListener
     protected:
     private:
 };
+
+}
 
 }
 #endif // SELECTIONEVENTLISTENER_H

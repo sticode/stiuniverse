@@ -6,6 +6,7 @@
 #include <string>
 namespace StiGame
 {
+
 /// \class SFont
 /// \brief Wrapper of a SDL_TTFFont
 class SFont
@@ -22,6 +23,9 @@ public:
 	SFont(void);
 	/// \brief Load a ttf file with specified font size
 	SFont(const char* m_path,int m_size);
+	
+	SFont(SDL_RWops *rw, int m_size);
+	
 	/// \brief Destructor
 	~SFont(void);
 	/// \brief Get the font size value
@@ -41,6 +45,12 @@ public:
 	/// \param caption Text to render
 	/// \param color SColor pointer
 	Surface *renderText(std::string caption, SColor *color);
+	
+	Surface *renderTextShaded(std::string caption, SColor *color, SColor *bg);
+	Surface *renderTextBlended(std::string caption, SColor *color);
+	
+	int getFontStyle(void);
+	void setFontStyle(int style);
 };
 
 }

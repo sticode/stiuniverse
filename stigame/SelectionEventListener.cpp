@@ -2,6 +2,8 @@
 namespace StiGame
 {
 
+namespace Gui
+{
 
 SelectionEventListener::SelectionEventListener()
 {
@@ -15,6 +17,8 @@ SelectionEventListener::~SelectionEventListener()
 
 void SelectionEventListener::handleEvent(SelectionEventThrower *src, SelectionEventArgs *args)
 {
+
+}
 
 }
 

@@ -21,6 +21,14 @@ SFont::SFont(const char *m_path, int m_size)
 }
 
 
+SFont::SFont(SDL_RWops *rw, int m_size)
+{
+	font = 0;
+	size = m_size;
+	path = "rw_ops";
+	font = TTF_OpenFontRW(rw, 1, size);
+}
+
 
 SFont::~SFont(void)
 {
@@ -54,6 +62,32 @@ Surface *SFont::renderText(const char* text, SColor *color)
 	Surface *sur = new Surface(txtsur);
 	sur->setReleaseSurface(true);
 	return sur;
+}
+
+Surface *SFont::renderTextShaded(std::string caption, SColor *color, SColor *bg)
+{
+	SDL_Surface *txtsur = TTF_RenderText_Shaded(font, caption.c_str(), color->getColor(), bg->getColor());
+	Surface *sur = new Surface(txtsur);
+	sur->setReleaseSurface(true);
+	return sur;
+}
+
+Surface *SFont::renderTextBlended(std::string caption, SColor *color)
+{
+	SDL_Surface *txtsur = TTF_RenderText_Blended(font, caption.c_str(), color->getColor());
+	Surface *sur = new Surface(txtsur);
+	sur->setReleaseSurface(true);
+	return sur;
+}
+
+int SFont::getFontStyle(void)
+{
+	return TTF_GetFontStyle(font);
+}
+
+void SFont::setFontStyle(int style)
+{
+	TTF_SetFontStyle(font, style);
 }
 
 }

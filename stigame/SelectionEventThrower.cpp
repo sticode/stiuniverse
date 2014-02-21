@@ -2,6 +2,9 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 SelectionEventThrower::SelectionEventThrower()
 {
     //ctor
@@ -29,6 +32,8 @@ void SelectionEventThrower::publish(SelectionEventThrower *src, SelectionEventAr
     {
         (*lit)->handleEvent(src, args);
     }
+}
+
 }
 
 }

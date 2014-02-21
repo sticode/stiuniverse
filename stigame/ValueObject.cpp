@@ -2,6 +2,9 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 ValueObject::ValueObject()
 {
     id = 0;
@@ -26,6 +29,8 @@ char* ValueObject::getText(void)
 
 ValueObject::~ValueObject()
 {
+
+}
 
 }
 

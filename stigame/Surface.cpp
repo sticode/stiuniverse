@@ -299,6 +299,13 @@ namespace StiGame {
 	    rect->x = m_x;
 	    rect->y = m_y;
 	}
+	
+	void Surface::updateSDLRect(SDL_Rect *rect, Point *pt)
+	{
+	    updateSDLRect(rect);
+	    rect->x = pt->getX();
+	    rect->y = pt->getY();
+	}
 
 	Surface::~Surface(void)
 	{

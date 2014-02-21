@@ -5,6 +5,9 @@
 
 namespace StiGame
 {
+
+namespace Gui
+{
 /// \class SelectionEventArgs
 /// \brief Event Args for a selection event
 class SelectionEventArgs :
@@ -25,6 +28,8 @@ class SelectionEventArgs :
     private:
 };
 
+
+}
 }
 
 #endif // SELECTIONEVENTARGS_H

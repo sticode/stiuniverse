@@ -3,6 +3,9 @@
 
 namespace StiGame {
 
+namespace Gui
+{
+
 /// \class ValueObject
 /// \brief Class for GuiItem list
 class ValueObject
@@ -30,6 +33,8 @@ class ValueObject
         char *text;
     private:
 };
+
+}
 
 }
 
