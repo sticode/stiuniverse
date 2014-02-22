@@ -10,7 +10,7 @@ namespace StiGame
 BaseGameAction* OverlayGameAction::GetDefaultOverlayGameAction(BaseGameState *m_state)
 {
 	OverlayGameAction *action = new OverlayGameAction();
-	KeyActionMap *kmap = new KeyActionMap("OpenOverlay", SDLK_ESCAPE);
+	KeyActionMap *kmap = new KeyActionMap("open_overlay", SDLK_ESCAPE);
 	action->setActionMap(kmap);
 	action->setState(m_state);
 
@@ -21,7 +21,7 @@ BaseGameAction* OverlayGameAction::GetDefaultOverlayGameAction(BaseGameState *m_
 OverlayGameAction::OverlayGameAction()
 {
 	initialize();
-	name = "OpenOverlay";
+	name = "open_overlay";
 }
 
 OverlayGameAction::~OverlayGameAction()

@@ -4,7 +4,7 @@
 #include <string>
 #include "VarFile.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 
 class AssetGenerator

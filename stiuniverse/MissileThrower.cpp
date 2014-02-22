@@ -1,5 +1,7 @@
 #include "MissileThrower.h"
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 MissileThrower::MissileThrower()

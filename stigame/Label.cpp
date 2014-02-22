@@ -9,10 +9,14 @@ namespace Gui
 
 Label::Label(void)  : Item("Label")
 {
-	caption = "";
+	caption = " ";
 	font = style->getNormalFont();
 	transparent = true;
 	stringBuffer = 0;
+	x = 0;
+	y = 0;
+	width = 0;
+	height = 0;
 }
 
 
@@ -21,13 +25,13 @@ Label::~Label(void)
 {
 }
 
-void Label::setCaption(char* m_caption)
+void Label::setCaption(std::string m_caption)
 {
 	caption = m_caption;
 	renderCaption();
 }
 
-char* Label::getCaption(void)
+std::string Label::getCaption(void)
 {
 	return caption;
 }

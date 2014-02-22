@@ -3,7 +3,9 @@
 #include "GreenMissile.h"
 #include "RedMissile.h"
 
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 	BaseMissile* MissileFactory::CreateMissile(MissileType mtype, SDL_Renderer *renderer, int m_x, int m_y, double m_angle)
 	{

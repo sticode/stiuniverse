@@ -13,7 +13,9 @@
 #include "CompActionMap.h"
 #include <iostream>
 
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 AssetGenerator::AssetGenerator()

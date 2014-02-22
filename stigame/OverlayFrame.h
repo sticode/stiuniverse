@@ -11,7 +11,7 @@ namespace StiGame
 namespace Gui
 {
 
-class OverlayFrame : 
+class OverlayFrame :
 	public Item
 {
 public:
@@ -20,10 +20,10 @@ public:
 	virtual void onMouseMotion(Point *relp);
 	virtual void onClick(Point *relp);
 	virtual Surface* render(void);
-	
+
 	bool isVisible(void);
 	void setVisible(bool m_visible);
-	
+
 	void add(Item *item);
 protected:
 	bool visible;

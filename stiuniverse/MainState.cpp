@@ -9,7 +9,10 @@
 #include "GameOverlay.h"
 #include "OverlayGameAction.h"
 
+
 using namespace StiGame;
+
+namespace StiUniverse {
 
 MainState::MainState() : BaseGameState()
 {
@@ -25,6 +28,7 @@ MainState::MainState() : BaseGameState()
 	rel_x = 0;
 	rel_y = 0;
 	vessel = new BatVessel();
+	hud = SpaceHud();
 }
 
 void MainState::quit(void)
@@ -411,8 +415,8 @@ void MainState::onPaint(SDL_Renderer *renderer)
     vessel_spr->set(vessel->getX() - real_x, vessel->getY() - real_y);
     vessel_spr->render();
 
-    renderGameMenu();
 
+    BaseGameState::onPaint(renderer);
 }
 
 void MainState::generateStars(void)
@@ -506,6 +510,12 @@ void MainState::onResize(int m_width, int m_height)
     BaseGameState::onResize(m_width, m_height);
 	missileLaunchRect.setWidth(m_width);
 	missileLaunchRect.setHeight(m_height);
+
+    hud.setWidth(m_width);
+    hud.setHeight(50);
+
+    hud.setX(0);
+    hud.setY(m_height - hud.getHeight());
 }
 
 void MainState::onQuit(SDL_Event *evt)
@@ -546,6 +556,7 @@ void MainState::onStart(void)
 
     GameOverlay *overlay = new GameOverlay();
     overlay->setState(this);
+    subscribe(overlay);
 
     gameMenu = overlay;
 
@@ -580,6 +591,12 @@ void MainState::onStart(void)
 
     createViewMovRects();
     updateViewMovRects();
+
+    hud.setVessel(vessel);
+
+    hud.setVisible(true);
+
+    frames.push_back(&hud);
 }
 
 void MainState::tickViewMovement(void)
@@ -647,4 +664,6 @@ void MainState::updateViewMovRects(void)
 MainState::~MainState()
 {
     //dtor
+}
+
 }

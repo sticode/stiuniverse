@@ -54,7 +54,9 @@ Surface* OverlayFrame::render(void)
 	std::list<Item*>::iterator lit(items.begin()), lend(items.end());
 	for(;lit!=lend;++lit)
 	{
-		Surface *ibuf = (*lit)->render();
+	    Item *item = (*lit);
+
+		Surface *ibuf = item->render();
 
 		ibuf->updateSDLRect(src);
 		ibuf->updateSDLRect(dst, (*lit));

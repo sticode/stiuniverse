@@ -5,12 +5,12 @@
 #include <vector>
 #include "GameUnit.h"
 #include "MissileThrower.h"
-namespace StiGame
+namespace StiUniverse
 {
 
 
 class SpaceVessel :
-    public GameUnit
+    public StiGame::GameUnit
 {
     public:
         const static unsigned int MISSILE_THROWER_MAX = 3;
@@ -19,15 +19,16 @@ class SpaceVessel :
 
         virtual void spawnVessel(int v_width, int v_height);
 
-        virtual void moveUnit(SDirection m_direction);
-        DirectionSprite* getSprite(void);
+        virtual void moveUnit(StiGame::SDirection m_direction);
+        StiGame::DirectionSprite* getSprite(void);
         void loadSprite(SDL_Renderer *renderer);
-        BaseMissile* throwMissile(int index, SDL_Renderer *renderer, double angle);
+        StiGame::BaseMissile* throwMissile(int index, SDL_Renderer *renderer, double angle);
         virtual void tick(void);
+        std::string getVesselName(void);
     protected:
         int _tick;
         std::string vessel_name;
-        DirectionSprite *sprite;
+        StiGame::DirectionSprite *sprite;
 
         //need a more elegant thing than only the enum type
         //maybe a class that handle missile cooldown or energy levels

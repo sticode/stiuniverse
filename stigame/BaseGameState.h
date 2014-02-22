@@ -4,6 +4,7 @@
 #include "BaseGameAction.h"
 #include "ActionBinding.h"
 #include "OverlayMenu.h"
+#include "OverlayFrame.h"
 #include <list>
 
 namespace StiGame
@@ -55,7 +56,6 @@ public:
 
 	bool isHandleQuit(void);
 
-	void renderGameMenu(void);
 	void openGameMenu(void);
 	void closeGameMenu(void);
 
@@ -64,6 +64,9 @@ public:
 
 protected:
     void tickActions(void);
+
+    void renderOverlayFrames(SDL_Renderer *renderer);
+    void renderGameMenu(SDL_Renderer *renderer);
 
 	/// \brief width (px)
 	int width;
@@ -78,6 +81,9 @@ protected:
     std::list<BaseGameAction*> actions;
     ActionBinding bindings;
 	Gui::OverlayMenu *gameMenu;
+
+	std::list<Gui::OverlayFrame*> frames;
+
 private:
     std::list<SDL_Keycode> keyDowns;
     std::list<Uint8> mouseButtons;

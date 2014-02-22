@@ -1,7 +1,9 @@
 #include "SpaceVessel.h"
 #include "GamePath.h"
 #include "DirectionSpriteFile.h"
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 SpaceVessel::SpaceVessel()
@@ -123,6 +125,11 @@ BaseMissile* SpaceVessel::throwMissile(int index, SDL_Renderer *renderer, double
     }
 
     return 0;
+}
+
+std::string SpaceVessel::getVesselName(void)
+{
+    return vessel_name;
 }
 
 void SpaceVessel::loadSprite(SDL_Renderer *renderer)

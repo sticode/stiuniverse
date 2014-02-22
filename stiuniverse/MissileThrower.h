@@ -3,7 +3,7 @@
 
 #include "BaseMissile.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 
 class MissileThrower
@@ -17,7 +17,7 @@ class MissileThrower
 
         virtual ~MissileThrower();
         virtual bool isReady(void);
-        virtual BaseMissile* throwMissile(int m_x, int m_y, double angle) = 0;
+        virtual StiGame::BaseMissile* throwMissile(int m_x, int m_y, double angle) = 0;
     protected:
         SDL_Renderer *renderer;
         bool ready;

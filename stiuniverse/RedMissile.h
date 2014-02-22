@@ -1,11 +1,11 @@
 #ifndef REDMISSILE_H
 #define REDMISSILE_H
 #include "BaseMissile.h"
-namespace StiGame
+namespace StiUniverse
 {
 
 class RedMissile :
-    public BaseMissile
+    public StiGame::BaseMissile
 {
     public:
         RedMissile();

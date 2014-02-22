@@ -3,7 +3,7 @@
 #include <fstream>
 #include <cstring>
 
-namespace StiGame
+namespace StiUniverse
 {
 
 SpaceMapFile::SpaceMapFile()

@@ -1,6 +1,8 @@
 #include "GameOverlay.h"
 #include <iostream>
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 GameOverlay::GameOverlay() : Gui::OverlayMenu()
@@ -19,8 +21,6 @@ GameOverlay::GameOverlay() : Gui::OverlayMenu()
 
     add(&resumeButton);
     add(&quitButton);
-
-    std::cout << "Game overlay ctr" << std::endl;
 }
 
 void GameOverlay::handleEvent(EventThrower *src, SEventArgs *evt)

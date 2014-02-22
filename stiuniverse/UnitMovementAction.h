@@ -3,21 +3,21 @@
 #include "BaseGameAction.h"
 #include "DirectionSprite.h"
 #include "GameUnit.h"
-namespace StiGame
+namespace StiUniverse
 {
 
 
 class UnitMovementAction :
-    public BaseGameAction
+    public StiGame::BaseGameAction
 {
     public:
         UnitMovementAction();
-        UnitMovementAction(std::string m_name, SDirection m_direction);
+        UnitMovementAction(std::string m_name, StiGame::SDirection m_direction);
         virtual ~UnitMovementAction();
-        void setUnit(GameUnit *m_unit);
+        void setUnit(StiGame::GameUnit *m_unit);
     protected:
-        GameUnit *unit;
-        SDirection direction;
+        StiGame::GameUnit *unit;
+        StiGame::SDirection direction;
         void doAction(void);
     private:
 };

@@ -1,5 +1,8 @@
 #include "UnitMovementAction.h"
-namespace StiGame
+
+using namespace StiGame;
+
+namespace StiUniverse
 {
 UnitMovementAction::UnitMovementAction()
 {

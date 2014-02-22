@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace StiGame
+namespace StiUniverse
 {
 
 const int MAP_NAME_MAX = 64;

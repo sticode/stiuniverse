@@ -3,7 +3,7 @@
 
 #include "SpaceVessel.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 
 class BatVessel :
@@ -22,7 +22,7 @@ class BVMissileLauncher1 :
     public:
         BVMissileLauncher1();
         virtual ~BVMissileLauncher1();
-        BaseMissile* throwMissile(int m_x, int m_y, double angle);
+        StiGame::BaseMissile* throwMissile(int m_x, int m_y, double angle);
 
 };
 
@@ -32,7 +32,7 @@ class BVMissileLauncher2 :
     public:
         BVMissileLauncher2();
         virtual ~BVMissileLauncher2();
-        BaseMissile* throwMissile(int m_x, int m_y, double angle);
+        StiGame::BaseMissile* throwMissile(int m_x, int m_y, double angle);
 
 };
 

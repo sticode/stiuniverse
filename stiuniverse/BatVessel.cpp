@@ -1,7 +1,9 @@
 #include "BatVessel.h"
 #include "RedMissile.h"
 #include "GreenMissile.h"
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 BVMissileLauncher1::BVMissileLauncher1()

@@ -1,7 +1,9 @@
 #include "MainMenuState.h"
 #include "MainState.h"
 
-namespace StiGame
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 MainMenuState::MainMenuState() : GuiState()

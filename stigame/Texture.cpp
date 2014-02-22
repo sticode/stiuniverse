@@ -72,6 +72,16 @@ namespace StiGame
         sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
     }
 
+    Texture::Texture(SDL_Renderer *m_renderer, Surface *surface)
+    {
+        initialize();
+        renderer = m_renderer;
+        width = surface->getWidth();
+        height = surface->getHeight();
+
+        sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
+    }
+
     SDL_Texture* Texture::getSDLTexture(void)
     {
         return sdlTexture;

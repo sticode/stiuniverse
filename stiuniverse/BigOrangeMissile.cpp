@@ -1,6 +1,9 @@
 #include "BigOrangeMissile.h"
 #include "MathTK.h"
-namespace StiGame
+
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
     BigOrangeMissile::BigOrangeMissile() : BaseMissile()

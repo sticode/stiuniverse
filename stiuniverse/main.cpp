@@ -9,8 +9,8 @@
 #include "KeyActionMap.h"
 #include "MathTK.h"
 #include <string>
+using namespace StiUniverse;
 using namespace StiGame;
-
 
 int main(int argc, char** argv)
 {

@@ -1,6 +1,9 @@
 #include "GreenMissile.h"
 #include "MathTK.h"
-namespace StiGame
+
+using namespace StiGame;
+
+namespace StiUniverse
 {
 
 GreenMissile::GreenMissile() : BaseMissile()

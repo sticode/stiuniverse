@@ -1,7 +1,9 @@
 #include "GameActionFactory.h"
 #include "UnitMovementAction.h"
 
-namespace StiGame{
+using namespace StiGame;
+
+namespace StiUniverse{
 GameActionFactory::GameActionFactory()
 {
     //ctor

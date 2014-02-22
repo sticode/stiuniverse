@@ -5,20 +5,20 @@
 #include "EventListener.h"
 #include "Button.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 
 class MainMenuState :
-    public Gui::GuiState,
-    public EventListener
+    public StiGame::Gui::GuiState,
+    public StiGame::EventListener
 {
     public:
         MainMenuState();
         virtual ~MainMenuState();
-        void handleEvent(EventThrower *src, SEventArgs *evt);
+        void handleEvent(StiGame::EventThrower *src, StiGame::SEventArgs *evt);
     protected:
-        Gui::Button btnStart;
-        Gui::Button btnQuit;
+        StiGame::Gui::Button btnStart;
+        StiGame::Gui::Button btnQuit;
     private:
 };
 

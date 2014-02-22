@@ -6,20 +6,20 @@
 #include "EventListener.h"
 #include "MainState.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 class GameOverlay :
-    public Gui::OverlayMenu,
-    public EventListener
+    public StiGame::Gui::OverlayMenu,
+    public StiGame::EventListener
 {
     public:
         GameOverlay();
         virtual ~GameOverlay();
-        void handleEvent(EventThrower *src, SEventArgs *evt);
+        void handleEvent(StiGame::EventThrower *src, StiGame::SEventArgs *evt);
         void setState(MainState *m_state);
     protected:
-        Gui::Button resumeButton;
-        Gui::Button quitButton;
+        StiGame::Gui::Button resumeButton;
+        StiGame::Gui::Button quitButton;
         MainState *state;
     private:
 };

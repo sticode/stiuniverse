@@ -1,6 +1,6 @@
 #pragma once
 #include "Item.h"
-
+#include <string>
 namespace StiGame
 {
 
@@ -21,10 +21,10 @@ public:
 	Surface* render(void);
 	/// \brief Set the caption text
 	/// \param m_caption Text
-	void setCaption(char* m_caption);
+	void setCaption(std::string m_caption);
 	/// \brief Get the current caption text
 	/// \return Caption text
-	char* getCaption(void);
+	std::string getCaption(void);
 	/// \brief Set the Label Font
 	/// \param m_font Font
 	void setFont(SFont *m_font);
@@ -46,7 +46,7 @@ protected:
 	/// \brief Caption font
 	SFont *font;
 	/// \brief Caption Text
-	char* caption;
+	std::string caption;
 };
 }
 }

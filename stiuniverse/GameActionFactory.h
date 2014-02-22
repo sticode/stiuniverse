@@ -6,15 +6,15 @@
 #include "GameUnit.h"
 #include "ActionBinding.h"
 
-namespace StiGame{
+namespace StiUniverse{
 
 class GameActionFactory
 {
     public:
         GameActionFactory();
         virtual ~GameActionFactory();
-        static std::list<BaseGameAction*> PopulateMovement(std::list<BaseGameAction*> actions, GameUnit *unit);
-        static void MapAction(std::list<BaseGameAction*> actions, ActionBinding *binds);
+        static std::list<StiGame::BaseGameAction*> PopulateMovement(std::list<StiGame::BaseGameAction*> actions, StiGame::GameUnit *unit);
+        static void MapAction(std::list<StiGame::BaseGameAction*> actions, StiGame::ActionBinding *binds);
     protected:
     private:
 };

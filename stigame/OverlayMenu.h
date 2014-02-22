@@ -2,6 +2,7 @@
 #define OVERLAYMENU_H
 
 #include "Item.h"
+#include "KeyEventListener.h"
 #include <list>
 
 namespace StiGame
@@ -18,7 +19,8 @@ enum OverlayPosition { OP_MIDDLE,
 					OP_CUSTOM };
 
 class OverlayMenu :
-    public Item
+    public Item,
+    public KeyEventListener
 {
     public:
 		static const int DEFAULT_OFFSET;
@@ -33,12 +35,14 @@ class OverlayMenu :
 		void setPosition(OverlayPosition m_position);
 		void fixPosition(int m_width, int m_height);
 		void add(Item *item);
+		virtual void handleEvent(KeyEventThrower *src, KeyEventArgs *args);
     protected:
 		Item* getLastItem(void);
 		OverlayPosition position;
         std::list<Item*> items;
         bool visible;
 		bool autosize;
+		int _tick;
     private:
 };
 

@@ -3,11 +3,11 @@
 
 #include "BaseMissile.h"
 
-namespace StiGame
+namespace StiUniverse
 {
 
 class BigOrangeMissile :
-    public BaseMissile
+    public StiGame::BaseMissile
 {
     public:
         BigOrangeMissile();

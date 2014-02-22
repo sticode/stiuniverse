@@ -12,11 +12,16 @@
 #include "BaseGameAction.h"
 #include "ActionBinding.h"
 #include "MissileFactory.h"
+#include "SpaceHud.h"
 #include <map>
-using namespace StiGame;
 
-class MainState : public BaseGameState,
-    public KeyEventListener
+
+namespace StiUniverse
+{
+
+
+class MainState : public StiGame::BaseGameState,
+    public StiGame::KeyEventListener
 {
     public:
         MainState();
@@ -28,7 +33,7 @@ class MainState : public BaseGameState,
         void onEvent(SDL_Event *evt);
         void unload(void);
 
-        void handleEvent(KeyEventThrower *src, KeyEventArgs *args);
+        void handleEvent(StiGame::KeyEventThrower *src, StiGame::KeyEventArgs *args);
         void quit(void);
     protected:
         void createViewMovRects(void);
@@ -37,22 +42,24 @@ class MainState : public BaseGameState,
         void moveView(int direction);
         //std::list<SDL_Keycode> keyDowns;
         //ActionBinding *bindings;
-        SpriteLibrary sprites;
+        StiGame::SpriteLibrary sprites;
         //DirectionSprite vessel_sprite;
         SpaceVessel *vessel;
-        std::list<ClonedSprite*> stars_sprites;
-        std::list<ClonedSprite*> nebula_sprites;
-        std::list<BaseMissile*> missiles;
+        std::list<StiGame::ClonedSprite*> stars_sprites;
+        std::list<StiGame::ClonedSprite*> nebula_sprites;
+        std::list<StiGame::BaseMissile*> missiles;
 
-        std::map<SDirection, SRect*> viewMovRects;
+        std::map<StiGame::SDirection, StiGame::SRect*> viewMovRects;
         //std::list<BaseGameAction*> actions;
         void throwMissile(MissileType mtype);
         void missilesTick(void);
         void generateStars(void);
         void moveStars(int dx, int dy);
         void loadSprites(void);
-		SRect missileLaunchRect;
-        MultiRect* getViewMultiRect(void);
+		StiGame::SRect missileLaunchRect;
+        StiGame::MultiRect* getViewMultiRect(void);
+        SpaceHud hud;
+
         long tick;
         int area_width;
         int area_height;
@@ -65,5 +72,7 @@ class MainState : public BaseGameState,
         int mouse_y;
     private:
 };
+
+}
 
 #endif // MAINSTATE_H

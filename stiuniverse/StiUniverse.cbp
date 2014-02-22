@@ -81,6 +81,8 @@
 		<Unit filename="MissileThrower.h" />
 		<Unit filename="RedMissile.cpp" />
 		<Unit filename="RedMissile.h" />
+		<Unit filename="SpaceHud.cpp" />
+		<Unit filename="SpaceHud.h" />
 		<Unit filename="SpaceMapFile.cpp" />
 		<Unit filename="SpaceMapFile.h" />
 		<Unit filename="SpaceVessel.cpp" />

@@ -15,6 +15,7 @@ OverlayMenu::OverlayMenu() : Item("Overlay")
     //ctor
 	position = OP_MIDDLE;
 	visible = false;
+	_tick = 0;
 }
 
 OverlayMenu::~OverlayMenu()
@@ -159,11 +160,24 @@ bool OverlayMenu::isVisible(void)
 
 void OverlayMenu::setVisible(bool m_visible)
 {
+    _tick = 0;
     visible = m_visible;
+}
+
+void OverlayMenu::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
+{
+    if(visible && _tick >= 10)
+    {
+        if(args->getKeyboardEvent()->keysym.sym == SDLK_ESCAPE && args->getState() == KS_UP)
+        {
+            visible = false;
+        }
+    }
 }
 
 Surface* OverlayMenu::render(void)
 {
+    _tick++;
     Surface *buffer = new Surface(width, height);
     buffer->fill(background);
     std::list<Item*>::iterator lit(items.begin()), lend(items.end());

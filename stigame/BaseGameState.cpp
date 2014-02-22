@@ -66,12 +66,42 @@ void BaseGameState::unload(void)
 
 void BaseGameState::onPaint(SDL_Renderer *renderer)
 {
-
+    renderGameMenu(renderer);
+    renderOverlayFrames(renderer);
 }
 
 void BaseGameState::onQuit(SDL_Event *evt)
 {
     running = false;
+}
+
+void BaseGameState::renderOverlayFrames(SDL_Renderer *renderer)
+{
+    std::list<Gui::OverlayFrame*>::iterator lit(frames.begin()), lend(frames.end());
+    SDL_Rect *src = new SDL_Rect();
+    SDL_Rect *dst = new SDL_Rect();
+
+    for(;lit!=lend;++lit)
+    {
+        Gui::OverlayFrame *frame = (*lit);
+
+        if(frame->isVisible())
+        {
+            Surface *sur = frame->render();
+
+            sur->updateSDLRect(src);
+            sur->updateSDLRect(dst, frame);
+
+            Texture texture (renderer, sur);
+
+            texture.renderCopy(src, dst);
+
+            delete sur;
+        }
+    }
+
+    delete src;
+    delete dst;
 }
 
 void BaseGameState::tickActions(void)
@@ -130,6 +160,17 @@ void BaseGameState::onEvent(SDL_Event *evt)
 			}
 		}
 
+		std::list<Gui::OverlayFrame*>::iterator lit(frames.begin()), lend(frames.end());
+		for(;lit!=lend;++lit)
+        {
+            if((*lit)->isVisible())
+            {
+                Point relpt = Point(evt->button.x - (*lit)->getX(), evt->button.y - (*lit)->getY());
+                (*lit)->onClick(&relpt);
+            }
+
+        }
+
         Uint8 mbutton = evt->button.button;
         mouseButtons.remove(mbutton);
     }
@@ -143,6 +184,17 @@ void BaseGameState::onEvent(SDL_Event *evt)
 				gameMenu->onMouseMotion(&relpt);
 			}
 		}
+
+        std::list<Gui::OverlayFrame*>::iterator lit(frames.begin()), lend(frames.end());
+		for(;lit!=lend;++lit)
+        {
+            if((*lit)->isVisible())
+            {
+                Point relpt = Point(evt->motion.x - (*lit)->getX(), evt->motion.y - (*lit)->getY());
+                (*lit)->onMouseMotion(&relpt);
+            }
+
+        }
 	}
 
     if(handleQuit && evt->type == SDL_QUIT)
@@ -167,7 +219,7 @@ void BaseGameState::closeGameMenu(void)
 	}
 }
 
-void BaseGameState::renderGameMenu(void)
+void BaseGameState::renderGameMenu(SDL_Renderer *renderer)
 {
 	if(gameMenu != 0)
 	{
@@ -178,10 +230,9 @@ void BaseGameState::renderGameMenu(void)
 
 		if(gameMenu->isVisible())
 		{
-		    std::cout << "VISIBLE" << std::endl;
 			Surface *sur = gameMenu->render();
 
-			Texture *tex = new Texture(viewport->getRenderer(), sur->getSDLSurface());
+			Texture *tex = new Texture(renderer, sur->getSDLSurface());
 
 			SDL_Rect *src = sur->getRect();
 			SDL_Rect *dst = sur->getRect(gameMenu->getX(), gameMenu->getY());
