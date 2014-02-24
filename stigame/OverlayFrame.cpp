@@ -43,8 +43,16 @@ void OverlayFrame::onClick(Point *relp)
 	}
 }
 
+void OverlayFrame::tick(void)
+{
+
+}
+
+
 Surface* OverlayFrame::render(void)
 {
+    tick();
+
 	Surface *buffer = new Surface(width, height);
 	buffer->fill(background);
 

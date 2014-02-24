@@ -17,12 +17,24 @@ Label::Label(void)  : Item("Label")
 	y = 0;
 	width = 0;
 	height = 0;
+	anchors = TA_MIDDLE;
 }
 
 
 
 Label::~Label(void)
 {
+
+}
+
+int Label::getAnchors(void)
+{
+    return anchors;
+}
+
+void Label::setAnchors(int m_anchors)
+{
+    anchors = m_anchors;
 }
 
 void Label::setCaption(std::string m_caption)
@@ -51,7 +63,7 @@ void Label::renderCaption(void)
 	stringBuffer = font->renderText(caption, foreground);
 }
 
-void Label::autosize(void)
+void Label::doAutosize(void)
 {
 	if(stringBuffer == 0)
 	{
@@ -72,17 +84,22 @@ bool Label::getTransparent(void)
 	return transparent;
 }
 
-Surface *Label::render(void)
+Surface* Label::render(void)
 {
 	if(isEmpty())
 	{
-		autosize();
+		doAutosize();
 	}
 
 	if(stringBuffer == 0)
 	{
 		renderCaption();
 	}
+
+    if(width != stringBuffer->getWidth() || height != stringBuffer->getHeight())
+    {
+        doAutosize();
+    }
 
 	Surface *buffer = new Surface(width,height);
 

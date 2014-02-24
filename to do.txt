@@ -30,5 +30,7 @@
 StiGame :
 	A header to rules them all ?!?
 		-Maybe, will see
+
+label refactor, with better autosize, and text anchor
 		
 -Reorganize virtual folders into IDE

@@ -20,6 +20,7 @@ public:
 	virtual void onMouseMotion(Point *relp);
 	virtual void onClick(Point *relp);
 	virtual Surface* render(void);
+    virtual void tick(void);
 
 	bool isVisible(void);
 	void setVisible(bool m_visible);

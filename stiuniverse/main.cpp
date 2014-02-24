@@ -15,7 +15,6 @@ using namespace StiGame;
 int main(int argc, char** argv)
 {
     AssetGenerator gen = AssetGenerator();
-
     gen.generateBindings();
 
     Viewport *viewport = new Viewport(1000, 650);
@@ -23,7 +22,6 @@ int main(int argc, char** argv)
     viewport->setFps(40);
 
     MainMenuState ms = MainMenuState();
-
     viewport->push(&ms);
     viewport->setTitle("StiUniverse : just one light year before alpha !");
     viewport->startLoop();
