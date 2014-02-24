@@ -1,6 +1,8 @@
 #ifndef VALUEOBJECT_H
 #define VALUEOBJECT_H
 
+#include <string>
+
 namespace StiGame {
 
 namespace Gui
@@ -17,12 +19,12 @@ class ValueObject
         /// New value object with specified param
         /// \param m_id Value Id
         /// \param m_text Value Text
-        ValueObject(int m_id, char* m_text);
+        ValueObject(int m_id, std::string m_text);
         /// \brief Destructor
         virtual ~ValueObject();
         /// \brief Get the value text
         /// \return value text
-        char *getText(void);
+        std::string getText(void);
         /// \brief Get he value id
         /// \return value id
         int getId(void);
@@ -30,7 +32,7 @@ class ValueObject
         /// \brief Value Id
         int id;
         /// \brief Value Text
-        char *text;
+        std::string text;
     private:
 };
 

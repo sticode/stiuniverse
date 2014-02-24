@@ -11,7 +11,7 @@ ValueObject::ValueObject()
     text = "empty";
 }
 
-ValueObject::ValueObject(int m_id, char* m_text)
+ValueObject::ValueObject(int m_id, std::string m_text)
 {
     id = m_id;
     text = m_text;
@@ -22,7 +22,7 @@ int ValueObject::getId(void)
     return id;
 }
 
-char* ValueObject::getText(void)
+std::string ValueObject::getText(void)
 {
     return text;
 }

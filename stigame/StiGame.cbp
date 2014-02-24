@@ -258,6 +258,12 @@
 		<Unit filename="Label.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
+		<Unit filename="List.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="List.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="MDimension.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
@@ -347,6 +353,12 @@
 		</Unit>
 		<Unit filename="Point.h">
 			<Option virtualFolder="headers/core/" />
+		</Unit>
+		<Unit filename="ProgressBar.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ProgressBar.h">
+			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="RadioButton.cpp">
 			<Option virtualFolder="src/gui/" />
@@ -479,6 +491,24 @@
 		</Unit>
 		<Unit filename="Surface.h">
 			<Option virtualFolder="headers/core/" />
+		</Unit>
+		<Unit filename="Table.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Table.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="TableCell.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="TableCell.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="TableRow.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="TableRow.h">
+			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="TextLogger.cpp">
 			<Option virtualFolder="src/" />

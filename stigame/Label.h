@@ -7,18 +7,6 @@ namespace StiGame
 namespace Gui
 {
 
-enum TextAnchor {
-    TA_TOP = 1,
-    TA_BOTTOM = 2,
-    TA_LEFT = 4,
-    TA_RIGHT = 8,
-    TA_TOP_LEFT =  5,
-    TA_TOP_RIGHT = 9,
-    TA_BOT_LEFT = 6,
-    TA_BOT_RIGHT = 10,
-    TA_MIDDLE = 15
-};
-
 /// \class Label
 /// \brief Text Label
 class Label :
@@ -49,13 +37,16 @@ public:
 	/// \brief Get the label transparency value
 	/// \return Transparency
 	bool getTransparent(void);
-
-	int getAnchors(void);
-	void setAnchors(int m_anchors);
+	
+	bool getDrawBorder(void);
+	void setDrawBorder(bool m_drawBorder);
 
 protected:
 	/// \brief Render the caption text
 	void renderCaption(void);
+	
+	void _drawBorder(Surface *buffer);
+	
 	/// \brief Transparency
 	bool transparent;
 	/// \brief Caption text buffer
@@ -64,8 +55,11 @@ protected:
 	SFont *font;
 	/// \brief Caption Text
 	std::string caption;
-	int anchors;
+	
+	bool drawBorder;
 };
+
 }
+
 }
 

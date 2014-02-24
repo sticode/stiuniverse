@@ -561,9 +561,9 @@ void MainState::onStart(void)
     gameMenu = overlay;
 
 
-    actions = GameActionFactory::PopulateMovement(actions, vessel);
+	GameActionFactory::PopulateMovement(actions, vessel);
     GameActionFactory::MapAction(actions, &bindings);
-
+	//Default OverlayAction triggered by Escape key, this action will not ne mappable !
     BaseGameAction *o_action = OverlayGameAction::GetDefaultOverlayGameAction(this);
 
     actions.push_back(o_action);

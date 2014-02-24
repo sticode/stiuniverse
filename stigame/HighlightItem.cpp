@@ -12,6 +12,12 @@ HighlightItem::HighlightItem() : Item()
     highlightBackground = style->getHighlightBackground();
 }
 
+HighlightItem::HighlightItem(std::string i_name) : Item(i_name)
+{
+    highlightForeground = style->getHighlightForeground();
+    highlightBackground = style->getHighlightBackground();
+}
+
 
 void HighlightItem::setHighlightBackground(SColor *color)
 {

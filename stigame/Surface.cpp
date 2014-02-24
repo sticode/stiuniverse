@@ -299,7 +299,7 @@ namespace StiGame {
 	    rect->x = m_x;
 	    rect->y = m_y;
 	}
-	
+
 	void Surface::updateSDLRect(SDL_Rect *rect, Point *pt)
 	{
 	    updateSDLRect(rect);
@@ -307,13 +307,19 @@ namespace StiGame {
 	    rect->y = pt->getY();
 	}
 
+	Uint32 Surface::getPixel(int p_x, int p_y)
+	{
+		Uint32 pc = 0;
+
+		Uint8 *target_pixel = (Uint8 *)sdlSurface->pixels + p_y * sdlSurface->pitch + p_x * 4;
+		pc = (*(Uint32*)target_pixel);
+
+		return pc;
+	}
+
 	Surface::~Surface(void)
 	{
 		freeSurface();
-		//delete sdlSurface;
-		//delete &width;
-		//delete &height;
-		//delete &empty;
 	}
 
 }

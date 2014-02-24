@@ -13,7 +13,7 @@ class GameActionFactory
     public:
         GameActionFactory();
         virtual ~GameActionFactory();
-        static std::list<StiGame::BaseGameAction*> PopulateMovement(std::list<StiGame::BaseGameAction*> actions, StiGame::GameUnit *unit);
+        static void PopulateMovement(std::list<StiGame::BaseGameAction*>& actions, StiGame::GameUnit *unit);
         static void MapAction(std::list<StiGame::BaseGameAction*> actions, StiGame::ActionBinding *binds);
     protected:
     private:

@@ -9,7 +9,7 @@ namespace StiGame
 namespace Math
 {
 
-/// \class SVector
+/// \class Vector
 /// \brief Vector for move path
 class Vector
 {

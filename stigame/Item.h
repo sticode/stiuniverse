@@ -10,7 +10,7 @@ namespace StiGame
 namespace Gui
 {
 
-/// \class GuiItem
+/// \class Item
 /// \brief Base class for GuiItem
 class Item :
 	public SRect
@@ -25,7 +25,7 @@ public:
 	virtual ~Item(void);
 	/// \brief GuiItem Render method
 	/// \return Rendered surface of the item
-	virtual Surface* render(void);
+	virtual Surface* render(void) = 0;
 	/// \brief Clear item members
 	virtual void clear(void);
 	/// \brief Get the name of the item
@@ -33,13 +33,13 @@ public:
 	std::string getName(void);
 	/// \brief Set the background color
 	/// \param m_background SColor pointer
-	void setBackground(SColor* m_background);
+	virtual void setBackground(SColor* m_background);
 	/// \brief Get the background color pointer
 	/// \return SColor pointer
 	SColor *getBackground(void);
 	/// \brief Set the foreground color
 	/// \param m_foreground SColor pointer
-	void setForeground(SColor* m_foreground);
+	virtual void setForeground(SColor* m_foreground);
 	/// \brief Get the foreground color
 	/// \return SColor pointer
 	SColor *getForeground(void);

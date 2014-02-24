@@ -10,7 +10,7 @@ public:
 	PLine(void);
 	~PLine(void);
 	void fill(SDL_Surface*,SColor*);
-	void draw(SDL_Surface*,SColor *);
+	void draw(SDL_Surface*,SColor*);
 	void draw(SDL_Renderer *renderer, SColor *color);
     void fill(SDL_Renderer *renderer, SColor *color);
 	void set1(int,int);

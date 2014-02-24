@@ -16,7 +16,6 @@ int main(int argc, char** argv)
 {
     AssetGenerator gen = AssetGenerator();
     gen.generateBindings();
-
     Viewport *viewport = new Viewport(1000, 650);
     viewport->setResizable(true);
     viewport->setFps(40);

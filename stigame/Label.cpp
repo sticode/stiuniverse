@@ -1,5 +1,6 @@
 
 #include "Label.h"
+#include "PLine.h"
 
 namespace StiGame
 {
@@ -17,7 +18,7 @@ Label::Label(void)  : Item("Label")
 	y = 0;
 	width = 0;
 	height = 0;
-	anchors = TA_MIDDLE;
+	drawBorder = false;
 }
 
 
@@ -27,14 +28,34 @@ Label::~Label(void)
 
 }
 
-int Label::getAnchors(void)
+bool Label::getDrawBorder(void)
 {
-    return anchors;
+	return drawBorder;
 }
 
-void Label::setAnchors(int m_anchors)
+void Label::setDrawBorder(bool m_drawBorder)
 {
-    anchors = m_anchors;
+	drawBorder = m_drawBorder;
+}
+
+void Label::_drawBorder(Surface *buffer)
+{
+	PLine line = PLine();
+
+	line.set1(0, 0);
+	line.set2(0, height - 1);
+	line.draw(buffer->getSDLSurface(), foreground);
+
+	line.set2(width - 1, 0);
+	line.draw(buffer->getSDLSurface(), foreground);
+
+	line.set1(width - 1, 0);
+	line.set2(width - 1, height - 1);
+	line.draw(buffer->getSDLSurface(), foreground);
+
+	line.set1(0, height - 1);
+	line.set2(width - 1, height - 1);
+	line.draw(buffer->getSDLSurface(), foreground);
 }
 
 void Label::setCaption(std::string m_caption)
@@ -121,6 +142,11 @@ Surface* Label::render(void)
 	dst->h = src->h;
 
 	buffer->blit(stringBuffer, src, dst);
+
+	if(drawBorder)
+	{
+		_drawBorder(buffer);
+	}
 
 	delete dst;
 	delete src;

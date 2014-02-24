@@ -30,7 +30,7 @@ void GameActionFactory::MapAction(std::list<BaseGameAction*> actions, ActionBind
     }
 }
 
-std::list<BaseGameAction*> GameActionFactory::PopulateMovement(std::list<BaseGameAction*> actions, GameUnit *unit)
+void GameActionFactory::PopulateMovement(std::list<BaseGameAction*>& actions, GameUnit *unit)
 {
     //movement
     UnitMovementAction *um_action;
@@ -58,7 +58,6 @@ std::list<BaseGameAction*> GameActionFactory::PopulateMovement(std::list<BaseGam
 
     actions.push_back(um_action);
 
-    return actions;
 }
 
 }

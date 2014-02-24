@@ -7,7 +7,7 @@ namespace StiGame {
 
 namespace Gui
 {
-
+//refactor those constants to UPPER CHAR
 const int ComboBox::DefaultNbItems = 4;
 const int ComboBox::DefaultTextOffset = 4;
 

@@ -10,6 +10,8 @@ namespace StiGame
 *
 */
 
+class Surface;
+
 /// \class SPrimitive
 /// \brief Interface to draw or fill a polygon
 class SPrimitive
@@ -19,17 +21,19 @@ public:
 	SPrimitive(void);
 	/// \brief Destructor
 	~SPrimitive(void);
+	void draw(Surface *surface, SColor *color);
+	void fill(Surface *surface, SColor *color);
 	/// \brief Virtual method to override
 	/// Draw the primitive, border only
 	/// \param surface SDL_Surface to draw on
 	/// \param color SColor pointer
-	/// \deprecated Using surface gonna be deprecated, but still used in GuiItem rendering...
+	/// \deprecated Using surface gonna be deprecated, but still used in Item rendering...
 	virtual void draw(SDL_Surface *surface, SColor *color) = 0;
 	/// \brief Virtual method to override
 	/// Fill the primitive
 	/// \param surface SDL_Surface to draw on
 	/// \param color SColor pointer
-	/// \deprecated Using surface gonna be deprecated, but still used in GuiItem rendering...
+	/// \deprecated Using surface gonna be deprecated, but still used in Item rendering...
 	virtual void fill(SDL_Surface *surface, SColor *color) = 0;
 	/// \brief Virtual method to override, draw to the screen a Primitive
 	/// \param renderer SDL_Renderer

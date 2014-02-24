@@ -130,6 +130,8 @@ public:
 	/// \brief Load a image file
 	/// \param m_path Path to image
 	void loadFromFile(char *m_path);
+	
+	Uint32 getPixel(int p_x, int p_y);
 
 	void updateSDLRect(SDL_Rect *rect);
 	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);

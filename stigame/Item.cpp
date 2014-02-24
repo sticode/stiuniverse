@@ -42,14 +42,6 @@ void Item::init(void)
 	foreground = style->getForeground();
 }
 
-Surface *Item::render(void)
-{
-	Surface *buffer = new Surface(width, height);
-	buffer->fill(background);
-
-	return buffer;
-}
-
 void Item::onClick(Point *relp)
 {
 

@@ -18,6 +18,9 @@ class HighlightItem :
     public:
 		/// \brief Create a new Highlight Item
         HighlightItem();
+		
+		HighlightItem(std::string i_name);
+		
 		/// \brief Destructor
         virtual ~HighlightItem();
 		/// \brief Set highlight Foreground Color

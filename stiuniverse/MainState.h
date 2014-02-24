@@ -15,7 +15,7 @@
 #include "SpaceHud.h"
 #include <map>
 
-
+//need to refactor this to SpaceTravelState or something like this
 namespace StiUniverse
 {
 
