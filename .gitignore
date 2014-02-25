@@ -21,6 +21,7 @@ doxygen/*
 *.depend
 *.layout
 *log.html
+*.stackdump
 assets/sprites/*.bspr
 assets/sprites/*.bdspr
 assets/*.res
