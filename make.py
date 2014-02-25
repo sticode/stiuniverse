@@ -225,7 +225,7 @@ class build_project:
                 print "Build failed ! abort..."
                 print errtxt
                 self.log.end_proj(False)
-                break;
+                break
 
             self.bin_objs.append(fout)
 
