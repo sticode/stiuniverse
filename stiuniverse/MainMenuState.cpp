@@ -33,7 +33,6 @@ void MainMenuState::handleEvent(EventThrower *src, SEventArgs *evt)
     if(src == &btnStart)
     {
         MainState *state = new MainState();
-
         viewport->push(state);
     }
     else if(src == &btnQuit)

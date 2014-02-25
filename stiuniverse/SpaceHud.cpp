@@ -20,12 +20,30 @@ SpaceHud::SpaceHud() : OverlayFrame()
 
     lblY = new Label();
 
-    lblX->set(100, 10);
-    lblY->set(100, 30);
+    lblX->set(400, 10);
+    lblY->set(400, 30);
+
+    hpBar = new ProgressBar();
+
+    hpBar->setWidth(300);
+    hpBar->setHeight(15);
+    hpBar->set(90, 10);
+    hpBar->setMax(200);
+    hpBar->setCurrent(170);
+
+    hpBarTextColor = new SColor(255, 5, 5);
+
+    lblHpBar = new Label();
+    lblHpBar->setForeground(hpBarTextColor);
+    lblHpBar->setCaption("HP");
+
+    lblHpBar->set(90, 12);
 
     add(label1);
     add(lblX);
     add(lblY);
+    add(hpBar);
+    add(lblHpBar);
 }
 
 SpaceHud::~SpaceHud()

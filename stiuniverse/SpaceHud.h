@@ -3,6 +3,7 @@
 
 #include "OverlayFrame.h"
 #include "Label.h"
+#include "ProgressBar.h"
 #include "SpaceVessel.h"
 
 namespace StiUniverse
@@ -20,6 +21,9 @@ class SpaceHud :
         StiGame::Gui::Label *label1;
         StiGame::Gui::Label *lblX;
         StiGame::Gui::Label *lblY;
+        StiGame::Gui::ProgressBar *hpBar;
+        StiGame::Gui::Label *lblHpBar;
+        StiGame::SColor *hpBarTextColor;
         SpaceVessel *vessel;
     private:
 };

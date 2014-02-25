@@ -15,7 +15,7 @@ ProgressBar::ProgressBar()
     : Item("ProgressBar")
 {
 	current = 0;
-	max = 0;
+	max = 1;
 	drawBorder = true;
 	barColor = DEFAULT_BAR_COLOR;
 	height = DEFAULT_HEIGHT;
