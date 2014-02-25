@@ -1,6 +1,7 @@
 # Compiled source #
 ###################
 *.com
+*.pyc
 *.class
 #.exe
 *.o
@@ -19,6 +20,7 @@ doxygen/*
 #there are stil there...
 *.depend
 *.layout
+*log.html
 assets/sprites/*.bspr
 assets/sprites/*.bdspr
 assets/*.res
