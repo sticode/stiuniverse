@@ -24,43 +24,42 @@ SpaceVessel::~SpaceVessel()
 void SpaceVessel::tick(void)
 {
     _tick++;
+	int diffy = 0;
+	int diffx = 0;
+	
     if(( direction & SD_UP ) == SD_UP)
     {
-        y -= speed;
-    }
+        //y -= speed;
+		diffy = -1;
+	}
 
     if( (direction & SD_DOWN) == SD_DOWN )
     {
-        y += speed;
-    }
+        //y += speed;
+		diffy = 1;
+	}
 
     if( (direction & SD_LEFT) == SD_LEFT)
     {
-        x -= speed;
-    }
+        //x -= speed;
+		diffx = -1;
+	}
 
     if( (direction & SD_RIGHT) == SD_RIGHT)
     {
-        x += speed;
+        //x += speed;
+		diffx = 1;
     }
-    /*switch(direction)
-    {
-    case SD_UP:
-        y -= speed;
-        break;
-    case SD_DOWN:
-        y += speed;
-        break;
-    case SD_LEFT:
-        x -= speed;
-        break;
-    case SD_RIGHT:
-        x += speed;
-        break;
-    case SD_IDLE:
-        //do nothing
-        break;
-    }*/
+	
+	int dspeed = speed;
+	
+	if(diffx != 0 && diffy != 0)
+	{
+		dspeed = speed / 2;
+	}
+	
+	x += (dspeed * diffx);
+	y += (dspeed * diffy);
 
     direction = SD_IDLE;
 }
@@ -78,7 +77,24 @@ void SpaceVessel::initialize(void)
     gfxName = "";
     direction = SD_IDLE;
     sprite = 0;
+	maxHp = 0;
+	currentHp = 0;
     //mtypes = new MissileType[MISSILE_TYPE_MAX];
+}
+
+int SpaceVessel::getMaxHp(void)
+{
+	return maxHp;
+}
+
+int SpaceVessel::getCurrentHp(void)
+{
+	return currentHp;
+}
+
+bool SpaceVessel::isDead(void)
+{
+	return (currentHp <= 0);
 }
 
 

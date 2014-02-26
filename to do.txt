@@ -3,7 +3,7 @@
 	-DirectionSpriteFile -> Done
 
 -gui Resource file
-	-Maybe a namespace for Gui ?! big refactor
+	-Maybe a namespace for Gui ?! big refactor -> Done
 
 -fix missile trigo
 	-Seems to work now
@@ -23,7 +23,7 @@
 
 
 -refactor : typo with suscribe on all listener -> subscribe DAH!
-	-Need to change inputEquals, add InputType maybe,
+	-Need to change inputEquals, add InputType maybe, -> done
 		-Need to change this to make an ActionMap composite, for multiple binding, for the same event
 	-Joystick Action Map : can wait
 	
@@ -31,6 +31,7 @@ StiGame :
 	A header to rules them all ?!?
 		-Maybe, will see
 
-label refactor, with better autosize, and text anchor
+label refactor, with better autosize, and text anchor , maybe..not
 		
 -Reorganize virtual folders into IDE
+-Gui TextBox, should be very useful..

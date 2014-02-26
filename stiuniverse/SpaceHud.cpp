@@ -38,12 +38,18 @@ SpaceHud::SpaceHud() : OverlayFrame()
     lblHpBar->setCaption("HP");
 
     lblHpBar->set(90, 12);
+	
+	lblTxtHp = new Label();
+	lblTxtHp->setForeground(hpBarTextColor);
+	lblTxtHp->setCaption("0/0");
+	lblTxtHp->set(hpBar->getX() + hpBar->getWidth() + 2, hpBar->getY() + (hpBar->getHeight() - lblTxtHp->getHeight())/2);
 
     add(label1);
     add(lblX);
     add(lblY);
     add(hpBar);
     add(lblHpBar);
+	add(lblTxtHp);
 }
 
 SpaceHud::~SpaceHud()
@@ -55,12 +61,14 @@ void SpaceHud::setVessel(SpaceVessel *m_vessel)
 {
     vessel = m_vessel;
     label1->setCaption(vessel->getVesselName());
+	lblTxtHp->setCaption(std::to_string(vessel->getCurrentHp()) + "/" + std::to_string(vessel->getMaxHp()));
 }
 
 void SpaceHud::tick(void)
 {
     lblX->setCaption("X : " + std::to_string(vessel->getX()));
     lblY->setCaption("Y : " + std::to_string(vessel->getY()));
+	lblTxtHp->setCaption(std::to_string(vessel->getCurrentHp()) + "/" + std::to_string(vessel->getMaxHp()));
 }
 
 

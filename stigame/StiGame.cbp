@@ -348,6 +348,12 @@
 		<Unit filename="PRect.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="Pixel.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Pixel.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="Point.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>

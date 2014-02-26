@@ -8,13 +8,22 @@ namespace StiGame
     {
         enum AngleUnit { AU_NOUNIT, AU_DEGREE, AU_RADIAN };
 
+		/// \class Angle
+		/// \brief Pure abstract class for angle
         class Angle
         {
             public:
+				/// \brief Default constructor
                 Angle();
+				/// \brief Destructor
                 virtual ~Angle();
-
+				/// \brief Get angle in the specified unit
+				/// \param au Angle Unit
+				/// \return Angle
                 virtual double getAngle(AngleUnit au) = 0;
+				/// \brief Set angle in the specified unit
+				/// \param au Angle Unit
+				/// \param m_angle Angle
                 virtual void setAngle(AngleUnit au, double m_angle) = 0;
 
                 AngleUnit getUnit(void);

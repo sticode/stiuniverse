@@ -25,8 +25,16 @@ class SpaceVessel :
         StiGame::BaseMissile* throwMissile(int index, SDL_Renderer *renderer, double angle);
         virtual void tick(void);
         std::string getVesselName(void);
+		
+		int getMaxHp(void);
+		int getCurrentHp(void);
+		
+		bool isDead(void);
+		
     protected:
         int _tick;
+		int currentHp;
+		int maxHp;
         std::string vessel_name;
         StiGame::DirectionSprite *sprite;
 

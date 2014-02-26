@@ -1,10 +1,11 @@
-#pragma once
+#ifndef SCOLOR_H
+#define SCOLOR_H
 #include "SDL.h"
 
 namespace StiGame
 {
 /// \class SColor
-/// \brief Class to map color into SDL
+/// \brief Class to map color into SDL (Maybe we'll refactor this class to Color and the struct will be SColor...)
 class SColor
 {
 public:
@@ -31,7 +32,7 @@ public:
 	void mapColor(SDL_PixelFormat *format);
 	/// \brief Get SDL_Color value
 	/// \return SDL_Color
-	SDL_Color getColor(void);
+	SDL_Color getSDLColor(void);
 	/// \brief Get the Uint32 mapped color
 	/// \return Uint32 color
 	Uint32 getMap(void);
@@ -47,6 +48,7 @@ public:
     /// \brief Get the alpha value
     /// \return alpha value (0-255)
     Uint8 getAlpha(void);
+
 protected:
 	/// \brief Red byte value
 	Uint8 red;
@@ -63,3 +65,5 @@ protected:
 };
 
 }
+
+#endif

@@ -9,7 +9,7 @@ class build_log:
     def __init__(self, bname, output):
         self.name = bname
         self.output = output
-        self.header = '<html><head><title>'+self.name+' Build log</title><link rel="stylesheet" href="log.css" type="text/css" /></head><body><h2>'+self.name+'</h2>';
+        self.header = '<html><head><title>'+self.name+' Build log</title><link rel="stylesheet" href="../log.css" type="text/css" /></head><body><h2>'+self.name+'</h2>';
         self.datet = datetime.datetime.now()
         self.datestr = str(self.datet.day)+"-"+str(self.datet.month)+"-"+str(self.datet.year)+" "+str(self.datet.hour)+":"+str(self.datet.minute)
         self.content = ""
@@ -44,20 +44,21 @@ class subexec:
 
     def __init__(self, args):
         self.args = args
-
+        self.stdout = ""
+        self.stderr = ""
     def run(self):
         p = subprocess.Popen(self.args , stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
         line = p.stdout.readline()
 
         while len(line) > 0:
-            print line
+            self.stdout += line
             line = p.stdout.readline()
 
         line = p.stderr.readline()
 
         while len(line) > 0:
-            print line
+            self.stderr += line
             line = p.stderr.readline()
         
 class dll_copy:
@@ -67,8 +68,8 @@ class dll_copy:
     def copy(self):
         dlls = os.listdir(self.dlldir)
         for d in dlls:
-            print "Copying : "+d
             if d.endswith(".dll"):
+                print "Copying : "+d
                 shutil.copy(os.path.join(self.dlldir, d), os.path.join(self.deploy, d))
     
 
@@ -135,6 +136,12 @@ class cpp_info:
         self.objs_prefix = []
         self.build_num = "0"
 
+    def reset(self):
+        self.includes = []
+        self.links = []
+        self.link_args = []
+        self.objs_prefix = []
+
     def set_env(self):
         os.environ["PATH"] += os.pathsep + self.gpp_path
 
@@ -151,7 +158,16 @@ class build_project:
         self.links = cppinfo.links
         self.output = ""
         self.objs_prefix = cppinfo.objs_prefix
-        self.log = build_log(projname, projname+"-build-"+cppinfo.build_num+"-log.html")
+
+        self.log_name = projname+"-build-"+cppinfo.build_num+"-log.html";
+
+        if not os.path.exists('build_logs'):
+            os.mkdir('build_logs')
+
+
+        self.log_path = os.path.join('build_logs', self.log_name)
+        
+        self.log = build_log(projname, self.log_path)
 
         if not os.path.exists(os.path.join(projname, self.obj_dir)):
             os.makedirs(os.path.join(projname, self.obj_dir))
@@ -225,11 +241,15 @@ class build_project:
                 print "Build failed ! abort..."
                 print errtxt
                 self.log.end_proj(False)
+                os.chdir("..")
+                self.log.save()
+                return False
                 break
 
             self.bin_objs.append(fout)
 
         os.chdir("..")
+        return True
 
     def link(self):
         os.chdir(self.projname)
@@ -281,6 +301,9 @@ class build_project:
             self.log.std_err(errtxt)
             self.log.end_proj(False)
             print errtxt
+            os.chdir("..")
+            self.log.save()
+            return False
         else:
             self.log.end_proj()
             print "Build success !"
@@ -288,4 +311,64 @@ class build_project:
         os.chdir("..")
 
         self.log.save()
+        return True
             
+class build_file:
+
+    def __init__(self, path):
+        self.path = path
+        self.info = cpp_info()
+        self.project = ""
+        self.output = ""
+        self.build = ""
+        self.read()
+
+    def read(self):
+        fp = open(self.path, 'r')
+
+        line = fp.readline()
+
+        while len(line) > 0:
+
+            self.parse_line(line)
+
+            line = fp.readline()
+
+        fp.close()
+
+    def parse_line(self, line):
+        if line.startswith("link:"):
+            link = line[5:].strip()
+            print "Linking -> " + link
+            self.info.links.append(link)
+        elif line.startswith("include:"):
+            include = line[8:].strip()
+            print "Include -> " + include
+            self.info.includes.append(include)
+        elif line.startswith("link_args:"):
+            link_args = line[10:].strip()
+            print "Link Args -> " + link_args
+            self.info.link_args.append(link_args)
+        elif line.startswith("obj_prefix:"):
+            obj_prefix = line[11:].strip()
+            print "Obj Prefix -> " + obj_prefix
+            self.info.objs_prefix.append(obj_prefix)
+        elif line.startswith("output:"):
+            output = line[7:].strip()
+            print "Output -> " + output
+            self.output = output
+        elif line.startswith("build:"):
+            build = line[6:].strip()
+            print "Build -> " + build
+            self.build = build
+        elif line.startswith("project:"):
+            project = line[8:].strip()
+            print "Project -> " + project
+            self.project = project
+
+    def get_maker(self):
+        self.info.set_env()
+        bp = build_project(self.project, self.info, self.build)
+        bp.output = self.output
+        return bp
+        

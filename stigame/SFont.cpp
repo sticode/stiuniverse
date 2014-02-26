@@ -58,7 +58,7 @@ Surface *SFont::renderText(std::string caption, SColor *color)
 
 Surface *SFont::renderText(const char* text, SColor *color)
 {
-	SDL_Surface *txtsur = TTF_RenderText_Solid(font, text, color->getColor());
+	SDL_Surface *txtsur = TTF_RenderText_Solid(font, text, color->getSDLColor());
 	Surface *sur = new Surface(txtsur);
 	sur->setReleaseSurface(true);
 	return sur;
@@ -66,7 +66,7 @@ Surface *SFont::renderText(const char* text, SColor *color)
 
 Surface *SFont::renderTextShaded(std::string caption, SColor *color, SColor *bg)
 {
-	SDL_Surface *txtsur = TTF_RenderText_Shaded(font, caption.c_str(), color->getColor(), bg->getColor());
+	SDL_Surface *txtsur = TTF_RenderText_Shaded(font, caption.c_str(), color->getSDLColor(), bg->getSDLColor());
 	Surface *sur = new Surface(txtsur);
 	sur->setReleaseSurface(true);
 	return sur;
@@ -74,7 +74,7 @@ Surface *SFont::renderTextShaded(std::string caption, SColor *color, SColor *bg)
 
 Surface *SFont::renderTextBlended(std::string caption, SColor *color)
 {
-	SDL_Surface *txtsur = TTF_RenderText_Blended(font, caption.c_str(), color->getColor());
+	SDL_Surface *txtsur = TTF_RenderText_Blended(font, caption.c_str(), color->getSDLColor());
 	Surface *sur = new Surface(txtsur);
 	sur->setReleaseSurface(true);
 	return sur;

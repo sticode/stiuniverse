@@ -9,7 +9,7 @@ class packer:
         self.output = output
 
     def pack(self):
-        self.zf = zipfile.ZipFile(self.output, 'w')
+        self.zf = zipfile.ZipFile(self.output, 'w', zipfile.ZIP_DEFLATED)
 
         files = os.listdir(self.packdir)
 

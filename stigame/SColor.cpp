@@ -1,6 +1,5 @@
-
 #include "SColor.h"
-#include "SDL.h"
+
 namespace StiGame
 {
 
@@ -76,7 +75,7 @@ Uint32 SColor::getMap(void)
 	return map;
 }
 
-SDL_Color SColor::getColor(void)
+SDL_Color SColor::getSDLColor(void)
 {
 	SDL_Color color = SDL_Color();
 	color.r = red;
