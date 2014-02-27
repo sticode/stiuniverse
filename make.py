@@ -159,7 +159,7 @@ class build_project:
         self.output = ""
         self.objs_prefix = cppinfo.objs_prefix
 
-        self.log_name = projname+"-build-"+cppinfo.build_num+"-log.html";
+        self.log_name = projname+"-build-"+cppinfo.build_num+"-"+build+"-log.html";
 
         if not os.path.exists('build_logs'):
             os.mkdir('build_logs')

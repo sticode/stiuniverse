@@ -1,4 +1,6 @@
-#pragma once
+#ifndef DIMENSION_H
+#define DIMENSION_H
+
 #include "SDL.h"
 
 namespace StiGame
@@ -45,4 +47,6 @@ namespace StiGame
 	};
 
 }
+
+#endif
 
