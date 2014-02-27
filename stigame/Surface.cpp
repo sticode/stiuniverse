@@ -307,7 +307,7 @@ namespace StiGame {
 	    rect->y = pt->getY();
 	}
 
-	Uint32 Surface::getPixel(int p_x, int p_y)
+	Uint32 Surface::getPixelInt(int p_x, int p_y)
 	{
 		Uint32 pc = 0;
 
@@ -316,6 +316,18 @@ namespace StiGame {
 
 		return pc;
 	}
+
+    Pixel Surface::getPixel(Point *pt)
+    {
+        return getPixel(pt->getX(), pt->getY());
+    }
+
+    Pixel Surface::getPixel(int p_x, int p_y)
+    {
+        Uint32 px = getPixelInt(p_x, p_y);
+
+        return Pixel(px, sdlSurface->format);
+    }
 
 	Surface::~Surface(void)
 	{

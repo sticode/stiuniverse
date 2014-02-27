@@ -516,6 +516,12 @@
 		<Unit filename="TableRow.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="TextBox.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="TextBox.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="TextLogger.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>

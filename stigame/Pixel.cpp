@@ -62,7 +62,7 @@ SDL_Color Pixel::getSDLColor(void)
 	color.r = red;
 	color.g = green;
 	color.b = blue;
-	
+	color.a = alpha;
 	return color;
 }
 

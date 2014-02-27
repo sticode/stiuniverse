@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SDL.h"
-#include "SColor.h"
+#include "Pixel.h"
 #include "SPrimitive.h"
 #include "SRect.h"
 
@@ -130,8 +130,10 @@ public:
 	/// \brief Load a image file
 	/// \param m_path Path to image
 	void loadFromFile(char *m_path);
-	
-	Uint32 getPixel(int p_x, int p_y);
+
+	Uint32 getPixelInt(int p_x, int p_y);
+	Pixel getPixel(Point *pt);
+    Pixel getPixel(int p_x, int p_y);
 
 	void updateSDLRect(SDL_Rect *rect);
 	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);

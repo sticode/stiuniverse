@@ -46,7 +46,10 @@ void TextBox::setText(std::string m_text)
 
 void TextBox::onClick(Point *relpt)
 {
-
+    if(!focus)
+    {
+        setFocus(true);
+    }
 }
 
 bool TextBox::isFocus(void)
@@ -57,14 +60,24 @@ bool TextBox::isFocus(void)
 void TextBox::setFocus(bool m_focus)
 {
 	focus = m_focus;
+	if(focus)
+    {
+        SDL_StartTextInput();
+        //possible leak here
+        SDL_SetTextInputRect(getSDLRect());
+    }
+    else
+    {
+        SDL_StopTextInput();
+    }
 }
 
 Surface* TextBox::render(void)
 {
 	Surface *buffer = new Surface(width, height);
-	
+
 	buffer->fill(background);
-	
+
 	return buffer;
 }
 
@@ -74,7 +87,7 @@ void TextBox::renderString(void)
 	{
 		delete stringBuffer;
 	}
-	
+
 	stringBuffer = font->renderText(text, foreground);
 }
 
