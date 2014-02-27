@@ -101,6 +101,7 @@ if __name__ == '__main__':
     info.link_args.append("-L..\\lib\\")
     info.objs_prefix.append("-std=c++11")
     info.objs_prefix.append("-Wall")
+    info.link_args.append("-s")
     
     if debug:
         info.objs_prefix.append("-g")
@@ -135,7 +136,6 @@ if __name__ == '__main__':
     info.links.append("SDL2_ttf")
     info.links.append("SDL2_gfx")
     info.links.append("StiGame")
-    info.link_args.append("-s")
     info.link_args.append("-L..\\lib\\")
     
     if debug:
@@ -181,7 +181,6 @@ if __name__ == '__main__':
     #info.link_args.append("-Wl,--output-def=bin\Debug\libStiGame.def")
     #info.link_args.append("-Wl,--out-implib=bin\Debug\libStiGame.a")
     #info.link_args.append("-Wl,--dll")
-    info.link_args.append("-s")
     info.link_args.append("-L..\\lib\\")
 
     if debug:

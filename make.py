@@ -145,6 +145,17 @@ class cpp_info:
     def set_env(self):
         os.environ["PATH"] += os.pathsep + self.gpp_path
 
+class object_info:
+    def __init__(self, name, otype = '.cpp'):
+        self.name = name
+        self.otype = otype
+
+    def get_src(self):
+        return self.name + self.otype
+
+    def get_o(self):
+        return self.name + ".o"
+
 class build_project:
 
     def __init__(self, projname, cppinfo, build = "Debug"):
@@ -182,24 +193,38 @@ class build_project:
             if f.endswith('.cpp'):
                 fname = f.split('.')[0]
 
-                self.objs.append(fname)
+                obj = object_info(fname)
+                
+                self.objs.append(obj)
 
                 print "Adding object : " + fname
                 
                 self.log.add_obj(fname)
+                
+            elif f.endswith('.c'):
+                fname = f.split('.')[0]
+
+                obj = object_info(fname, '.c')
+                
+                self.objs.append(obj)
+
+                print "Adding object : " + fname
+                
+                self.log.add_obj(fname)
+                
 
     def build_objects(self):
         build_failed = False
         os.chdir(self.projname)
         for o in self.objs:
-            fout = os.path.join(self.obj_dir, o + ".o")
-            fcpp = os.path.join(o + ".cpp")
+            fout = os.path.join(self.obj_dir, o.get_o())
+            fcpp = os.path.join(o.get_src())
             fcpp = os.path.abspath(fcpp)
 
             #building args
             args = []
             args.append(self.cppinfo.gpp)
-            print "Building "+o+" with "+args[0]
+            print "Building "+o.name+" with "+args[0]
             for a in self.objs_prefix:
                 args.append(a)
 
