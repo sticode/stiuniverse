@@ -178,12 +178,12 @@ void Table::addColumn(std::string c_name, int width)
 	nbColumns++;
 }
 
-SFont* Table::getFont(void)
+Font* Table::getFont(void)
 {
 	return font;
 }
 
-void Table::setFont(SFont *m_font)
+void Table::setFont(Font *m_font)
 {
 	font = m_font;
 

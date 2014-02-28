@@ -60,7 +60,7 @@ class RadioButton :
 		/// \brief Caption Image Buffer
         Surface *stringBuffer;
 		/// \brief Font
-        SFont *font;
+        Font *font;
 		/// \brief Render Text Caption
         void renderCaption(void);
 		/// \brief Caption offset (pixels)

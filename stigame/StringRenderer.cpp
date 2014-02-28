@@ -27,12 +27,12 @@ Color* StringRenderer::getColor(void)
 	return color;
 }
 
-void StringRenderer::setFont(SFont *m_font)
+void StringRenderer::setFont(Font *m_font)
 {
 	font = m_font;
 }
 
-SFont* StringRenderer::getFont(void)
+Font* StringRenderer::getFont(void)
 {
 	return font;
 }

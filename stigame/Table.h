@@ -3,7 +3,6 @@
 
 #include "Item.h"
 #include "TableRow.h"
-#include "SFont.h"
 #include <vector>
 
 namespace StiGame
@@ -37,8 +36,8 @@ public:
 	
 	TableRow* newRow(void);
 	
-	SFont *getFont(void);
-	void setFont(SFont *m_font);
+	Font *getFont(void);
+	void setFont(Font *m_font);
 	
 	TableRow* getRow(int index);
 	
@@ -50,7 +49,7 @@ public:
 protected:
 	std::vector<TableRow*> rows;
 	std::vector<TableColumn*> columns;
-	SFont *font;
+	Font *font;
 	int nbColumns;
 	int rowHeight;
 	static int MinWidth(int w1, int w2);

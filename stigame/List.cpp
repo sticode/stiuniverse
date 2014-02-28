@@ -141,12 +141,12 @@ int List::getNbItems(void)
 	return nbItems;
 }
 
-void List::setFont(SFont *m_font)
+void List::setFont(Font *m_font)
 {
 	font = m_font;
 }
 
-SFont* List::getFont(void)
+Font* List::getFont(void)
 {
 	return font;
 }

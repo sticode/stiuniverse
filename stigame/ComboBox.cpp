@@ -322,7 +322,7 @@ void ComboBox::remove(ValueObject *vo)
 
 }
 
-void ComboBox::setFont(SFont *m_font)
+void ComboBox::setFont(Font *m_font)
 {
     font = m_font;
 }

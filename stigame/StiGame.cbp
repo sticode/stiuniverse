@@ -408,10 +408,10 @@
 		<Unit filename="SEventArgs.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="SFont.cpp">
+		<Unit filename="Font.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="SFont.h">
+		<Unit filename="Font.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="SPhysic.cpp">

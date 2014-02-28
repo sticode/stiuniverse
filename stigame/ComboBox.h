@@ -3,7 +3,6 @@
 #include <list>
 #include <map>
 #include "HighlightItem.h"
-#include "SFont.h"
 #include "ValueObject.h"
 #include "SelectionEventThrower.h"
 
@@ -43,7 +42,7 @@ class ComboBox :
         void remove(ValueObject *vo);
 		/// \brief Set Text font
 		/// \param m_font Font
-        void setFont(SFont *m_font);
+        void setFont(Font *m_font);
 		/// \brief On Click Event
 		/// \param relp Relative mouse position
         void onClick(Point *relp);
@@ -75,7 +74,7 @@ class ComboBox :
 		/// \brief Item Hover
         int itemHover;
 		/// \brief Text Font
-        SFont *font;
+        Font *font;
 		/// \brief Value Object List
         std::list<ValueObject*> items;
 		/// \brief Value Object String Buffer

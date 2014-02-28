@@ -1,6 +1,6 @@
 #pragma once
 #include "Color.h"
-#include "SFont.h"
+#include "Font.h"
 
 namespace StiGame
 {
@@ -35,7 +35,7 @@ private:
 	/// \brief Checked Radio Button Image
 	Surface *radioChecked;
 	/// \brief Normal Font
-	SFont *normalFont;
+	Font *normalFont;
 public:
 	/// \brief Create a new GuiStyle
 	Style(void);
@@ -64,7 +64,7 @@ public:
 	/// \brief Get Check Radio Button Pointer
 	Surface *getRadioChecked(void);
 	/// \brief Get Normal Font Pointer
-	SFont *getNormalFont(void);
+	Font *getNormalFont(void);
 	/// \brief Unload Ressources
 	void unload(void);
 };

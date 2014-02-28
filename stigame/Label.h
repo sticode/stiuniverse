@@ -28,7 +28,7 @@ public:
 	std::string getCaption(void);
 	/// \brief Set the Label Font
 	/// \param m_font Font
-	void setFont(SFont *m_font);
+	void setFont(Font *m_font);
 	/// \brief Autosize the label with caption text
 	void doAutosize(void);
 	/// \brief Set the label transparent
@@ -52,7 +52,7 @@ protected:
 	/// \brief Caption text buffer
 	Surface *stringBuffer;
 	/// \brief Caption font
-	SFont *font;
+	Font *font;
 	/// \brief Caption Text
 	std::string caption;
 	

@@ -1,7 +1,7 @@
 #ifndef STRINGRENDERER_H
 #define STRINGRENDERER_H
 
-#include "SFont.h"
+#include "Font.h"
 #include <string>
 
 namespace StiGame
@@ -14,8 +14,8 @@ public:
 	StringRenderer();
 	virtual ~StringRenderer();
 	
-	void setFont(SFont *m_font);
-	SFont* getFont(void);
+	void setFont(Font *m_font);
+	Font* getFont(void);
 	
 	void setColor(Color *m_color);
 	Color* getColor(void);
@@ -28,7 +28,7 @@ protected:
 	std::string text;
 	void renderSurface(void);
 	Surface *renderedString;
-	SFont *font;
+	Font *font;
 	Color *color;
 };
 

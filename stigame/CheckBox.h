@@ -43,7 +43,7 @@ class CheckBox :
 		/// \brief Render the Caption Text
         void renderCaption();
 		/// \brief Caption Font
-        SFont *font;
+        Font *font;
 		/// \brief Caption Text Buffer
         Surface *stringBuffer;
 		/// \brief Empty Check Box Image

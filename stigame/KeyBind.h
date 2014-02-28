@@ -50,7 +50,7 @@ class KeyBind :
 		/// \brief Keycode String Buffer
         Surface *stringBuffer;
 		/// \brief Font
-        SFont *font;
+        Font *font;
 		/// \brief Key Code
         SDL_Keycode key;
 		/// \brief Key String Value

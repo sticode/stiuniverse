@@ -69,7 +69,7 @@ std::string Label::getCaption(void)
 	return caption;
 }
 
-void Label::setFont(SFont *m_font)
+void Label::setFont(Font *m_font)
 {
 	font = m_font;
 }

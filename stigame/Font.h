@@ -1,4 +1,6 @@
-#pragma once
+#ifndef FONT_H
+#define FONT_H
+
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "Surface.h"
@@ -7,9 +9,9 @@
 namespace StiGame
 {
 
-/// \class SFont
+/// \class Font
 /// \brief Wrapper of a SDL_TTFFont
-class SFont
+class Font
 {
 private:
 	/// \brief TTF_Font pointer
@@ -20,14 +22,14 @@ private:
 	int size;
 public:
 	/// \brief Empty font
-	SFont(void);
+	Font(void);
 	/// \brief Load a ttf file with specified font size
-	SFont(const char* m_path,int m_size);
+	Font(const char* m_path,int m_size);
 	
-	SFont(SDL_RWops *rw, int m_size);
+	Font(SDL_RWops *rw, int m_size);
 	
 	/// \brief Destructor
-	~SFont(void);
+	~Font(void);
 	/// \brief Get the font size value
 	/// \return font size
 	int getSize(void);
@@ -36,7 +38,7 @@ public:
 	const char *getPath(void);
 	/// \brief Get the TTF_Font pointer
 	/// \return TTF_Font pointer
-	TTF_Font *getFont(void);
+	TTF_Font *getSDLFont(void);
 	/// \brief Render the specified string and color into a surface
 	/// \param caption Text to render
 	/// \param color SColor pointer
@@ -54,3 +56,5 @@ public:
 };
 
 }
+
+#endif

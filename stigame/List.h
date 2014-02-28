@@ -2,7 +2,6 @@
 #define LIST_H
 
 #include "HighlightItem.h"
-#include "SFont.h"
 #include "ValueObject.h"
 #include "SelectionEventThrower.h"
 #include <vector>
@@ -33,8 +32,8 @@ public:
 
 	int getNbItems(void);
 
-	void setFont(SFont *m_font);
-	SFont* getFont(void);
+	void setFont(Font *m_font);
+	Font* getFont(void);
 
 	int getLineHeight(void);
 	void setLineHeight(int m_lineHeight);
@@ -48,7 +47,7 @@ protected:
 	int nbItems;
 	Surface *upArrow;
 	Surface *downArrow;
-	SFont *font;
+	Font *font;
 	int lineHeight;
 	int mouseOverIndex;
 };

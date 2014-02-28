@@ -23,12 +23,12 @@ TextBox::~TextBox()
 	}
 }
 
-SFont* TextBox::getFont(void)
+Font* TextBox::getFont(void)
 {
 	return font;
 }
 
-void TextBox::setFont(SFont *m_font)
+void TextBox::setFont(Font *m_font)
 {
 	font = m_font;
 }
