@@ -402,10 +402,10 @@
 		<Unit filename="Color.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="SEventArgs.cpp">
+		<Unit filename="EventArgs.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="SEventArgs.h">
+		<Unit filename="EventArgs.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="Font.cpp">

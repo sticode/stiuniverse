@@ -1,6 +1,6 @@
 #ifndef KEYEVENTARGS_H
 #define KEYEVENTARGS_H
-#include "SEventArgs.h"
+#include "EventArgs.h"
 #include <string>
 namespace StiGame
 {
@@ -10,7 +10,7 @@ enum KeyState {KS_UP, KS_DOWN};
 /// \class KeyEventArgs
 /// \brief Key Event Arguments
 class KeyEventArgs  :
-    public SEventArgs
+    public EventArgs
 {
     public:
 		/// \brief Create a new Key Event Arguments

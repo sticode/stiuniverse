@@ -4,7 +4,7 @@
 namespace StiGame
 {
 
-KeyEventArgs::KeyEventArgs(SDL_Event *evt) : SEventArgs(evt)
+KeyEventArgs::KeyEventArgs(SDL_Event *evt) : EventArgs(evt)
 {
     //ctor
     //todo

@@ -12,7 +12,7 @@ EventListener::~EventListener(void)
 {
 }
 
-void EventListener::handleEvent(EventThrower *src, SEventArgs *evt)
+void EventListener::handleEvent(EventThrower *src, EventArgs *evt)
 {
 
 }

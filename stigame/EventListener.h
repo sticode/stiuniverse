@@ -1,6 +1,8 @@
-#pragma once
+#ifndef EVENTLISTENER_H
+#define EVENTLISTENER_H
+
 #include "SDL.h"
-#include "SEventArgs.h"
+#include "EventArgs.h"
 namespace StiGame
 {
 
@@ -17,8 +19,9 @@ public:
 	/// \brief Method to override to handle your event
 	/// \param src Event source
 	/// \param evt Event args
-	virtual void handleEvent(EventThrower *src, SEventArgs *evt);
+	virtual void handleEvent(EventThrower *src, EventArgs *evt);
 };
 
 }
 
+#endif

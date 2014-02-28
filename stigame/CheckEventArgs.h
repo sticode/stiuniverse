@@ -1,11 +1,12 @@
 #ifndef CHECKEVENTARGS_H
 #define CHECKEVENTARGS_H
 #include <string>
-#include "SEventArgs.h"
+#include "EventArgs.h"
+
 namespace StiGame
 {
 class CheckEventArgs :
-    public SEventArgs
+    public EventArgs
 {
     public:
         CheckEventArgs(bool m_checked, std::string m_caption);

@@ -119,7 +119,7 @@ void ImageButton::clear(void)
 
 void ImageButton::onClick(Point *relp)
 {
-	SEventArgs evt = SEventArgs();
+	EventArgs evt = EventArgs();
 	publish(this, &evt);
 }
 

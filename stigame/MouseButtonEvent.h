@@ -1,13 +1,13 @@
 #ifndef MOUSEBUTTONEVENT_H
 #define MOUSEBUTTONEVENT_H
 
-#include "SEventArgs.h"
+#include "EventArgs.h"
 
 namespace StiGame
 {
 
 class MouseButtonEvent
-    : public SEventArgs
+    : public EventArgs
 {
     public:
         MouseButtonEvent();

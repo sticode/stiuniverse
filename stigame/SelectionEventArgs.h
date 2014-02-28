@@ -1,6 +1,6 @@
 #ifndef SELECTIONEVENTARGS_H
 #define SELECTIONEVENTARGS_H
-#include "SEventArgs.h"
+#include "EventArgs.h"
 #include "ValueObject.h"
 
 namespace StiGame
@@ -11,7 +11,7 @@ namespace Gui
 /// \class SelectionEventArgs
 /// \brief Event Args for a selection event
 class SelectionEventArgs :
-    public SEventArgs
+    public EventArgs
 {
     public:
 		/// \brief Create a new SelectionEventArgs

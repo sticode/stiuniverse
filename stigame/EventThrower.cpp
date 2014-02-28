@@ -17,7 +17,7 @@ void EventThrower::remove(EventListener *listener)
 {
 	listeners.remove(listener);
 }
-void EventThrower::publish(EventThrower *source, SEventArgs *evt)
+void EventThrower::publish(EventThrower *source, EventArgs *evt)
 {
 	std::list<EventListener*>::iterator lit = (listeners.begin()), lend(listeners.end());
 	for(; lit!=lend; ++lit)

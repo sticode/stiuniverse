@@ -1,4 +1,5 @@
-#pragma once
+#ifndef EVENTTHROWER_H
+#define EVENTTHROWER_H
 #include "EventListener.h"
 #include <list>
 namespace StiGame
@@ -25,7 +26,9 @@ protected:
 	/// \brief Publish an event
 	/// \param source Thrower
 	/// \param evt Event Args
-	virtual void publish(EventThrower *source, SEventArgs *evt);
+	virtual void publish(EventThrower *source, EventArgs *evt);
 };
 
 }
+
+#endif

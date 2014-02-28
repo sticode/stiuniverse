@@ -23,7 +23,7 @@ GameOverlay::GameOverlay() : Gui::OverlayMenu()
     add(&quitButton);
 }
 
-void GameOverlay::handleEvent(EventThrower *src, SEventArgs *evt)
+void GameOverlay::handleEvent(EventThrower *src, EventArgs *evt)
 {
     if(src == &resumeButton)
     {

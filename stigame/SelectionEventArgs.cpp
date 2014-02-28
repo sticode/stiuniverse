@@ -6,7 +6,7 @@ namespace StiGame
 namespace Gui
 {
 
-SelectionEventArgs::SelectionEventArgs(ValueObject *m_selection)
+SelectionEventArgs::SelectionEventArgs(ValueObject *m_selection) : EventArgs()
 {
     //ctor
     selection = m_selection;

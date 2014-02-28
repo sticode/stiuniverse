@@ -27,7 +27,7 @@ MainMenuState::MainMenuState() : GuiState()
     add(&btnQuit);
 }
 
-void MainMenuState::handleEvent(EventThrower *src, SEventArgs *evt)
+void MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
 {
 
     if(src == &btnStart)

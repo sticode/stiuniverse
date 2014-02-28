@@ -3,13 +3,13 @@ namespace StiGame
 {
 
 MouseButtonEvent::MouseButtonEvent()
-    : SEventArgs()
+    : EventArgs()
 {
     //ctor
 }
 
 MouseButtonEvent::MouseButtonEvent(SDL_Event *m_sdlEvent)
-    : SEventArgs(m_sdlEvent)
+    : EventArgs(m_sdlEvent)
 {
 
 }

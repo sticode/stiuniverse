@@ -94,7 +94,7 @@ Surface* Button::render(void)
 void Button::onClick(Point *relp)
 {
 	//create a button event, but now
-	SEventArgs se = SEventArgs();
+	EventArgs se = EventArgs();
 	publish(this, &se);
 }
 
