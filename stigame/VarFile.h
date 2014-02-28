@@ -22,7 +22,7 @@ class VarFile
         virtual void read(void);
 		/// \brief Write to the file
         virtual void write(void);
-		/// \brief Get the value of thie specified variable
+		/// \brief Get the value of this specified variable
 		/// \param varname Variable Name
 		/// \return Variable value
         std::string getValue(std::string varname);
@@ -38,6 +38,8 @@ class VarFile
 		std::list<std::string> getKeys(void);
 
         static int ParseInt(std::string i_str);
+		static bool ParseBool(std::string b_str);
+		static std::string BoolToString(bool b_val);
     protected:
 		/// \brief File path
         const char* filepath;

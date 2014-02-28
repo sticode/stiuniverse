@@ -21,6 +21,30 @@ int VarFile::ParseInt(std::string i_str)
     return atoi(i_str.c_str());
 }
 
+std::string VarFile::BoolToString(bool b_val)
+{
+	if(b_val)
+	{
+		return "True";
+	}
+	else
+	{
+		return "False";
+	}
+}
+
+bool VarFile::ParseBool(std::string b_str)
+{
+	if(b_str == "True")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void VarFile::read(void)
 {
     std::string line;

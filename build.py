@@ -137,6 +137,7 @@ if __name__ == '__main__':
     info.links.append("SDL2_gfx")
     info.links.append("StiGame")
     info.link_args.append("-L..\\lib\\")
+    info.link_args.append("-s")
     
     if debug:
         info.link_args.append("-L..\\stigame\\bin\\Debug\\")
@@ -182,7 +183,8 @@ if __name__ == '__main__':
     #info.link_args.append("-Wl,--out-implib=bin\Debug\libStiGame.a")
     #info.link_args.append("-Wl,--dll")
     info.link_args.append("-L..\\lib\\")
-
+    info.link_args.append("-s")
+    
     if debug:
         info.link_args.append("-L..\\stigame\\bin\\Debug\\")
     else:
