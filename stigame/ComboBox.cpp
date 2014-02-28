@@ -78,13 +78,13 @@ void ComboBox::onClick(Point *relp)
 {
     //drop list close
     //need to determine if the click is for drop arrow
-    SRect *upRect,*downRect;
-    upRect = upArrow->getSRect(width - upArrow->getWidth(), closedHeight);
-    downRect = downArrow->getSRect(width - downArrow->getWidth(), closedHeight + itemSize*nbItemsToShow - downArrow->getHeight());
+    Rectangle *upRect,*downRect;
+    upRect = upArrow->getRectangle(width - upArrow->getWidth(), closedHeight);
+    downRect = downArrow->getRectangle(width - downArrow->getWidth(), closedHeight + itemSize*nbItemsToShow - downArrow->getHeight());
 
     if(!drawDroplist)
     {
-        SRect *arrow = dropArrow->getSRect(width - dropArrow->getWidth(), 0);
+        Rectangle *arrow = dropArrow->getRectangle(width - dropArrow->getWidth(), 0);
         if(arrow->contains(relp))
         {
             //drop list method
@@ -111,7 +111,7 @@ void ComboBox::onClick(Point *relp)
     {
     //drop list open
     //need to determine the clicked item
-        SRect closeRect = SRect(0, 0, width, closedHeight);
+        Rectangle closeRect = Rectangle(0, 0, width, closedHeight);
 
         if(closeRect.contains(relp))
         {
@@ -132,7 +132,7 @@ void ComboBox::onClick(Point *relp)
                 if(i >= currentItem)
                 {
                     int rely = i - currentItem;
-                    SRect irect = SRect(0, closedHeight + rely*itemSize, width - dropArrow->getWidth(), itemSize);
+                    Rectangle irect = Rectangle(0, closedHeight + rely*itemSize, width - dropArrow->getWidth(), itemSize);
                     if(irect.contains(relp))
                     {
                         //this object is clicked

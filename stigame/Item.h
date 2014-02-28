@@ -3,7 +3,7 @@
 #include "Color.h"
 #include <string>
 #include "Style.h"
-#include "SRect.h"
+#include "Rectangle.h"
 namespace StiGame
 {
 
@@ -13,7 +13,7 @@ namespace Gui
 /// \class Item
 /// \brief Base class for GuiItem
 class Item :
-	public SRect
+	public Rectangle
 {
 public:
 	/// \brief Create an GuiItem

@@ -1,6 +1,6 @@
 #ifndef MULTIRECT_H
 #define MULTIRECT_H
-#include "SRect.h"
+#include "Rectangle.h"
 #include <list>
 #include "ISprite.h"
 
@@ -33,7 +33,7 @@ class MultiRect
         bool contains(ISprite *sprite);
 		/// \brief Add a rectangle to the MultiRect
 		/// \param rect Rectangle
-        void addRect(SRect *rect);
+        void addRect(Rectangle *rect);
 		/// \brief Add a rectangle to the MultiRect
 		/// \param r_x X position
 		/// \param r_y Y position
@@ -42,7 +42,7 @@ class MultiRect
         void addRect(int r_x, int r_y, int r_w, int r_h);
     protected:
 		/// \brief Rectangles
-        std::list<SRect*> rects;
+        std::list<Rectangle*> rects;
     private:
 };
 

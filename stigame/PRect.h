@@ -1,11 +1,11 @@
 #pragma once
 #include "Primitive.h"
-#include "SRect.h"
+#include "Rectangle.h"
 namespace StiGame
 {
 class PRect :
 	public Primitive,
-	public SRect
+	public Rectangle
 {
 public:
 	PRect(void);

@@ -8,7 +8,7 @@ namespace StiGame
 		button = 0;
 		inputType = IT_MOUSE;
 		positionChecked = false;
-		rect = SRect();
+		rect = Rectangle();
 	}
 
 	MouseActionMap::MouseActionMap(std::string m_name)
@@ -17,7 +17,7 @@ namespace StiGame
 		button = 0;
 		inputType = IT_MOUSE;
 		positionChecked = false;
-		rect = SRect();
+		rect = Rectangle();
 	}
 	
 	MouseActionMap::MouseActionMap(std::string m_name, Uint8 m_button)
@@ -26,7 +26,7 @@ namespace StiGame
 		button = m_button;
 		inputType = IT_MOUSE;
 		positionChecked = false;
-		rect = SRect();
+		rect = Rectangle();
 	}
 
 	MouseActionMap::~MouseActionMap(void)

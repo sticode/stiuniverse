@@ -1,7 +1,7 @@
 #ifndef MOUSEACTIONMAP_H
 #define MOUSEACTIONMAP_H
 
-#include "SRect.h"
+#include "Rectangle.h"
 #include "ActionMap.h"
 
 namespace StiGame
@@ -60,7 +60,7 @@ namespace StiGame
 		protected:
 			/// \brief Mouse Button
 			Uint8 button;
-			SRect rect;
+			Rectangle rect;
             bool positionChecked;
 	};
 }

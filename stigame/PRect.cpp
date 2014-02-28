@@ -4,7 +4,7 @@
 namespace StiGame
 {
 
-PRect::PRect(void) : SRect()
+PRect::PRect(void) : Rectangle()
 {
 }
 

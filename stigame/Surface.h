@@ -4,7 +4,7 @@
 #include "SDL.h"
 #include "Pixel.h"
 #include "Primitive.h"
-#include "SRect.h"
+#include "Rectangle.h"
 
 /// \namespace StiGame
 /// \brief Namespace that contains all classes to work with SDLEngine
@@ -116,12 +116,12 @@ public:
 	SDL_Rect *getRect(int m_x,int m_y);
     /// \brief Get a Pointer to a SRect who contains surface dimension
 	/// IMPORTANT : You must free this SRect after it has been used.
-	SRect *getSRect(void);
+	Rectangle *getRectangle(void);
     /// \brief Get a Pointer to a SRect who contains surface dimension
 	/// IMPORTANT : You must free this SRect after it has been used.
 	/// /param m_x Value to add to width
 	/// /param m_y Value to add to height
-	SRect *getSRect(int m_x, int m_y);
+	Rectangle *getRectangle(int m_x, int m_y);
 	/// \brief Lock the surface
 	void lock(void);
 	/// \brief Unlock the surface

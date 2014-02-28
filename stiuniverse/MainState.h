@@ -49,14 +49,14 @@ class MainState : public StiGame::BaseGameState,
         std::list<StiGame::ClonedSprite*> nebula_sprites;
         std::list<StiGame::BaseMissile*> missiles;
 
-        std::map<StiGame::SDirection, StiGame::SRect*> viewMovRects;
+        std::map<StiGame::SDirection, StiGame::Rectangle*> viewMovRects;
         //std::list<BaseGameAction*> actions;
         void throwMissile(MissileType mtype);
         void missilesTick(void);
         void generateStars(void);
         void moveStars(int dx, int dy);
         void loadSprites(void);
-		StiGame::SRect missileLaunchRect;
+		StiGame::Rectangle missileLaunchRect;
         StiGame::MultiRect* getViewMultiRect(void);
         SpaceHud hud;
 

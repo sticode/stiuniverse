@@ -62,7 +62,7 @@ void RadioButton::onClick(Point *relp)
 {
     //checking if the mouse click was in the radio image
 
-    SRect *radioRect = surfaceEmpty->getSRect(width - surfaceEmpty->getWidth(), 0);
+    Rectangle *radioRect = surfaceEmpty->getRectangle(width - surfaceEmpty->getWidth(), 0);
 
     if(radioRect->contains(relp))
     {

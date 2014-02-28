@@ -21,7 +21,7 @@ MainState::MainState() : BaseGameState()
     area_height = 8000;
     mouse_x = 0;
     mouse_y = 0;
-	missileLaunchRect = SRect();
+	missileLaunchRect = Rectangle();
     tick = 0;
     speed_y = -50;
     subscribe(this);
@@ -215,7 +215,7 @@ void MainState::onEvent(SDL_Event *evt)
 
 void MainState::createViewMovRects(void)
 {
-    SRect *rect = new SRect();
+    Rectangle *rect = new Rectangle();
 
     rect->setX(0);
     rect->setY(0);
@@ -224,7 +224,7 @@ void MainState::createViewMovRects(void)
 
     viewMovRects.insert(std::make_pair(SD_UP, rect));
 
-    rect = new SRect();
+    rect = new Rectangle();
 
     rect->setX(0);
     rect->setY(height - 100);
@@ -233,7 +233,7 @@ void MainState::createViewMovRects(void)
 
     viewMovRects.insert(std::make_pair(SD_DOWN, rect));
 
-    rect = new SRect();
+    rect = new Rectangle();
     rect->setX(0);
     rect->setY(0);
     rect->setWidth(100);
@@ -241,7 +241,7 @@ void MainState::createViewMovRects(void)
 
     viewMovRects.insert(std::make_pair(SD_LEFT, rect));
 
-    rect = new SRect();
+    rect = new Rectangle();
     rect->setX(width - 100);
     rect->setY(0);
     rect->setWidth(100);
@@ -601,7 +601,7 @@ void MainState::onStart(void)
 
 void MainState::tickViewMovement(void)
 {
-    std::map<SDirection, SRect*>::iterator lit(viewMovRects.begin()), lend(viewMovRects.end());
+    std::map<SDirection, Rectangle*>::iterator lit(viewMovRects.begin()), lend(viewMovRects.end());
     int direction = 0;
 
     for(;lit!=lend;++lit)

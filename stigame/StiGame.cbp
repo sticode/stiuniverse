@@ -426,10 +426,10 @@
 		<Unit filename="Primitive.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="SRect.cpp">
+		<Unit filename="Rectangle.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="SRect.h">
+		<Unit filename="Rectangle.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="Time.cpp">

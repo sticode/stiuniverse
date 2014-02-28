@@ -30,7 +30,7 @@ void CheckBox::setCaption(std::string m_caption)
 void CheckBox::onClick(Point *relp)
 {
     //determine if the checkbox is clicked
-    SRect *cbRect = surfaceEmpty->getSRect(width - surfaceEmpty->getWidth(), 0);
+    Rectangle *cbRect = surfaceEmpty->getRectangle(width - surfaceEmpty->getWidth(), 0);
 
     if(cbRect->contains(relp))
     {

@@ -143,14 +143,14 @@ namespace StiGame {
         SDL_UnlockSurface(sdlSurface);
     }
 
-    SRect *Surface::getSRect(void)
+    Rectangle *Surface::getRectangle(void)
     {
-        return getSRect(0, 0);
+        return getRectangle(0, 0);
     }
 
-    SRect *Surface::getSRect(int m_x, int m_y)
+    Rectangle *Surface::getRectangle(int m_x, int m_y)
     {
-        SRect *rect = new SRect();
+        Rectangle *rect = new Rectangle();
         rect->set(m_x, m_y);
         rect->setWidth(width);
         rect->setHeight(height);

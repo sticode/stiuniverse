@@ -28,8 +28,8 @@ List::~List()
 
 void List::onClick(Point *relpt)
 {
-	SRect rectUp = SRect(0, 0, upArrow->getWidth(), upArrow->getHeight());
-	SRect rectDown = SRect(width - downArrow->getWidth(), height - downArrow->getHeight(), downArrow->getWidth(), downArrow->getHeight() );
+	Rectangle rectUp = Rectangle(0, 0, upArrow->getWidth(), upArrow->getHeight());
+	Rectangle rectDown = Rectangle(width - downArrow->getWidth(), height - downArrow->getHeight(), downArrow->getWidth(), downArrow->getHeight() );
 	
 	if(rectUp.contains(relpt))
 	{

@@ -10,7 +10,7 @@ MultiRect::MultiRect()
 
 void MultiRect::clear(void)
 {
-    std::list<SRect*>::iterator lit(rects.begin()), lend(rects.end());
+    std::list<Rectangle*>::iterator lit(rects.begin()), lend(rects.end());
     for(;lit!=lend;++lit)
     {
         delete (*lit);
@@ -29,9 +29,9 @@ bool MultiRect::contains(ISprite *sprite)
     //need to rework this ! ASAP
     bool contain_sprite = false;
 
-    SRect *tmp_rect = new SRect(sprite->getX(), sprite->getY(), sprite->getWidth(), sprite->getHeight());
+    Rectangle *tmp_rect = new Rectangle(sprite->getX(), sprite->getY(), sprite->getWidth(), sprite->getHeight());
 
-    std::list<SRect*>::iterator lit(rects.begin()), lend(rects.end());
+    std::list<Rectangle*>::iterator lit(rects.begin()), lend(rects.end());
     for(;lit!=lend;++lit)
     {
         if( (*lit)->intersect(tmp_rect)
@@ -49,7 +49,7 @@ bool MultiRect::contains(ISprite *sprite)
 
 bool MultiRect::contains(int p_x, int p_y)
 {
-    std::list<SRect*>::iterator lit(rects.begin()), lend(rects.end());
+    std::list<Rectangle*>::iterator lit(rects.begin()), lend(rects.end());
     for(;lit!=lend;++lit)
     {
         if( (*lit)->contains(p_x, p_y) )
@@ -61,14 +61,14 @@ bool MultiRect::contains(int p_x, int p_y)
     return false;
 }
 
-void MultiRect::addRect(SRect *rect)
+void MultiRect::addRect(Rectangle *rect)
 {
     rects.push_back(rect);
 }
 
 void MultiRect::addRect(int r_x, int r_y, int r_w, int r_h)
 {
-    rects.push_back(new SRect(r_x, r_y, r_w, r_h));
+    rects.push_back(new Rectangle(r_x, r_y, r_w, r_h));
 }
 
 MultiRect::~MultiRect()

@@ -1,26 +1,28 @@
-#pragma once
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
 #include "MDimension.h"
 #include "MPoint.h"
 #include "SDL.h"
 
 namespace StiGame
 {
-/// \class SRect
+/// \class Rectangle
 /// \brief Rectangle
-class SRect :
+class Rectangle :
 	public MDimension, public MPoint
 {
 public:
 	/// \brief Empty rectangle
-	SRect(void);
+	Rectangle(void);
 	/// \brief Rectangle with specified parameters
 	/// \param m_x x position (px)
 	/// \param m_y y position (px)
 	/// \param m_width width (px)
 	/// \param m_height height (px)
-	SRect(int m_x, int m_y, int m_width, int m_height);
+	Rectangle(int m_x, int m_y, int m_width, int m_height);
 	/// \brief Destructor
-	virtual ~SRect(void);
+	virtual ~Rectangle(void);
 
 	/// \brief Get a new SDL_Rect with the parameter of this rectangle
 	/// \return Pointer to a new SDL_Rect
@@ -44,7 +46,7 @@ public:
 	/// \brief If this rectangle intersect with another rectangle
 	/// \param rect Rectangle
 	/// \return intersect or not
-    bool intersect(SRect *rect);
+    bool intersect(Rectangle *rect);
 
 	/// \brief If the value is in the range
 	/// \param value value to test
@@ -70,4 +72,6 @@ public:
 	Point *getRightBottom(void);
 };
 }
+
+#endif
 
