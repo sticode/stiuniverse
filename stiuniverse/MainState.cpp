@@ -5,7 +5,7 @@
 #include "DirectionSpriteFile.h"
 #include "BatVessel.h"
 #include "GameActionFactory.h"
-#include "STime.h"
+#include "Time.h"
 #include "GameOverlay.h"
 #include "OverlayGameAction.h"
 
@@ -550,7 +550,7 @@ void MainState::loadSprites(void)
 
 void MainState::onStart(void)
 {
-    unsigned long long load_time = STime::GetMsTimestamp();
+    unsigned long long load_time = Time::GetMsTimestamp();
     bindings = ActionBinding(ActionBinding::FILENAME.c_str());
     bindings.read();
 
@@ -576,7 +576,7 @@ void MainState::onStart(void)
     std::cout << "generating stars" << std::endl;
     generateStars();
 
-    load_time = STime::GetMsTimestamp() - load_time;
+    load_time = Time::GetMsTimestamp() - load_time;
     std::cout << "loading just took " << load_time << "ms !" << std::endl;
 
     real_y = area_height - height;

@@ -1,19 +1,19 @@
-#include "STime.h"
+#include "Time.h"
 #include <chrono>
 namespace StiGame
 {
 
-STime::STime()
+Time::Time()
 {
     //ctor
 }
 
-STime::~STime()
+Time::~Time()
 {
     //dtor
 }
 
-unsigned long long STime::GetMsTimestamp(void)
+unsigned long long Time::GetMsTimestamp(void)
 {
     std::chrono::time_point<std::chrono::steady_clock> tp = std::chrono::steady_clock::now();
 

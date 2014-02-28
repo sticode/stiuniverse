@@ -432,10 +432,10 @@
 		<Unit filename="SRect.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="STime.cpp">
+		<Unit filename="Time.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="STime.h">
+		<Unit filename="Time.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="SelectionEventArgs.cpp">

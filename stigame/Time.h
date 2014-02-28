@@ -1,14 +1,14 @@
-#ifndef STIME_H
-#define STIME_H
+#ifndef TIME_H
+#define TIME_H
 
 namespace StiGame
 {
 
-class STime
+class Time
 {
     public:
-        STime();
-        virtual ~STime();
+        Time();
+        virtual ~Time();
         static unsigned long long GetMsTimestamp(void);
     protected:
     private:

@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#include "STime.h"
+#include "Time.h"
 namespace StiGame
 {
 
@@ -165,7 +165,7 @@ void Viewport::startLoop(void)
 		{
 			//starting tick
 
-			unsigned long long diff = STime::GetMsTimestamp() - lastTick;
+			unsigned long long diff = Time::GetMsTimestamp() - lastTick;
 
 			if(diff >= msWaitTime)
 			{
@@ -176,7 +176,7 @@ void Viewport::startLoop(void)
                     std::cout << "missed frame by " << over << "ms !" << std::endl;
                 }
 				tick();
-				lastTick = STime::GetMsTimestamp();
+				lastTick = Time::GetMsTimestamp();
 			}
 
 			//ending time

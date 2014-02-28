@@ -1,5 +1,5 @@
 #include "TimedGameAction.h"
-#include "STime.h"
+#include "Time.h"
 namespace StiGame
 {
 
@@ -26,7 +26,7 @@ void TimedGameAction::testKeycode(SDL_Keycode keycode)
     if(actionMap->inputEquals(IT_KEYBOARD, keycode))
     {
         unsigned long long nextAction = lastAction + cooldown;
-        unsigned long long timestamp = STime::GetMsTimestamp();
+        unsigned long long timestamp = Time::GetMsTimestamp();
 
         if(nextAction <= timestamp)
         {
@@ -45,7 +45,7 @@ void TimedGameAction::testMouseButton(MouseButtonEvent *mbEvt)
         if(actionMap->inputMouseEquals(mbEvt))
         {
             unsigned long long nextAction = lastAction + cooldown;
-            unsigned long long timestamp = STime::GetMsTimestamp();
+            unsigned long long timestamp = Time::GetMsTimestamp();
 
             if(nextAction <= timestamp)
             {
@@ -60,7 +60,7 @@ void TimedGameAction::testMouseButton(MouseButtonEvent *mbEvt)
         if(actionMap->inputEquals(IT_MOUSE, mbEvt->getButton()))
         {
             unsigned long long nextAction = lastAction + cooldown;
-            unsigned long long timestamp = STime::GetMsTimestamp();
+            unsigned long long timestamp = Time::GetMsTimestamp();
 
             if(nextAction <= timestamp)
             {
@@ -77,7 +77,7 @@ void TimedGameAction::testMouse(Uint8 mbutton)
     if(actionMap->inputEquals(IT_MOUSE, mbutton))
     {
         unsigned long long nextAction = lastAction + cooldown;
-        unsigned long long timestamp = STime::GetMsTimestamp();
+        unsigned long long timestamp = Time::GetMsTimestamp();
 
         if(nextAction <= timestamp)
         {
