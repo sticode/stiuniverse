@@ -1,8 +1,9 @@
-#pragma once
+#ifndef SURFACE_H
+#define SURFACE_H
 
 #include "SDL.h"
 #include "Pixel.h"
-#include "SPrimitive.h"
+#include "Primitive.h"
 #include "SRect.h"
 
 /// \namespace StiGame
@@ -65,7 +66,7 @@ public:
 	void fill(Uint32 color);
 	/// \brief Fill the entire surface with a specific color
 	/// \param color SColor pointer
-	void fill(SColor *color);
+	void fill(Color *color);
 	/// \brief Fill a region specified by a SDL_Rect
 	/// \param rect Pointer to a SDL_Rect
 	/// \param color Uint32 mapped color
@@ -73,7 +74,7 @@ public:
 	/// \brief Fill a region specified by a SDL_Rect
 	/// \param rect Pointer to a SDL_Rect
 	/// \param color Pointer to a SColor
-	void fillRect(SDL_Rect *rect, SColor *color);
+	void fillRect(SDL_Rect *rect, Color *color);
 	/// \brief Blit a SDL_Surface on this Surface
 	/// \param m_surface Pointer to the source SDL_Surface
 	/// \param src Pointer to source SDL_Rect
@@ -87,11 +88,11 @@ public:
 	/// \brief Draw a primitive object to this Surface
 	/// \param prim Pointer to primitive to draw
 	/// \param color Pointer to a SColor
-	void draw(SPrimitive *prim, SColor *color);
+	void draw(Primitive *prim, Color *color);
 	/// \brief Fill a primitive object to this Surface
 	/// \param prim Pointer to primitive to draw
 	/// \param color Pointer to a SColor
-	void fill(SPrimitive *prim, SColor *color);
+	void fill(Primitive *prim, Color *color);
 	/// \brief Make this surface transparent
 	void makeTransparent(void);
 	/// \brief Change this alpha value of the surface
@@ -99,7 +100,7 @@ public:
 	void setAlpha(int n_aplha);
 	/// \brief Set transparent color key
 	/// \param color Pointer to SColor
-	void setTransparentColor(SColor *color);
+	void setTransparentColor(Color *color);
 	/// \brief Set transparent color key
 	/// \param r Red
 	/// \param g Green
@@ -141,4 +142,6 @@ public:
 };
 
 }
+
+#endif
 

@@ -1,12 +1,12 @@
 #ifndef PELLIPSE_H
 #define PELLIPSE_H
-#include "SPrimitive.h"
+#include "Primitive.h"
 
 namespace StiGame
 {
 
 class PEllipse :
-    public SPrimitive
+    public Primitive
 {
     public:
         PEllipse();
@@ -22,10 +22,10 @@ class PEllipse :
         int getRadiusX(void);
         int getRadiusY(void);
         bool getAA(void);
-        void draw(SDL_Surface *surface, SColor *color);
-        void fill(SDL_Surface *surface, SColor *color);
-        void draw(SDL_Renderer *renderer, SColor *color);
-        void fill(SDL_Renderer *renderer, SColor *color);
+        void draw(SDL_Surface *surface, Color *color);
+        void fill(SDL_Surface *surface, Color *color);
+        void draw(SDL_Renderer *renderer, Color *color);
+        void fill(SDL_Renderer *renderer, Color *color);
 
 
     protected:

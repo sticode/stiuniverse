@@ -1,29 +1,29 @@
-#ifndef SCOLOR_H
-#define SCOLOR_H
+#ifndef COLOR_H
+#define COLOR_H
 #include "SDL.h"
 
 namespace StiGame
 {
-/// \class SColor
+/// \class Color
 /// \brief Class to map color into SDL (Maybe we'll refactor this class to Color and the struct will be SColor...)
-class SColor
+class Color
 {
 public:
 	/// \brief Empty color
-	SColor(void);
+	Color(void);
 	/// \brief Create a new RGB color
 	/// \param r red
 	/// \param g green
 	/// \param b blue
-	SColor(Uint8 r,Uint8 g,Uint8 b);
+	Color(Uint8 r,Uint8 g,Uint8 b);
     /// \brief Create a new RGB color
 	/// \param r red
 	/// \param g green
 	/// \param b blue
 	/// \param a alpha
-	SColor(Uint8 r,Uint8 g,Uint8 b, Uint8 a);
+	Color(Uint8 r,Uint8 g,Uint8 b, Uint8 a);
 	/// \brief Destructor
-	~SColor(void);
+	~Color(void);
 	/// \brief is the value is Uint32 mapped
 	/// \return mapped or not
 	bool isMapped(void);

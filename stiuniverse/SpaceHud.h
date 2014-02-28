@@ -24,7 +24,7 @@ class SpaceHud :
         StiGame::Gui::ProgressBar *hpBar;
         StiGame::Gui::Label *lblHpBar;
 		StiGame::Gui::Label *lblTxtHp;
-        StiGame::SColor *hpBarTextColor;
+        StiGame::Color *hpBarTextColor;
         SpaceVessel *vessel;
     private:
 };

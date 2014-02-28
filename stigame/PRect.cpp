@@ -8,7 +8,7 @@ PRect::PRect(void) : SRect()
 {
 }
 
-void PRect::draw(SDL_Surface *surface, SColor *color)
+void PRect::draw(SDL_Surface *surface, Color *color)
 {
 	if(!color->isMapped())
 	{
@@ -39,7 +39,7 @@ void PRect::draw(SDL_Surface *surface, SColor *color)
 
 }
 
-void PRect::fill(SDL_Surface *surface, SColor *color)
+void PRect::fill(SDL_Surface *surface, Color *color)
 {
 	if(!color->isMapped())
 	{
@@ -51,12 +51,12 @@ void PRect::fill(SDL_Surface *surface, SColor *color)
 	delete rect;
 }
 
-void PRect::draw(SDL_Renderer *renderer, SColor *color)
+void PRect::draw(SDL_Renderer *renderer, Color *color)
 {
     rectangleRGBA(renderer, x, y, x + width, y + height, color->getRed(), color->getBlue(), color->getGreen(), color->getAlpha());
 }
 
-void PRect::fill(SDL_Renderer *renderer, SColor *color)
+void PRect::fill(SDL_Renderer *renderer, Color *color)
 {
     boxRGBA(renderer, x, y, x + width, y + height, color->getRed(), color->getBlue(), color->getGreen(), color->getAlpha());
 }

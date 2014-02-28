@@ -46,9 +46,9 @@ public:
 
 protected:
 	/// \brief Highlight Foreground Color
-	SColor *highlightForeground;
+	Color *highlightForeground;
 	/// \brief Highlight Background Color
-	SColor *highlightBackground;
+	Color *highlightBackground;
 	/// \brief Button Image
 	Surface *image;
 	/// \brief Hover Button Image

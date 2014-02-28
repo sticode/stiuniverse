@@ -1,6 +1,6 @@
 #pragma once
 #include "Surface.h"
-#include "SColor.h"
+#include "Color.h"
 #include <string>
 #include "Style.h"
 #include "SRect.h"
@@ -33,16 +33,16 @@ public:
 	std::string getName(void);
 	/// \brief Set the background color
 	/// \param m_background SColor pointer
-	virtual void setBackground(SColor* m_background);
+	virtual void setBackground(Color* m_background);
 	/// \brief Get the background color pointer
 	/// \return SColor pointer
-	SColor *getBackground(void);
+	Color *getBackground(void);
 	/// \brief Set the foreground color
 	/// \param m_foreground SColor pointer
-	virtual void setForeground(SColor* m_foreground);
+	virtual void setForeground(Color* m_foreground);
 	/// \brief Get the foreground color
 	/// \return SColor pointer
-	SColor *getForeground(void);
+	Color *getForeground(void);
 	/// \brief Get the style of the item
 	/// \return GuiStyle pointer
 	Style *getStyle(void);
@@ -59,9 +59,9 @@ protected:
 	/// \brief Name of the item
 	std::string name;
 	/// \brief Background color
-	SColor *background;
+	Color *background;
 	/// \brief Foreground color
-	SColor *foreground;
+	Color *foreground;
 	/// \brief Item GuiStyle
 	Style *style;
 	/// \brief is mouse over

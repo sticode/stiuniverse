@@ -73,17 +73,17 @@ bool PEllipse::getAA(void)
     return aa;
 }
 
-void PEllipse::draw(SDL_Surface *surface, SColor *color)
+void PEllipse::draw(SDL_Surface *surface, Color *color)
 {
     //not implemented
 }
 
-void PEllipse::fill(SDL_Surface *surface, SColor *color)
+void PEllipse::fill(SDL_Surface *surface, Color *color)
 {
     //not implemented
 }
 
-void PEllipse::draw(SDL_Renderer *renderer, SColor *color)
+void PEllipse::draw(SDL_Renderer *renderer, Color *color)
 {
     if(aa)
     {
@@ -95,7 +95,7 @@ void PEllipse::draw(SDL_Renderer *renderer, SColor *color)
     }
 }
 
-void PEllipse::fill(SDL_Renderer *renderer, SColor *color)
+void PEllipse::fill(SDL_Renderer *renderer, Color *color)
 {
     filledEllipseRGBA(renderer, x, y, radiusX, radiusY, color->getRed(), color->getGreen(), color->getBlue(), color->getAlpha());
 }

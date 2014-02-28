@@ -10,7 +10,7 @@ namespace StiUniverse
 SpaceHud::SpaceHud() : OverlayFrame()
 {
     //ctor
-    background = new SColor(10, 10, 10);
+    background = new Color(10, 10, 10);
     label1 = new Label();
     label1->setX(10);
     label1->setY(10);
@@ -31,7 +31,7 @@ SpaceHud::SpaceHud() : OverlayFrame()
     hpBar->setMax(200);
     hpBar->setCurrent(170);
 
-    hpBarTextColor = new SColor(255, 5, 5);
+    hpBarTextColor = new Color(255, 5, 5);
 
     lblHpBar = new Label();
     lblHpBar->setForeground(hpBarTextColor);

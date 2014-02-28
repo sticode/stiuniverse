@@ -11,10 +11,10 @@ namespace Gui
 
 Style::Style(void)
 {
-	foreground = SColor(200, 250, 250);
-	background = SColor(15, 15, 15);
-	highlightForeground = SColor(255, 255, 255);
-	highlightBackground = SColor(120, 120, 120);
+	foreground = Color(200, 250, 250);
+	background = Color(15, 15, 15);
+	highlightForeground = Color(255, 255, 255);
+	highlightBackground = Color(120, 120, 120);
 
 	normalFont = new SFont(GamePath::getFilepath(AssetRoot, "font.ttf").c_str(), 14);
 	dropListArrow = new Surface(GamePath::getFilepath(AssetGui, "droplist_arrow.png").c_str());
@@ -51,22 +51,22 @@ Surface *Style::getDropListArrow(void)
     return dropListArrow;
 }
 
-SColor *Style::getBackground(void)
+Color *Style::getBackground(void)
 {
 	return &background;
 }
 
-SColor *Style::getForeground(void)
+Color *Style::getForeground(void)
 {
 	return &foreground;
 }
 
-SColor *Style::getHighlightBackground(void)
+Color *Style::getHighlightBackground(void)
 {
 	return &highlightBackground;
 }
 
-SColor *Style::getHighlightForeground(void)
+Color *Style::getHighlightForeground(void)
 {
 	return &highlightForeground;
 }

@@ -3,8 +3,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "Dimension.h"
-#include "SColor.h"
-#include "SPrimitive.h"
+#include "Primitive.h"
 #include <string>
 #include <iostream>
 
@@ -56,7 +55,7 @@ namespace StiGame {
         }
     }
 
-    void Surface::setTransparentColor(SColor *color)
+    void Surface::setTransparentColor(Color *color)
     {
         setTransparentColor(color->getRed(), color->getGreen(), color->getBlue());
     }
@@ -198,7 +197,7 @@ namespace StiGame {
 		int rs = SDL_FillRect(sdlSurface, &region, c);
 	}
 
-	void Surface::fill(SColor *c)
+	void Surface::fill(Color *c)
 	{
 		if(!c->isMapped())
 		{	void updateSDLRect(SDL_Rect *rect);
@@ -220,7 +219,7 @@ namespace StiGame {
 		}
 	}
 
-	void Surface::fillRect(SDL_Rect *region, SColor *color)
+	void Surface::fillRect(SDL_Rect *region, Color *color)
 	{
 		if(!color->isMapped())
 		{
@@ -267,12 +266,12 @@ namespace StiGame {
 		return sdlSurface;
 	}
 
-	void Surface::draw(SPrimitive *prim, SColor *color)
+	void Surface::draw(Primitive *prim, Color *color)
 	{
 		prim->draw(sdlSurface, color);
 	}
 
-	void Surface::fill(SPrimitive *prim, SColor *color)
+	void Surface::fill(Primitive *prim, Color *color)
 	{
 		prim->fill(sdlSurface, color);
 	}

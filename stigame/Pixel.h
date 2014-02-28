@@ -1,7 +1,7 @@
 #ifndef PIXEL_H
 #define PIXEL_H
 
-#include "SColor.h"
+#include "Color.h"
 
 namespace StiGame
 {
@@ -20,7 +20,7 @@ public:
 	SDL_PixelFormat* getFormat(void);
 	Uint32 getPixel(void);
 	SDL_Color getSDLColor(void);
-	SColor getColor(void);
+	Color getColor(void);
 protected:
 	void init(void);
 	void getRGBA(void);

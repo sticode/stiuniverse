@@ -41,8 +41,8 @@ Surface* Button::render(void)
 	}
 
 	Surface *buffer = new Surface(width, height);
-	SColor *bg;
-	SColor *fg;
+	Color *bg;
+	Color *fg;
 
 	PLine l1 = PLine();
 	l1.set1(0,0);

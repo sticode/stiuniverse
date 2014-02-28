@@ -48,8 +48,8 @@ Surface *ImageButton::render(void)
 		autosize();
 	}
 
-	SColor *fg;
-	SColor *bg;
+	Color *fg;
+	Color *bg;
 
 	if(mouseOver)
 	{

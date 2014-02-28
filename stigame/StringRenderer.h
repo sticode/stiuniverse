@@ -17,8 +17,8 @@ public:
 	void setFont(SFont *m_font);
 	SFont* getFont(void);
 	
-	void setColor(SColor *m_color);
-	SColor* getColor(void);
+	void setColor(Color *m_color);
+	Color* getColor(void);
 	
 	void setText(std::string m_text);
 	std::string getText(void);
@@ -29,7 +29,7 @@ protected:
 	void renderSurface(void);
 	Surface *renderedString;
 	SFont *font;
-	SColor *color;
+	Color *color;
 };
 
 

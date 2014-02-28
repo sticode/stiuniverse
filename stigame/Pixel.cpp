@@ -66,9 +66,9 @@ SDL_Color Pixel::getSDLColor(void)
 	return color;
 }
 
-SColor Pixel::getColor(void)
+Color Pixel::getColor(void)
 {
-	return SColor(red, green, blue, alpha);
+	return Color(red, green, blue, alpha);
 }
 
 Uint32 Pixel::getPixel(void)

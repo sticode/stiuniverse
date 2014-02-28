@@ -1,5 +1,5 @@
 #pragma once
-#include "SColor.h"
+#include "Color.h"
 #include "SFont.h"
 
 namespace StiGame
@@ -13,13 +13,13 @@ class Style
 {
 private:
 	/// \brief Foreground Color
-	SColor foreground;
+	Color foreground;
 	/// \brief Background Color
-	SColor background;
+	Color background;
 	/// \brief Highlight Foreground Color
-	SColor highlightForeground;
+	Color highlightForeground;
 	/// \brief Highlight Background Color
-	SColor highlightBackground;
+	Color highlightBackground;
 	/// \brief Drop List Arrow Image
 	Surface *dropListArrow;
 	/// \brief Up Arrow Image
@@ -42,13 +42,13 @@ public:
 	/// \brief Destructor
 	~Style(void);
 	/// \brief Get Foreground Pointer
-	SColor *getForeground(void);
+	Color *getForeground(void);
 	/// \brief Get Background Pointer
-	SColor *getBackground(void);
+	Color *getBackground(void);
 	/// \brief Get Highlight Background Pointer
-	SColor *getHighlightBackground(void);
+	Color *getHighlightBackground(void);
 	/// \brief Get Highlight Foreground Pointer
-	SColor *getHighlightForeground(void);
+	Color *getHighlightForeground(void);
 	/// \brief Get Up Arrow Image Pointer
 	Surface *getUpArrow(void);
 	/// \brief Get Down Arrow Image Pointer

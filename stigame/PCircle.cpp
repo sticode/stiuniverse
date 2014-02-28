@@ -1,29 +1,29 @@
 
 #include "PCircle.h"
 #include "SDL.h"
-#include "SColor.h"
-#include "SPrimitive.h"
+#include "Color.h"
+#include "Primitive.h"
 #include "math.h"
 #include "SDL_gfxPrimitives.h"
 
 namespace StiGame
 {
 
-PCircle::PCircle(void) : SPrimitive()
+PCircle::PCircle(void) : Primitive()
 {
 	x = 0;
 	y = 0;
 	radius = 0;
 }
 
-PCircle::PCircle(int m_x, int m_y): SPrimitive()
+PCircle::PCircle(int m_x, int m_y): Primitive()
 {
 	x = m_x;
 	y = m_y;
 	radius = 0;
 }
 
-PCircle::PCircle(int m_x, int m_y, double m_radius): SPrimitive()
+PCircle::PCircle(int m_x, int m_y, double m_radius): Primitive()
 {
 	x = m_x;
 	y = m_y;
@@ -31,7 +31,7 @@ PCircle::PCircle(int m_x, int m_y, double m_radius): SPrimitive()
 }
 
 
-void PCircle::draw(SDL_Surface *surface, SColor *color)
+void PCircle::draw(SDL_Surface *surface, Color *color)
 {
 	if(!color->isMapped())
 	{
@@ -81,7 +81,7 @@ void PCircle::draw(SDL_Surface *surface, SColor *color)
 	}
 }
 
-void PCircle::fill(SDL_Surface *surface, SColor *color)
+void PCircle::fill(SDL_Surface *surface, Color *color)
 {
 	if(!color->isMapped())
 	{
@@ -147,12 +147,12 @@ void PCircle::setRadius(double m_radius)
 }
 
 
-void PCircle::draw(SDL_Renderer *renderer, SColor *color)
+void PCircle::draw(SDL_Renderer *renderer, Color *color)
 {
     circleRGBA(renderer, x, y, radius, color->getRed(), color->getGreen(), color->getBlue(), color->getAlpha());
 }
 
-void PCircle::fill(SDL_Renderer *renderer, SColor *color)
+void PCircle::fill(SDL_Renderer *renderer, Color *color)
 {
     filledCircleRGBA(renderer, x, y, radius, color->getRed(), color->getGreen(), color->getBlue(), color->getAlpha());
 }

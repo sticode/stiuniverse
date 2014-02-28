@@ -31,7 +31,7 @@ int PLine::getSize(void)
 	return size;
 }
 
-void PLine::fill(SDL_Surface* surface, SColor *color)
+void PLine::fill(SDL_Surface* surface, Color *color)
 {
 	if(y1 == y2)
 	{
@@ -61,7 +61,7 @@ void PLine::switchPoints(void)
 	y2 = t_y;
 }
 
-void PLine::fillHLine(SDL_Surface *surface, SColor *color)
+void PLine::fillHLine(SDL_Surface *surface, Color *color)
 {
 	int dx = 0;
 	int sx = std::min(x1,x2);
@@ -87,7 +87,7 @@ void PLine::fillHLine(SDL_Surface *surface, SColor *color)
 	delete buffer;
 }
 
-void PLine::fillVLine(SDL_Surface *surface, SColor *color)
+void PLine::fillVLine(SDL_Surface *surface, Color *color)
 {
 	int dy = 0;
 	int sy = std::min(y1,y2);
@@ -114,7 +114,7 @@ void PLine::fillVLine(SDL_Surface *surface, SColor *color)
 
 }
 
-void PLine::fillTanLine(SDL_Surface *surface, SColor *color)
+void PLine::fillTanLine(SDL_Surface *surface, Color *color)
 {
 	//pt1 -> pt2
 	if(!color->isMapped())
@@ -174,7 +174,7 @@ void PLine::fillTanLine(SDL_Surface *surface, SColor *color)
 }
 
 
-void PLine::draw(SDL_Surface* surface, SColor *color)
+void PLine::draw(SDL_Surface* surface, Color *color)
 {
 	//sorry bro, just fillin
 	fill(surface, color);
@@ -214,12 +214,12 @@ int PLine::getY2(void)
 	return y2;
 }
 
-void PLine::draw(SDL_Renderer *renderer, SColor *color)
+void PLine::draw(SDL_Renderer *renderer, Color *color)
 {
     lineRGBA(renderer, x1, y2, x2, y2, color->getRed(), color->getGreen(), color->getBlue(), color->getAlpha());
 }
 
-void PLine::fill(SDL_Renderer *renderer, SColor *color)
+void PLine::fill(SDL_Renderer *renderer, Color *color)
 {
     lineRGBA(renderer, x1, y2, x2, y2, color->getRed(), color->getGreen(), color->getBlue(), color->getAlpha());
 }

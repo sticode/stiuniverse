@@ -17,12 +17,12 @@ StringRenderer::~StringRenderer()
 
 }
 
-void StringRenderer::setColor(SColor *m_color)
+void StringRenderer::setColor(Color *m_color)
 {
 	color = m_color;
 }
 
-SColor* StringRenderer::getColor(void)
+Color* StringRenderer::getColor(void)
 {
 	return color;
 }

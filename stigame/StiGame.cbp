@@ -396,10 +396,10 @@
 		<Unit filename="SBMissile.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="SColor.cpp">
+		<Unit filename="Color.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="SColor.h">
+		<Unit filename="Color.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="SEventArgs.cpp">
@@ -420,10 +420,10 @@
 		<Unit filename="SPhysic.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="SPrimitive.cpp">
+		<Unit filename="Primitive.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
-		<Unit filename="SPrimitive.h">
+		<Unit filename="Primitive.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="SRect.cpp">

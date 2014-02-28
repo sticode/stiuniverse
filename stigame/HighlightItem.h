@@ -25,22 +25,22 @@ class HighlightItem :
         virtual ~HighlightItem();
 		/// \brief Set highlight Foreground Color
 		/// \param color Color
-        void setHighlightForeground(SColor *color);
+        void setHighlightForeground(Color *color);
 		/// \brief Set highlight Background Color
 		/// \param color Color
-        void setHighlightBackground(SColor *color);
+        void setHighlightBackground(Color *color);
 		/// \brief Get highlight Foreground Color
 		/// \return Foreground Color
-        SColor *getHighlightForeground(void);
+        Color *getHighlightForeground(void);
 		/// \brief Get highlight Background Color
 		/// \return Background Color
-        SColor *getHighlightBackground(void);
+        Color *getHighlightBackground(void);
 
     protected:
 		/// \brief Highlight Foreground Color
-        SColor *highlightForeground;
+        Color *highlightForeground;
 		/// \brief Highlight Background Color
-        SColor *highlightBackground;
+        Color *highlightBackground;
     private:
 };
 

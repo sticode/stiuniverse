@@ -42,7 +42,7 @@ public:
 	
 	TableRow* getRow(int index);
 	
-	virtual void setForeground(SColor* m_foreground);
+	virtual void setForeground(Color* m_foreground);
 	
 	int getRowHeight(void);
 	void setRowHeight(int m_rowHeight);

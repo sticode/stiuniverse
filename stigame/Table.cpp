@@ -141,7 +141,7 @@ TableRow* Table::getRow(int index)
 	return rows[index];
 }
 
-void Table::setForeground(SColor* m_foreground)
+void Table::setForeground(Color* m_foreground)
 {
 	foreground = m_foreground;
 

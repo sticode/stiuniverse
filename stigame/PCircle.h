@@ -1,12 +1,11 @@
 #pragma once
 #include "SDL.h"
-#include "SColor.h"
-#include "SPrimitive.h"
+#include "Primitive.h"
 namespace StiGame
 {
 	/// \class PCircle
 	/// \brief Circle primitive class
-class PCircle : public SPrimitive
+class PCircle : public Primitive
 {
 private:
 	int x,y;
@@ -26,11 +25,11 @@ public:
 	PCircle(int m_x,int m_y, double m_radius);
 	/// \brief Destructor
 	~PCircle(void);
-	void fill(SDL_Surface *, SColor *);
-	void draw(SDL_Surface *, SColor *);
+	void fill(SDL_Surface *surface, Color *color);
+	void draw(SDL_Surface *surface, Color *color);
 
-    void draw(SDL_Renderer *renderer, SColor *color);
-    void fill(SDL_Renderer *renderer, SColor *color);
+    void draw(SDL_Renderer *renderer, Color *color);
+    void fill(SDL_Renderer *renderer, Color *color);
 
 	int getX(void);
 	void setX(int m_x);

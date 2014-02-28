@@ -19,22 +19,22 @@ HighlightItem::HighlightItem(std::string i_name) : Item(i_name)
 }
 
 
-void HighlightItem::setHighlightBackground(SColor *color)
+void HighlightItem::setHighlightBackground(Color *color)
 {
     highlightBackground = color;
 }
 
-void HighlightItem::setHighlightForeground(SColor *color)
+void HighlightItem::setHighlightForeground(Color *color)
 {
     highlightForeground = color;
 }
 
-SColor *HighlightItem::getHighlightBackground(void)
+Color *HighlightItem::getHighlightBackground(void)
 {
     return highlightBackground;
 }
 
-SColor *HighlightItem::getHighlightForeground(void)
+Color *HighlightItem::getHighlightForeground(void)
 {
     return highlightForeground;
 }

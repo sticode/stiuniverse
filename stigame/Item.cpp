@@ -2,7 +2,6 @@
 #include "Item.h"
 #include "SDL.h"
 #include <string>
-#include "SColor.h"
 #include "Runtime.h"
 
 namespace StiGame
@@ -67,22 +66,22 @@ std::string Item::getName(void)
 	return name;
 }
 
-void Item::setBackground(SColor *c)
+void Item::setBackground(Color *c)
 {
 	background = c;
 }
 
-SColor *Item::getBackground(void)
+Color *Item::getBackground(void)
 {
 	return background;
 }
 
-void Item::setForeground(SColor *c)
+void Item::setForeground(Color *c)
 {
 	foreground = c;
 }
 
-SColor *Item::getForeground(void)
+Color *Item::getForeground(void)
 {
 	return foreground;
 }

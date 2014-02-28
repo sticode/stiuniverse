@@ -1,18 +1,18 @@
 #pragma once
-#include "SPrimitive.h"
+#include "Primitive.h"
 #include "math.h"
 namespace StiGame
 {
 class PLine :
-	public SPrimitive
+	public Primitive
 {
 public:
 	PLine(void);
 	~PLine(void);
-	void fill(SDL_Surface*,SColor*);
-	void draw(SDL_Surface*,SColor*);
-	void draw(SDL_Renderer *renderer, SColor *color);
-    void fill(SDL_Renderer *renderer, SColor *color);
+	void fill(SDL_Surface *surface, Color *color);
+	void draw(SDL_Surface *surface, Color *color);
+	void draw(SDL_Renderer *renderer, Color *color);
+    void fill(SDL_Renderer *renderer, Color *color);
 	void set1(int,int);
 	void set2(int,int);
 	int getX1(void);
@@ -22,9 +22,9 @@ public:
 	int getSize(void);
 	void setSize(int);
 protected:
-	void fillHLine(SDL_Surface*, SColor*);
-	void fillVLine(SDL_Surface*, SColor*);
-	void fillTanLine(SDL_Surface*,SColor*);
+	void fillHLine(SDL_Surface*, Color*);
+	void fillVLine(SDL_Surface*, Color*);
+	void fillTanLine(SDL_Surface*, Color*);
 	void switchPoints(void);
 	int x1,y1,x2,y2,size;
 };

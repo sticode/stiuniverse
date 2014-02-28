@@ -1,6 +1,7 @@
-#pragma once
+#ifndef PRIMITIVE_H
+#define PRIMITIVE_H
 #include "SDL.h"
-#include "SColor.h"
+#include "Color.h"
 
 namespace StiGame
 {
@@ -14,35 +15,35 @@ class Surface;
 
 /// \class SPrimitive
 /// \brief Interface to draw or fill a polygon
-class SPrimitive
+class Primitive
 {
 public:
 	/// \brief Empty constructor
-	SPrimitive(void);
+	Primitive(void);
 	/// \brief Destructor
-	~SPrimitive(void);
-	void draw(Surface *surface, SColor *color);
-	void fill(Surface *surface, SColor *color);
+	~Primitive(void);
+	void draw(Surface *surface, Color *color);
+	void fill(Surface *surface, Color *color);
 	/// \brief Virtual method to override
 	/// Draw the primitive, border only
 	/// \param surface SDL_Surface to draw on
 	/// \param color SColor pointer
 	/// \deprecated Using surface gonna be deprecated, but still used in Item rendering...
-	virtual void draw(SDL_Surface *surface, SColor *color) = 0;
+	virtual void draw(SDL_Surface *surface, Color *color) = 0;
 	/// \brief Virtual method to override
 	/// Fill the primitive
 	/// \param surface SDL_Surface to draw on
 	/// \param color SColor pointer
 	/// \deprecated Using surface gonna be deprecated, but still used in Item rendering...
-	virtual void fill(SDL_Surface *surface, SColor *color) = 0;
+	virtual void fill(SDL_Surface *surface, Color *color) = 0;
 	/// \brief Virtual method to override, draw to the screen a Primitive
 	/// \param renderer SDL_Renderer
 	/// \param color Primitive Color
-    virtual void draw(SDL_Renderer *renderer, SColor *color) = 0;
+    virtual void draw(SDL_Renderer *renderer, Color *color) = 0;
 	/// \brief Virtual method to override, fill to the screen a Primitive
 	/// \param renderer SDL_Renderer
 	/// \param color Primitive Color
-    virtual void fill(SDL_Renderer *renderer, SColor *color) = 0;
+    virtual void fill(SDL_Renderer *renderer, Color *color) = 0;
 protected:
 	/// \brief Set the pixel color
 	/// \param surface SDL_Surface to modify
@@ -53,4 +54,6 @@ protected:
 	void setPixel(SDL_Surface *surface,int p_x,int p_y,Uint32 color);
 };
 }
+
+#endif
 

@@ -2,7 +2,7 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "Surface.h"
-#include "SColor.h"
+#include "Color.h"
 #include <string>
 namespace StiGame
 {
@@ -40,14 +40,14 @@ public:
 	/// \brief Render the specified string and color into a surface
 	/// \param caption Text to render
 	/// \param color SColor pointer
-	Surface *renderText(const char *caption, SColor *color);
+	Surface *renderText(const char *caption, Color *color);
 	/// \brief Render the specified string and color into a surface
 	/// \param caption Text to render
 	/// \param color SColor pointer
-	Surface *renderText(std::string caption, SColor *color);
+	Surface *renderText(std::string caption, Color *color);
 	
-	Surface *renderTextShaded(std::string caption, SColor *color, SColor *bg);
-	Surface *renderTextBlended(std::string caption, SColor *color);
+	Surface *renderTextShaded(std::string caption, Color *color, Color *bg);
+	Surface *renderTextBlended(std::string caption, Color *color);
 	
 	int getFontStyle(void);
 	void setFontStyle(int style);

@@ -9,7 +9,7 @@ namespace Gui
 
 const int ProgressBar::DEFAULT_HEIGHT = 20;
 const int ProgressBar::DEFAULT_WIDTH = 100;
-SColor* ProgressBar::DEFAULT_BAR_COLOR = new SColor(0, 0, 240);
+Color* ProgressBar::DEFAULT_BAR_COLOR = new Color(0, 0, 240);
 
 ProgressBar::ProgressBar()
     : Item("ProgressBar")
@@ -53,12 +53,12 @@ Surface* ProgressBar::render(void)
 	return buffer;
 }
 
-SColor* ProgressBar::getBarColor(void)
+Color* ProgressBar::getBarColor(void)
 {
 	return barColor;
 }
 
-void ProgressBar::setBarColor(SColor *m_barColor)
+void ProgressBar::setBarColor(Color *m_barColor)
 {
 	barColor = m_barColor;
 }

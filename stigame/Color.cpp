@@ -1,9 +1,9 @@
-#include "SColor.h"
+#include "Color.h"
 
 namespace StiGame
 {
 
-SColor::SColor(void)
+Color::Color(void)
 {
 	red = 0;
 	green = 0;
@@ -11,7 +11,7 @@ SColor::SColor(void)
 	mapped = false;
 }
 
-SColor::SColor(Uint8 r, Uint8 g, Uint8 b)
+Color::Color(Uint8 r, Uint8 g, Uint8 b)
 {
 	red = r;
 	green = g;
@@ -20,7 +20,7 @@ SColor::SColor(Uint8 r, Uint8 g, Uint8 b)
 	mapped = false;
 }
 
-SColor::SColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+Color::Color(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 {
 	red = r;
 	green = g;
@@ -31,37 +31,37 @@ SColor::SColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 
 
-SColor::~SColor(void)
+Color::~Color(void)
 {
 }
 
-bool SColor::isMapped(void)
+bool Color::isMapped(void)
 {
 	return mapped;
 }
 
-Uint8 SColor::getRed(void)
+Uint8 Color::getRed(void)
 {
     return red;
 }
 
-Uint8 SColor::getBlue(void)
+Uint8 Color::getBlue(void)
 {
     return blue;
 }
 
-Uint8 SColor::getGreen(void)
+Uint8 Color::getGreen(void)
 {
     return green;
 }
 
-Uint8 SColor::getAlpha(void)
+Uint8 Color::getAlpha(void)
 {
     return alpha;
 }
 
 
-void SColor::mapColor(SDL_PixelFormat *format)
+void Color::mapColor(SDL_PixelFormat *format)
 {
 	if(!mapped)
 	{
@@ -70,12 +70,12 @@ void SColor::mapColor(SDL_PixelFormat *format)
 	}
 }
 
-Uint32 SColor::getMap(void)
+Uint32 Color::getMap(void)
 {
 	return map;
 }
 
-SDL_Color SColor::getSDLColor(void)
+SDL_Color Color::getSDLColor(void)
 {
 	SDL_Color color = SDL_Color();
 	color.r = red;

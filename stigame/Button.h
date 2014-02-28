@@ -48,9 +48,9 @@ protected:
 	/// \brief Offset Height
 	int offsetHeight;
 	/// \brief Highlight Foreground Color
-	SColor *highlightForeground;
+	Color *highlightForeground;
 	/// \brief Highlight Background Color
-	SColor *highlightBackground;
+	Color *highlightBackground;
 };
 
 }
