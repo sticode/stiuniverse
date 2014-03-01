@@ -3,7 +3,7 @@ import os
 import shutil
 import packer
 import sys
-
+#to rename...dir
 def exit_clean(build_config = "Release"):
     shutil.rmtree(os.path.join("stigame", "bin", build_config), True)
     shutil.rmtree(os.path.join("stigame", "obj", build_config), True)
