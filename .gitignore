@@ -29,6 +29,7 @@ assets/sprites/*.bspr
 assets/sprites/*.bdspr
 assets/*.res
 build_logs/*
+stiuniverse-*/*
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source

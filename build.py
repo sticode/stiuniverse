@@ -5,10 +5,10 @@ import packer
 import sys
 #to rename...dir
 def exit_clean(build_config = "Release"):
-    shutil.rmtree(os.path.join("stigame", "bin", build_config), True)
-    shutil.rmtree(os.path.join("stigame", "obj", build_config), True)
-    shutil.rmtree(os.path.join("stiuniverse", "bin", build_config), True)
-    shutil.rmtree(os.path.join("stiuniverse", "obj", build_config), True)
+    shutil.rmtree(os.path.join("StiGame", "bin", build_config), True)
+    shutil.rmtree(os.path.join("StiGame", "obj", build_config), True)
+    shutil.rmtree(os.path.join("StiUniverse", "bin", build_config), True)
+    shutil.rmtree(os.path.join("StiUniverse", "obj", build_config), True)
     shutil.rmtree(os.path.join("assettools", "bin", build_config), True)
     shutil.rmtree(os.path.join("assettools", "obj", build_config), True)
     shutil.rmtree("deploy", True)
@@ -111,7 +111,7 @@ if __name__ == '__main__':
         info.objs_prefix.append("-DRELEASE")
 
 
-    bp = make.build_project("stigame", info, build_name)
+    bp = make.build_project("StiGame", info, build_name)
     bp.output = "..\\deploy\\StiGame.dll"
     bp.scan_files()
     
@@ -128,7 +128,7 @@ if __name__ == '__main__':
     info.reset()
     info.build_num = build_num
     info.includes.append("..\\include\\SDL2")
-    info.includes.append("..\\stigame")
+    info.includes.append("..\\StiGame")
     info.links.append("mingw32")
     info.links.append("SDL2main")
     info.links.append("SDL2")
@@ -140,9 +140,9 @@ if __name__ == '__main__':
     info.link_args.append("-s")
     
     if debug:
-        info.link_args.append("-L..\\stigame\\bin\\Debug\\")
+        info.link_args.append("-L..\\StiGame\\bin\\Debug\\")
     else:
-        info.link_args.append("-L..\\stigame\\bin\\Release\\")
+        info.link_args.append("-L..\\StiGame\\bin\\Release\\")
 
     info.objs_prefix.append("-std=c++11")
     info.objs_prefix.append("-Wall")
@@ -170,7 +170,7 @@ if __name__ == '__main__':
     info.reset()
     info.build_num = build_num
     info.includes.append("..\\include\\SDL2")
-    info.includes.append("..\\stigame")
+    info.includes.append("..\\StiGame")
     info.links.append("mingw32")
     info.links.append("SDL2main")
     info.links.append("SDL2")
@@ -186,9 +186,9 @@ if __name__ == '__main__':
     info.link_args.append("-s")
     
     if debug:
-        info.link_args.append("-L..\\stigame\\bin\\Debug\\")
+        info.link_args.append("-L..\\StiGame\\bin\\Debug\\")
     else:
-        info.link_args.append("-L..\\stigame\\bin\\Release\\")
+        info.link_args.append("-L..\\StiGame\\bin\\Release\\")
         
     info.objs_prefix.append("-std=c++11")
     info.objs_prefix.append("-Wall")
@@ -200,7 +200,7 @@ if __name__ == '__main__':
         info.objs_prefix.append("-O2")
         info.objs_prefix.append("-DRELEASE")
 
-    bp = make.build_project("stiuniverse", info, build_name)
+    bp = make.build_project("StiUniverse", info, build_name)
     bp.output = "..\\deploy\\StiUniverse.exe"
     bp.scan_files()
     if not bp.build_objects():
@@ -247,10 +247,10 @@ if __name__ == '__main__':
 
     #cleaning folder
 
-    shutil.rmtree(os.path.join("stigame", "bin", build_name))
-    shutil.rmtree(os.path.join("stigame", "obj", build_name))
-    shutil.rmtree(os.path.join("stiuniverse", "bin", build_name))
-    shutil.rmtree(os.path.join("stiuniverse", "obj", build_name))
+    shutil.rmtree(os.path.join("StiGame", "bin", build_name))
+    shutil.rmtree(os.path.join("StiGame", "obj", build_name))
+    shutil.rmtree(os.path.join("StiUniverse", "bin", build_name))
+    shutil.rmtree(os.path.join("StiUniverse", "obj", build_name))
     shutil.rmtree(os.path.join("assettools", "bin", build_name))
     shutil.rmtree(os.path.join("assettools", "obj", build_name))
 
