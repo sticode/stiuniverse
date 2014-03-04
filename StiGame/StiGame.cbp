@@ -126,6 +126,12 @@
 		<Unit filename="ClonedSprite.h">
 			<Option virtualFolder="headers/sprites/" />
 		</Unit>
+		<Unit filename="Color.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="Color.h">
+			<Option virtualFolder="headers/core/" />
+		</Unit>
 		<Unit filename="ComboBox.cpp">
 			<Option virtualFolder="src/gui/" />
 		</Unit>
@@ -162,6 +168,12 @@
 		<Unit filename="DirectionSpriteFileCreator.h">
 			<Option virtualFolder="headers/sprites/" />
 		</Unit>
+		<Unit filename="EventArgs.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="EventArgs.h">
+			<Option virtualFolder="headers/core/" />
+		</Unit>
 		<Unit filename="EventListener.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
@@ -172,6 +184,12 @@
 			<Option virtualFolder="src/core/" />
 		</Unit>
 		<Unit filename="EventThrower.h">
+			<Option virtualFolder="headers/core/" />
+		</Unit>
+		<Unit filename="Font.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="Font.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="GamePath.cpp">
@@ -288,6 +306,12 @@
 		<Unit filename="MissileDictionary.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="Motion.cpp">
+			<Option virtualFolder="src/math/" />
+		</Unit>
+		<Unit filename="Motion.h">
+			<Option virtualFolder="headers/math/" />
+		</Unit>
 		<Unit filename="MouseActionMap.cpp">
 			<Option virtualFolder="src/bindings/" />
 		</Unit>
@@ -360,6 +384,12 @@
 		<Unit filename="Point.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
+		<Unit filename="Primitive.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="Primitive.h">
+			<Option virtualFolder="headers/core/" />
+		</Unit>
 		<Unit filename="ProgressBar.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
@@ -377,6 +407,12 @@
 		</Unit>
 		<Unit filename="RadioGroup.h">
 			<Option virtualFolder="headers/gui/" />
+		</Unit>
+		<Unit filename="Rectangle.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="Rectangle.h">
+			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="ResourceFile.cpp">
 			<Option virtualFolder="src/" />
@@ -396,46 +432,10 @@
 		<Unit filename="SBMissile.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="Color.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="Color.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
-		<Unit filename="EventArgs.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="EventArgs.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
-		<Unit filename="Font.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="Font.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
 		<Unit filename="SPhysic.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
 		<Unit filename="SPhysic.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
-		<Unit filename="Primitive.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="Primitive.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
-		<Unit filename="Rectangle.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="Rectangle.h">
-			<Option virtualFolder="headers/core/" />
-		</Unit>
-		<Unit filename="Time.cpp">
-			<Option virtualFolder="src/core/" />
-		</Unit>
-		<Unit filename="Time.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
 		<Unit filename="SelectionEventArgs.cpp">
@@ -534,6 +534,12 @@
 		<Unit filename="Texture.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
+		<Unit filename="Time.cpp">
+			<Option virtualFolder="src/core/" />
+		</Unit>
+		<Unit filename="Time.h">
+			<Option virtualFolder="headers/core/" />
+		</Unit>
 		<Unit filename="TimedGameAction.cpp">
 			<Option virtualFolder="src/bindings/" />
 		</Unit>
@@ -556,6 +562,18 @@
 			<Option virtualFolder="src/math/" />
 		</Unit>
 		<Unit filename="Vector.h">
+			<Option virtualFolder="headers/math/" />
+		</Unit>
+		<Unit filename="Vector2.cpp">
+			<Option virtualFolder="src/math/" />
+		</Unit>
+		<Unit filename="Vector2.h">
+			<Option virtualFolder="headers/math/" />
+		</Unit>
+		<Unit filename="MVector2.cpp">
+			<Option virtualFolder="src/math/" />
+		</Unit>
+		<Unit filename="MVector2.h">
 			<Option virtualFolder="headers/math/" />
 		</Unit>
 		<Unit filename="Viewport.cpp">
