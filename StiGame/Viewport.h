@@ -148,6 +148,11 @@ public:
 	/// \brief Get SDL_Renderer pointer
 	/// \return SDL_Renderer pointer
 	SDL_Renderer* getRenderer(void);
+	
+	void hide(void);
+	void show(void);
+	
+	//need to add Cursor
 
 };
 

@@ -450,4 +450,20 @@ SDL_Renderer* Viewport::getRenderer(void)
     return renderer;
 }
 
+void Viewport::show(void)
+{
+	if(window != 0)
+	{
+		SDL_ShowWindow(window);
+	}
+}
+
+void Viewport::hide(void)
+{
+	if(window != 0)
+	{
+		SDL_HideWindow(window);
+	}
+}
+
 }

@@ -120,6 +120,12 @@
 		<Unit filename="CheckEventThrower.h">
 			<Option virtualFolder="headers/gui/" />
 		</Unit>
+		<Unit filename="Clipboard.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Clipboard.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="ClonedSprite.cpp">
 			<Option virtualFolder="src/sprites/" />
 		</Unit>
@@ -287,6 +293,12 @@
 		</Unit>
 		<Unit filename="MDimension.h">
 			<Option virtualFolder="headers/core/" />
+		</Unit>
+		<Unit filename="MessageBox.cpp">
+			<Option virtualFolder="src/gui/" />
+		</Unit>
+		<Unit filename="MessageBox.h">
+			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="MPoint.cpp">
 			<Option virtualFolder="src/core/" />

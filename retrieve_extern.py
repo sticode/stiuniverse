@@ -6,14 +6,13 @@ import os
 import urllib2
 #hard coded url
 url = 'https://docs.google.com/uc?id=0B_P5byse05MmUDRxajVFaXRQeE0&export=download'
+py_make = 'https://github.com/jordsti/pymake/archive/master.zip'
 
-def download(url):
+def download(url , output):
 
     req = urllib2.Request(url)
 
     resp = urllib2.urlopen(req)
-
-    output = 'stiuniverse_extern.zip'
 
     fp = open(output, 'wb')
 
@@ -49,9 +48,8 @@ def download(url):
     fp.close()
     
     print "Download complete !"
-    return output
 
-def extract(zipname):
+def extract(zipname, dst = None):
 
     zp = zipfile.ZipFile(zipname, 'r')
 
@@ -60,13 +58,21 @@ def extract(zipname):
     for n in names:
         if not n.endswith('/'):
             cdir = os.path.dirname(n)
+            if not dst == None:
+                cdir = os.path.join(dst, cdir)            
             if not os.path.exists(cdir):
                 os.makedirs(cdir)
             print "Extracting : " + n
-            zp.extract(n)
+            if dst == None:
+                zp.extract(n)
+            else:
+                zp.extract(n, dst)
 
     zp.close()
 
 if __name__ == '__main__':
-    output = download(url)
-    extract(output)
+    download(url, 'stiuniverse_extern.zip')
+    extract('stiuniverse_extern.zip')
+
+    download(py_make, 'pymake.zip')
+    extract('pymake.zip', 'pymake')
