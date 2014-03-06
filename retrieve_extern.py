@@ -74,5 +74,5 @@ if __name__ == '__main__':
     download(url, 'stiuniverse_extern.zip')
     extract('stiuniverse_extern.zip')
 
-    download(py_make, 'pymake.zip')
-    extract('pymake.zip', 'pymake')
+    #download(py_make, 'pymake.zip')
+    #extract('pymake.zip', 'pymake')
