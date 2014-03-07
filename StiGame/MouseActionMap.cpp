@@ -19,7 +19,7 @@ namespace StiGame
 		positionChecked = false;
 		rect = Rectangle();
 	}
-	
+
 	MouseActionMap::MouseActionMap(std::string m_name, Uint8 m_button)
 	{
 		name = m_name;
@@ -38,6 +38,11 @@ namespace StiGame
 	{
 		return "m" + GetStringValue(button);
 	}
+
+    int MouseActionMap::getIntValue(void)
+    {
+        return (int)button;
+    }
 
 	void MouseActionMap::fromString(std::string str)
 	{

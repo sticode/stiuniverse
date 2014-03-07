@@ -1,7 +1,7 @@
 #ifndef CURSOR_H
 #define CURSOR_H
 
-#include "SDL.h"
+#include "Surface.h"
 
 namespace StiGame
 {
@@ -11,27 +11,20 @@ class Cursor
 public:
 	Cursor();
 	Cursor(SDL_Cursor *m_cursor);
+	Cursor(const Uint8* m_data, const Uint8* m_mask, int m_width, int m_height, int m_hot_x, int m_hot_y);
+	Cursor(Surface *surface, int m_hot_x, int m_hot_y);
+	Cursor(SDL_SystemCursor systemCursor);
 	//todo : add a ctor for CreateCursor
 	virtual ~Cursor();
 
-	const Uint8* getData(void);
-	const Uint8* getMask(void);
-	int getWidth(void);
-	int getHeight(void);
-	int getHotX(void);
-	int getHotY(void);
-	
-	void setData(const Uint8* data);
-	void setMask(const Uint8* mask);
-	void setWidth(int width);
-	void setHeight(int height);
-	void setHotX(int hotX);
-	void setHotY(int hotY);
-	
+
 	SDL_Cursor* getSDLCursor(void);
-	
+    static void Show(bool m_show);
+    bool isDefault(void);
 protected:
 	SDL_Cursor *cursor;
+private:
+	bool _default;
 
 };
 

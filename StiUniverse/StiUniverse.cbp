@@ -79,6 +79,8 @@
 		<Unit filename="MissileFactory.h" />
 		<Unit filename="MissileThrower.cpp" />
 		<Unit filename="MissileThrower.h" />
+		<Unit filename="OptionMenuState.cpp" />
+		<Unit filename="OptionMenuState.h" />
 		<Unit filename="RedMissile.cpp" />
 		<Unit filename="RedMissile.h" />
 		<Unit filename="SpaceHud.cpp" />

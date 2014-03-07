@@ -15,7 +15,7 @@ namespace StiGame
 		keycode = 0;
 		inputType = IT_KEYBOARD;
 	}
-	
+
 	KeyActionMap::KeyActionMap(std::string m_name, SDL_Keycode m_keycode)
 	{
 		name = m_name;
@@ -27,6 +27,11 @@ namespace StiGame
 	{
 
 	}
+
+   int KeyActionMap::getIntValue(void)
+    {
+        return (int)keycode;
+    }
 
 	std::string KeyActionMap::toString(void)
 	{

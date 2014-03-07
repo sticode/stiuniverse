@@ -17,9 +17,9 @@ namespace StiGame
 			/// \brief Create a new Mouse Action Map
 			/// \param m_name Action Name
 			MouseActionMap(std::string m_name);
-			
+
 			MouseActionMap(std::string m_name, Uint8 m_button);
-			
+
 			/// \brief Destructor
 			virtual ~MouseActionMap(void);
 			/// \brief Get string value of the bind
@@ -57,6 +57,7 @@ namespace StiGame
 
 			bool isPositionChecked(void);
 
+            int getIntValue(void);
 		protected:
 			/// \brief Mouse Button
 			Uint8 button;

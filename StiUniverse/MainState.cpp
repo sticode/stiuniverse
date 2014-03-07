@@ -516,6 +516,16 @@ void MainState::onResize(int m_width, int m_height)
 
     hud.setX(0);
     hud.setY(m_height - hud.getHeight());
+
+    updateViewMovRects();
+
+    if(viewMovRects.size() != 0)
+    {
+        viewMovRects[SD_UP]->setWidth(m_width);
+        viewMovRects[SD_DOWN]->setWidth(m_width);
+        viewMovRects[SD_LEFT]->setHeight(m_height);
+        viewMovRects[SD_RIGHT]->setHeight(m_height);
+    }
 }
 
 void MainState::onQuit(SDL_Event *evt)
@@ -647,17 +657,20 @@ void MainState::moveView(int direction)
 
 void MainState::updateViewMovRects(void)
 {
-    viewMovRects[SD_UP]->setX(real_x);
-    viewMovRects[SD_UP]->setY(real_y);
+    if(viewMovRects.size() != 0)
+    {
+        viewMovRects[SD_UP]->setX(real_x);
+        viewMovRects[SD_UP]->setY(real_y);
 
-    viewMovRects[SD_DOWN]->setX(real_x);
-    viewMovRects[SD_DOWN]->setY(real_y + height - 100);
+        viewMovRects[SD_DOWN]->setX(real_x);
+        viewMovRects[SD_DOWN]->setY(real_y + height - 100);
 
-    viewMovRects[SD_LEFT]->setX(real_x);
-    viewMovRects[SD_LEFT]->setY(real_y);
+        viewMovRects[SD_LEFT]->setX(real_x);
+        viewMovRects[SD_LEFT]->setY(real_y);
 
-    viewMovRects[SD_RIGHT]->setX(real_x + width - 100);
-    viewMovRects[SD_RIGHT]->setY(real_y);
+        viewMovRects[SD_RIGHT]->setX(real_x + width - 100);
+        viewMovRects[SD_RIGHT]->setY(real_y);
+    }
 }
 
 

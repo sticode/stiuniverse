@@ -16,7 +16,7 @@ namespace StiGame
 			/// \brief Create a new Key Action Map
 			/// \param m_name Action Name
 			KeyActionMap(std::string m_name);
-			
+
 			KeyActionMap(std::string m_name, SDL_Keycode m_keycode);
 			/// \brief Destructor
 			virtual ~KeyActionMap(void);
@@ -34,6 +34,8 @@ namespace StiGame
 			void setKeycode(SDL_Keycode m_keycode);
 
 			bool inputEquals(InputType it, int input);
+
+			int getIntValue(void);
 		protected:
 			/// \brief Key Code
 			SDL_Keycode keycode;

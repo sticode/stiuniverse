@@ -302,7 +302,7 @@ void Viewport::initialize(void)
 
 	window = SDL_CreateWindow(title, window_x, window_y, width, height, videoFlags);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-
+    cursor = new Cursor();
     SDL_SetWindowTitle(window, title);
 
     updateWindowPosition();
@@ -314,6 +314,27 @@ void Viewport::initialize(void)
     //SDL_RenderSetLogicalSize(renderer, width, height);
 
 	error = SDL_GetError();
+}
+
+Cursor* Viewport::getCursor(void)
+{
+    return cursor;
+}
+
+void Viewport::showCursor(bool m_show)
+{
+    Cursor::Show(m_show);
+}
+
+void Viewport::setCursor(Cursor *m_cursor)
+{
+    if(!cursor->isDefault())
+    {
+        delete cursor;
+    }
+
+    cursor = m_cursor;
+    SDL_SetCursor(cursor->getSDLCursor());
 }
 
 bool Viewport::isFullscreen(void)

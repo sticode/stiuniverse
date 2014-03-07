@@ -24,6 +24,8 @@ namespace StiGame
 			virtual bool inputEquals(InputType it, int input) = 0;
 			virtual bool inputMouseEquals(MouseButtonEvent *mbEvt);
 			virtual bool isPositionChecked(void);
+
+			virtual int getIntValue(void);
 		protected:
 		    InputType inputType;
 			std::string name;

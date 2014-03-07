@@ -5,84 +5,63 @@ namespace StiGame
 
 Cursor::Cursor()
 {
-	cursor = SDL_GetCursor(); //default cursor
+	cursor = SDL_GetDefaultCursor(); //default cursor
+	_default = true;
 }
 
 Cursor::Cursor(SDL_Cursor *m_cursor)
 {
 	cursor = m_cursor;
+
+	if(m_cursor == SDL_GetDefaultCursor())
+    {
+        _default = true;
+    }
+    else
+    {
+        _default = false;
+    }
+}
+
+Cursor::Cursor(const Uint8* m_data, const Uint8* m_mask, int m_width, int m_height, int m_hot_x, int m_hot_y)
+{
+    cursor = SDL_CreateCursor(m_data, m_mask, m_width, m_height, m_hot_x, m_hot_y);
+    _default = false;
+}
+
+Cursor::Cursor(Surface *surface, int m_hot_x, int m_hot_y)
+{
+    cursor = SDL_CreateColorCursor(surface->getSDLSurface(), m_hot_x, m_hot_y);
+    _default = false;
+}
+
+Cursor::Cursor(SDL_SystemCursor systemCursor)
+{
+    cursor = SDL_CreateSystemCursor(systemCursor);
+    _default = false;
+}
+
+void Cursor::Show(bool m_show)
+{
+    SDL_ShowCursor(m_show);
+}
+
+bool Cursor::isDefault(void)
+{
+    return _default;
 }
 
 Cursor::~Cursor()
 {
 	//free this ?
-	SDL_Cursor *d_cursor = SDL_GetCursor();
-	
+	SDL_Cursor *d_cursor = SDL_GetDefaultCursor();
+
 	if(cursor != d_cursor)
 	{
 		SDL_FreeCursor(cursor);
 	}
 }
 
-const Uint8* Cursor::getData(void)
-{
-	return cursor->data;
-}
-
-const Uint8* Cursor::getMask(void)
-{
-	return cursor->mask;
-}
-
-int Cursor::getWidth(void)
-{
-	return cursor->w;
-}
-
-int Cursor::getHeight(void)
-{
-	return cursor->h;
-}
-
-int Cursor::getHotX(void)
-{
-	return cursor->hot_x;
-}
-
-int Cursor::getHotY(void)
-{
-	return cursor->hot_y;
-}
-
-void Cursor::setData(const Uint8* data)
-{
-	cursor->data = data;
-}
-
-void Cursor::setMask(const Uint8* mask)
-{
-	cursor->mask = mask;
-}
-
-void Cursor::setWidth(int width)
-{
-	cursor->w = width;
-}
-
-void Cursor::setHeight(int height)
-{
-	cursor->h = height;
-}
-
-void Cursor::setHotX(int hotX)
-{
-	cursor->hot_x = hotX;
-}
-
-void Cursor::setHotY(int hotY)
-{
-	cursor->hot_y = hotY;
-}
 
 SDL_Cursor* Cursor::getSDLCursor(void)
 {

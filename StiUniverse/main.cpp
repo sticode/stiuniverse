@@ -23,6 +23,9 @@ int main(int argc, char** argv)
     MainMenuState ms = MainMenuState();
     viewport->push(&ms);
     viewport->setTitle("StiUniverse : just one light year before alpha !");
+
+    Cursor *cursor = new Cursor(SDL_SYSTEM_CURSOR_CROSSHAIR);
+    viewport->setCursor(cursor);
     viewport->startLoop();
 
     delete viewport;

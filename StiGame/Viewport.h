@@ -3,6 +3,7 @@
 #include <string>
 #include "BaseGameState.h"
 #include "Dimension.h"
+#include "Cursor.h"
 
 namespace StiGame
 {
@@ -70,6 +71,8 @@ protected:
 	/// \param evt SDL_WindowEvent
 	void handleWindowEvent(SDL_WindowEvent evt);
 
+
+    Cursor* cursor;
 public:
 	/// \brief Create a new viewport
 	Viewport(void);
@@ -148,10 +151,14 @@ public:
 	/// \brief Get SDL_Renderer pointer
 	/// \return SDL_Renderer pointer
 	SDL_Renderer* getRenderer(void);
-	
+
 	void hide(void);
 	void show(void);
-	
+
+
+    Cursor* getCursor(void);
+    void setCursor(Cursor *m_cursor);
+    void showCursor(bool m_show);
 	//need to add Cursor
 
 };

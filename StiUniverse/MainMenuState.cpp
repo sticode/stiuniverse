@@ -17,13 +17,21 @@ MainMenuState::MainMenuState() : GuiState()
 
     btnStart.set(100,100);
 
+
+    btnOption = Gui::Button();
+    btnOption.setCaption("Option");
+
+    btnOption.subscribe(this);
+    btnOption.set(100,150);
+
     btnQuit = Gui::Button();
     btnQuit.setCaption("Quit");
 
     btnQuit.subscribe(this);
-    btnQuit.set(100,150);
+    btnQuit.set(100,200);
 
     add(&btnStart);
+    add(&btnOption);
     add(&btnQuit);
 }
 
@@ -34,6 +42,10 @@ void MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
     {
         MainState *state = new MainState();
         viewport->push(state);
+    }
+    else if (src == &btnOption)
+    {
+
     }
     else if(src == &btnQuit)
     {

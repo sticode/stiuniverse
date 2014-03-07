@@ -20,6 +20,8 @@ class CompActionMap :
         std::string toString(void);
         void push(ActionMap *p_map);
         void remove(ActionMap *r_map);
+
+        int getIntValue(void);
     protected:
         std::list<ActionMap*> actions;
     private:

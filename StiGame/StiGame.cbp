@@ -150,6 +150,12 @@
 		<Unit filename="CompActionMap.h">
 			<Option virtualFolder="headers/bindings/" />
 		</Unit>
+		<Unit filename="Cursor.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Cursor.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="Dimension.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
@@ -294,23 +300,29 @@
 		<Unit filename="MDimension.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
-		<Unit filename="MessageBox.cpp">
-			<Option virtualFolder="src/gui/" />
-		</Unit>
-		<Unit filename="MessageBox.h">
-			<Option virtualFolder="headers/gui/" />
-		</Unit>
 		<Unit filename="MPoint.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
 		<Unit filename="MPoint.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
+		<Unit filename="MVector2.cpp">
+			<Option virtualFolder="src/math/" />
+		</Unit>
+		<Unit filename="MVector2.h">
+			<Option virtualFolder="headers/math/" />
+		</Unit>
 		<Unit filename="MathTK.cpp">
 			<Option virtualFolder="src/math/" />
 		</Unit>
 		<Unit filename="MathTK.h">
 			<Option virtualFolder="headers/math/" />
+		</Unit>
+		<Unit filename="MessageBox.cpp">
+			<Option virtualFolder="src/gui/" />
+		</Unit>
+		<Unit filename="MessageBox.h">
+			<Option virtualFolder="headers/gui/" />
 		</Unit>
 		<Unit filename="MissileDictionary.cpp">
 			<Option virtualFolder="src/" />
@@ -580,12 +592,6 @@
 			<Option virtualFolder="src/math/" />
 		</Unit>
 		<Unit filename="Vector2.h">
-			<Option virtualFolder="headers/math/" />
-		</Unit>
-		<Unit filename="MVector2.cpp">
-			<Option virtualFolder="src/math/" />
-		</Unit>
-		<Unit filename="MVector2.h">
 			<Option virtualFolder="headers/math/" />
 		</Unit>
 		<Unit filename="Viewport.cpp">

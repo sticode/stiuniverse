@@ -56,6 +56,11 @@ namespace StiGame
 	    return false;
 	}
 
+    int ActionMap::getIntValue(void)
+    {
+        return 0;
+    }
+
 	ActionMap* ActionMap::FromString(std::string a_name, std::string action)
 	{
         //need to rework this method, to add Composite Action, with a split on the str

@@ -18,6 +18,7 @@ class MainMenuState :
         void handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *evt);
     protected:
         StiGame::Gui::Button btnStart;
+        StiGame::Gui::Button btnOption;
         StiGame::Gui::Button btnQuit;
     private:
 };

@@ -17,6 +17,17 @@ CompActionMap::CompActionMap(std::string m_name)
     inputType = IT_DEFAULT;
 }
 
+int CompActionMap::getIntValue(void)
+{
+    std::list<ActionMap*>::iterator lit(actions.begin()), lend(actions.end());
+    for(;lit!=lend;++lit)
+    {
+        //to investigate
+        return (*lit)->getIntValue();
+    }
+    return 0;
+}
+
 bool CompActionMap::isInput(InputType it)
 {
     std::list<ActionMap*>::iterator lit(actions.begin()), lend(actions.end());
