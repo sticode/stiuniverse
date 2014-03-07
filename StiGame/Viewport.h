@@ -155,12 +155,13 @@ public:
 	void hide(void);
 	void show(void);
 
+	void minimize(void);
+	void maximize(void);
+	void restore(void);
 
     Cursor* getCursor(void);
     void setCursor(Cursor *m_cursor);
     void showCursor(bool m_show);
-	//need to add Cursor
-
 };
 
 }

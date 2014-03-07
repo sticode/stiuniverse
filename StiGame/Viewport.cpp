@@ -487,4 +487,29 @@ void Viewport::hide(void)
 	}
 }
 
+void Viewport::restore(void)
+{
+	if(window != 0)
+	{
+		SDL_RestoreWindow(window);
+	}
+}
+
+void Viewport::minimize(void)
+{
+	if(window != 0)
+	{
+		SDL_MinimizeWindow(window);
+	}
+}
+
+void Viewport::maximize(void)
+{
+	if(window != 0)
+	{
+		SDL_MaximizeWindow(window);
+	}
+}
+
+
 }
