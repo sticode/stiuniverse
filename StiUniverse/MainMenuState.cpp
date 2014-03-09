@@ -1,5 +1,6 @@
 #include "MainMenuState.h"
 #include "MainState.h"
+#include "OptionMenuState.h"
 
 using namespace StiGame;
 
@@ -45,7 +46,8 @@ void MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
     }
     else if (src == &btnOption)
     {
-
+        OptionMenuState *optionState = new OptionMenuState();
+        viewport->push(optionState);
     }
     else if(src == &btnQuit)
     {
