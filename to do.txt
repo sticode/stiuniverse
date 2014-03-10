@@ -35,3 +35,5 @@ label refactor, with better autosize, and text anchor , maybe..not
 		
 -Reorganize virtual folders into IDE
 -Gui TextBox, should be very useful..
+
+-Need to rewrite post build script for assets, to be runnable from pymake

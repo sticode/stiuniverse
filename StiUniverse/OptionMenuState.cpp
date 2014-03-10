@@ -68,7 +68,27 @@ OptionMenuState::OptionMenuState() : GuiState()
 	lblThrowMissile1.setX(20);
 	lblThrowMissile1.setY(300);
 	lblThrowMissile1.setCaption("Missile 1 : ");
-
+	
+	acThrowMissile2 = Gui::ActionBind();
+	acThrowMissile2.setX(100);
+	acThrowMissile2.setY(350);
+	acThrowMissile2.setHandleMouse(true);
+	
+	lblThrowMissile2 = Gui::Label();
+	lblThrowMissile2.setX(20);
+	lblThrowMissile2.setY(350);
+	lblThrowMissile2.setCaption("Missile 2 : ");
+	
+	acThrowMissile3 = Gui::ActionBind();
+	acThrowMissile3.setX(100);
+	acThrowMissile3.setY(400);
+	acThrowMissile3.setHandleMouse(true);
+	
+	lblThrowMissile3 = Gui::Label();
+	lblThrowMissile3.setX(20);
+	lblThrowMissile3.setY(400);
+	lblThrowMissile3.setCaption("Missile 3 : ");
+	
     KeyEventThrower::subscribe(&keyUp);
     KeyEventThrower::subscribe(&keyDown);
     KeyEventThrower::subscribe(&keyRight);
@@ -76,6 +96,12 @@ OptionMenuState::OptionMenuState() : GuiState()
 
 	KeyEventThrower::subscribe(&acThrowMissile1);
 	MouseEventThrower::subscribe(&acThrowMissile1);
+	
+	KeyEventThrower::subscribe(&acThrowMissile2);
+	MouseEventThrower::subscribe(&acThrowMissile2);
+	
+	KeyEventThrower::subscribe(&acThrowMissile3);
+	MouseEventThrower::subscribe(&acThrowMissile3);
 	
     add(&btnBack);
     add(&keyUp);
@@ -88,34 +114,38 @@ OptionMenuState::OptionMenuState() : GuiState()
     add(&lblLeft);
 	add(&acThrowMissile1);
 	add(&lblThrowMissile1);
+	add(&acThrowMissile2);
+	add(&lblThrowMissile2);
+	add(&acThrowMissile3);
+	add(&lblThrowMissile3);
 }
 
 void OptionMenuState::saveBindings(void)
 {
-    KeyActionMap *kmap;
+    //KeyActionMap *kmap;
     ActionMap *amap;
-    SDL_Keycode kc;
 
-    kc = keyUp.getKey();
-    amap = bindings.getBinding("move_up");
-    kmap = dynamic_cast<KeyActionMap*>(amap);
-    kmap->setKeycode(kc);
+	std::string a_name = "move_up";
+    bindings.overwrite(a_name, keyUp.createKeyActionMap(a_name));
 
-    kc = keyDown.getKey();
-    amap = bindings.getBinding("move_down");
-    kmap = dynamic_cast<KeyActionMap*>(amap);
-    kmap->setKeycode(kc);
+    a_name = "move_down";
+    bindings.overwrite(a_name, keyDown.createKeyActionMap(a_name));
 
-    kc = keyRight.getKey();
-    amap = bindings.getBinding("move_right");
-    kmap = dynamic_cast<KeyActionMap*>(amap);
-    kmap->setKeycode(kc);
+    a_name = "move_right";
+    bindings.overwrite(a_name, keyRight.createKeyActionMap(a_name));
 
-    kc = keyLeft.getKey();
-    amap = bindings.getBinding("move_left");
-    kmap = dynamic_cast<KeyActionMap*>(amap);
-    kmap->setKeycode(kc);
+    a_name = "move_left";
+    bindings.overwrite(a_name, keyLeft.createKeyActionMap(a_name));
 
+	a_name = "throw_missile1";
+	bindings.overwrite(a_name, acThrowMissile1.createActionMap(a_name));
+	
+	a_name = "throw_missile2";
+	bindings.overwrite(a_name, acThrowMissile2.createActionMap(a_name));
+	
+	a_name = "throw_missile3";
+	bindings.overwrite(a_name, acThrowMissile3.createActionMap(a_name));
+	
     bindings.write();
 }
 
@@ -133,31 +163,30 @@ void OptionMenuState::onStart(void)
     bindings = ActionBinding(ActionBinding::FILENAME.c_str());
 
     bindings.read();
-
-    SDL_Keycode kc = SDLK_0;
-    int kc_int = 0;
+	
     ActionMap *amap;
 
     amap = bindings.getBinding("move_up");
-    kc_int = amap->getIntValue();
-    kc = static_cast<SDL_Keycode>(kc_int);
-    keyUp.setKey(kc);
+	keyUp.fromActionMap(amap);
 
     amap = bindings.getBinding("move_down");
-    kc_int = amap->getIntValue();
-    kc = static_cast<SDL_Keycode>(kc_int);
-    keyDown.setKey(kc);
+    keyDown.fromActionMap(amap);
 
     amap = bindings.getBinding("move_right");
-    kc_int = amap->getIntValue();
-    kc = static_cast<SDL_Keycode>(kc_int);
-    keyRight.setKey(kc);
+    keyRight.fromActionMap(amap);
 
     amap = bindings.getBinding("move_left");
-    kc_int = amap->getIntValue();
-    kc = static_cast<SDL_Keycode>(kc_int);
-    keyLeft.setKey(kc);
+    keyLeft.fromActionMap(amap);
 
+	amap = bindings.getBinding("throw_missile1");
+	acThrowMissile1.fromActionMap(amap);
+	
+	amap = bindings.getBinding("throw_missile2");
+	acThrowMissile2.fromActionMap(amap);
+	
+	amap = bindings.getBinding("throw_missile3");
+	acThrowMissile3.fromActionMap(amap);
+	
     running = true;
 }
 

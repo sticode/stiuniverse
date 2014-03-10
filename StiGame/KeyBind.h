@@ -3,6 +3,7 @@
 
 #include "HighlightItem.h"
 #include "KeyEventListener.h"
+#include "KeyActionMap.h"
 #include <string>
 
 namespace StiGame {
@@ -46,6 +47,10 @@ class KeyBind :
 		/// \brief Set SDL Keycode
 		/// \param m_key Key Code
         void setKey(SDL_Keycode m_key);
+		
+		KeyActionMap* createKeyActionMap(std::string a_name);
+		
+		void fromActionMap(ActionMap *amap);
     protected:
 		/// \brief Keycode String Buffer
         Surface *stringBuffer;

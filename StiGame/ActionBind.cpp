@@ -1,10 +1,14 @@
 #include "ActionBind.h"
+#include "KeyActionMap.h"
+#include "MouseActionMap.h"
+#include "PRect.h"
 
 namespace StiGame
 {
 
 namespace Gui
 {
+
 const int ActionBind::DefaultWidth = 100;
 const int ActionBind::DefaultHeight = 20;
 
@@ -30,6 +34,52 @@ ActionBind::~ActionBind()
 	}
 }
 
+ActionMap* ActionBind::createActionMap(std::string a_name)
+{
+	if(mouseButton)
+	{
+		Uint8 mb = MouseButtonEvent::GetSDLButton(mbutton);
+		MouseActionMap *mmap = new MouseActionMap(a_name, mb);
+		return mmap;
+	}
+	else
+	{
+		KeyActionMap *kmap = new KeyActionMap(a_name, keycode);
+		return kmap;
+	}
+}
+
+void ActionBind::fromActionMap(ActionMap *amap)
+{
+	if(amap->getInputType() == IT_COMP)
+	{
+		CompActionMap *cmap = dynamic_cast<CompActionMap*>(amap);
+		fromActionMap(cmap, 0);
+	}
+	else if(amap->getInputType() == IT_KEYBOARD)
+	{
+		SDL_Keycode kc = static_cast<SDL_Keycode>(amap->getIntValue());
+		keycode = kc;
+		mouseButton = false;
+		renderCaption();
+	}
+	else if(amap->getInputType() == IT_MOUSE)
+	{
+		Uint8 sdl_mb = static_cast<Uint8>(amap->getIntValue());
+		mbutton = MouseButtonEvent::GetMouseButtonFromSDL(sdl_mb);
+		mouseButton = true;
+		renderCaption();
+	}
+}
+
+void ActionBind::fromActionMap(CompActionMap *cmap, int index)
+{
+	ActionMap *amap = cmap->getMap(index);
+	
+	fromActionMap(amap);
+	
+}
+
 Surface* ActionBind::render(void)
 {
 	Surface *buffer = new Surface(width, height);
@@ -53,6 +103,22 @@ Surface* ActionBind::render(void)
 	dst.y = (height - dst.h) / 2;
 	
 	buffer->blit(stringBuffer, &src, &dst);
+	
+	PRect border = PRect();
+	
+	border.setX(0);
+	border.setY(0);
+	border.setWidth(width - 1);
+	border.setHeight(height - 1);
+	
+	Color *c_border = foreground;
+	
+	if(focus)
+	{
+		c_border = highlightForeground;
+	}
+	
+	border.draw(buffer->getSDLSurface(), c_border);
 	
 	return buffer;
 }

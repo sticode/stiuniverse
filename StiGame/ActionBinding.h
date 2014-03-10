@@ -16,6 +16,7 @@ class ActionBinding :
         void read(void);
         void write(void);
         void addBinding(std::string bname, ActionMap *amap);
+		void overwrite(std::string bname, ActionMap *nmap);
         std::string getActionByMouseButton(Uint8 button);
         std::string getActionByKeyCode(SDL_Keycode keycode);
         ActionMap* getBinding(std::string bname);

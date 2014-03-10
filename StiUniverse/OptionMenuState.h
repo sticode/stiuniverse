@@ -27,12 +27,16 @@ class OptionMenuState :
     StiGame::Gui::KeyBind keyLeft;
     StiGame::Gui::KeyBind keyRight;
 	StiGame::Gui::ActionBind acThrowMissile1;
+	StiGame::Gui::ActionBind acThrowMissile2;
+	StiGame::Gui::ActionBind acThrowMissile3;
     StiGame::Gui::Button btnBack;
     StiGame::Gui::Label lblUp;
     StiGame::Gui::Label lblDown;
     StiGame::Gui::Label lblLeft;
     StiGame::Gui::Label lblRight;
 	StiGame::Gui::Label lblThrowMissile1;
+	StiGame::Gui::Label lblThrowMissile2;
+	StiGame::Gui::Label lblThrowMissile3;
     StiGame::ActionBinding bindings;
     private:
 };

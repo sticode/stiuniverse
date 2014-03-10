@@ -5,7 +5,7 @@
 #include "HighlightItem.h"
 #include "KeyEventListener.h"
 #include "MouseEventListener.h"
-
+#include "CompActionMap.h"
 namespace StiGame
 {
 
@@ -35,6 +35,9 @@ public:
 	void setHandleMouse(bool m_handleMouse);
 	Font* getFont(void);
 	void setFont(Font *m_font);
+	void fromActionMap(ActionMap *amap);
+	void fromActionMap(CompActionMap *cmap, int index);
+	ActionMap* createActionMap(std::string a_name);
 	static std::string GetMouseString(MouseButton mbutton);
 protected:
 	SDL_Keycode keycode;

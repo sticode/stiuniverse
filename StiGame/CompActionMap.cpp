@@ -53,7 +53,9 @@ ActionMap* CompActionMap::getMap(int index)
 			amap = (*lit);
 			break;
 		}
-	
+		
+		amap = (*lit);
+		
 		i++;
 	}
 	
@@ -111,8 +113,11 @@ bool CompActionMap::inputEquals(InputType it, int input)
 
 void CompActionMap::push(ActionMap *p_map)
 {
-    p_map->setName(name);
-    actions.push_back(p_map);
+	if(p_map->getInputType() != IT_COMP)
+	{
+		p_map->setName(name);
+		actions.push_back(p_map);
+	}
 }
 
 void CompActionMap::remove(ActionMap *r_map)

@@ -55,6 +55,7 @@ public:
 	virtual void onMouseMotion(Point *relp);
 	/// \brief Virtual method to override, called when the item is clicked
 	virtual void onClick(Point *relp);
+
 protected:
 	/// \brief Name of the item
 	std::string name;

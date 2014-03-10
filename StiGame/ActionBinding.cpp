@@ -21,6 +21,15 @@ void ActionBinding::addBinding(std::string bname, ActionMap *amap)
     bindings.insert(std::make_pair(bname, amap));
 }
 
+void ActionBinding::overwrite(std::string bname, ActionMap *nmap)
+{
+	ActionMap *omap = bindings[bname];
+	
+	bindings[bname] = nmap;
+	
+	delete omap;
+}
+
 std::string ActionBinding::getActionByMouseButton(Uint8 button)
 {
     std::map<std::string, ActionMap*>::iterator lit(bindings.begin()), lend(bindings.end());

@@ -1,1 +1,1 @@
-post:test.py
+post:test.py,${BUILD},${ROOT},${G++},${CPATH},${GC},${BUILD_NUM}

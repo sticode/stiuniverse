@@ -32,6 +32,21 @@ void KeyBind::renderCaption(void)
     stringBuffer = font->renderText(keyCaption, foreground);
 }
 
+KeyActionMap* KeyBind::createKeyActionMap(std::string a_name)
+{
+	KeyActionMap *kmap = new KeyActionMap(a_name, key);
+	return kmap;
+}
+
+void KeyBind::fromActionMap(ActionMap *amap)
+{
+	if(amap->getInputType() == IT_KEYBOARD)
+	{
+		SDL_Keycode kc = static_cast<SDL_Keycode>(amap->getIntValue());
+		setKey(kc);
+	}
+}
+
 Surface *KeyBind::render(void)
 {
     if(stringBuffer == 0)

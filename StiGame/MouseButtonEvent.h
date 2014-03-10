@@ -31,6 +31,8 @@ class MouseButtonEvent
 
         bool isDown(void);
 
+		static MouseButton GetMouseButtonFromSDL(Uint8 mbutton);
+		static Uint8 GetSDLButton(MouseButton mbutton);
     protected:
     private:
 };
