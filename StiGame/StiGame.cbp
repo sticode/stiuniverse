@@ -54,6 +54,12 @@
 			<Add option="-lSDL2_gfx" />
 			<Add directory="../lib/" />
 		</Linker>
+		<Unit filename="ActionBind.cpp">
+			<Option virtualFolder="src/gui/" />
+		</Unit>
+		<Unit filename="ActionBind.h">
+			<Option virtualFolder="headers/gui/" />
+		</Unit>
 		<Unit filename="ActionBinding.cpp">
 			<Option virtualFolder="src/bindings/" />
 		</Unit>
@@ -346,6 +352,18 @@
 			<Option virtualFolder="src/" />
 		</Unit>
 		<Unit filename="MouseButtonEvent.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseEventThrower.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="MultiRect.cpp">

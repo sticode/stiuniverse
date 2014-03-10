@@ -16,12 +16,16 @@ class CompActionMap :
         virtual ~CompActionMap();
         bool isInput(InputType it);
         bool inputEquals(InputType it, int input); //need a rework on this
-
+		InputType getInputType(void);
         std::string toString(void);
         void push(ActionMap *p_map);
         void remove(ActionMap *r_map);
 
         int getIntValue(void);
+		
+		int getCount(void);
+		ActionMap* getMap(int index);
+		
     protected:
         std::list<ActionMap*> actions;
     private:

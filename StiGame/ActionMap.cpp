@@ -36,10 +36,10 @@ namespace StiGame
 		return "to override";
 	}
 
-	/*InputType ActionMap::getInputType(void)
+	InputType ActionMap::getInputType(void)
 	{
 		return inputType;
-	}*/
+	}
 
     bool ActionMap::isPositionChecked()
     {

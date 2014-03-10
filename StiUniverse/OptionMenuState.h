@@ -4,6 +4,7 @@
 #include "GuiState.h"
 #include "Button.h"
 #include "KeyBind.h"
+#include "ActionBind.h"
 #include "Label.h"
 #include "EventListener.h"
 #include "ActionBinding.h"
@@ -25,11 +26,13 @@ class OptionMenuState :
     StiGame::Gui::KeyBind keyDown;
     StiGame::Gui::KeyBind keyLeft;
     StiGame::Gui::KeyBind keyRight;
+	StiGame::Gui::ActionBind acThrowMissile1;
     StiGame::Gui::Button btnBack;
     StiGame::Gui::Label lblUp;
     StiGame::Gui::Label lblDown;
     StiGame::Gui::Label lblLeft;
     StiGame::Gui::Label lblRight;
+	StiGame::Gui::Label lblThrowMissile1;
     StiGame::ActionBinding bindings;
     private:
 };

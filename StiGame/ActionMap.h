@@ -7,7 +7,7 @@
 
 namespace StiGame
 {
-	enum InputType { IT_KEYBOARD, IT_MOUSE, IT_JOYSTICK, IT_DEFAULT };
+	enum InputType { IT_KEYBOARD, IT_MOUSE, IT_JOYSTICK, IT_DEFAULT, IT_COMP };
 
 	class ActionMap
 	{
@@ -18,7 +18,7 @@ namespace StiGame
 			void setName(std::string m_name);
 			virtual void fromString(std::string str);
 			virtual std::string toString(void);
-			//InputType getInputType(void);
+			virtual InputType getInputType(void);
 			virtual bool isInput(InputType it);
 			static ActionMap* FromString(std::string a_name, std::string action);
 			virtual bool inputEquals(InputType it, int input) = 0;

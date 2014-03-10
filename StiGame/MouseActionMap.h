@@ -58,6 +58,9 @@ namespace StiGame
 			bool isPositionChecked(void);
 
             int getIntValue(void);
+			
+			InputType getInputType(void);
+			
 		protected:
 			/// \brief Mouse Button
 			Uint8 button;

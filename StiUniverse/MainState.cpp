@@ -24,7 +24,7 @@ MainState::MainState() : BaseGameState()
 	missileLaunchRect = Rectangle();
     tick = 0;
     speed_y = -50;
-    subscribe(this);
+    KeyEventThrower::subscribe(this);
 	rel_x = 0;
 	rel_y = 0;
 	vessel = new BatVessel();
@@ -566,7 +566,7 @@ void MainState::onStart(void)
 
     GameOverlay *overlay = new GameOverlay();
     overlay->setState(this);
-    subscribe(overlay);
+    KeyEventThrower::subscribe(overlay);
 
     gameMenu = overlay;
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include "KeyEventThrower.h"
+#include "MouseEventThrower.h"
 #include "BaseGameAction.h"
 #include "ActionBinding.h"
 #include "OverlayMenu.h"
@@ -14,7 +15,8 @@ class Viewport;
 /// \class BaseGameState
 /// \brief Base class to inherite when you want to create a custom state
 class BaseGameState :
-    public KeyEventThrower
+    public KeyEventThrower,
+	public MouseEventThrower
 {
 public:
 	/// \brief Create a new GameState

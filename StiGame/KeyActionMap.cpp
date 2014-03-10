@@ -28,10 +28,15 @@ namespace StiGame
 
 	}
 
-   int KeyActionMap::getIntValue(void)
+	int KeyActionMap::getIntValue(void)
     {
         return (int)keycode;
     }
+	
+	InputType KeyActionMap::getInputType(void)
+	{
+		return inputType;
+	}
 
 	std::string KeyActionMap::toString(void)
 	{

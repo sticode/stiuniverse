@@ -7,14 +7,14 @@ CompActionMap::CompActionMap()
 {
     //ctor
     name = "composite action";
-    inputType = IT_DEFAULT;
+    inputType = IT_COMP;
 }
 
 CompActionMap::CompActionMap(std::string m_name)
 {
     //ctor
     name = m_name;
-    inputType = IT_DEFAULT;
+    inputType = IT_COMP;
 }
 
 int CompActionMap::getIntValue(void)
@@ -28,8 +28,46 @@ int CompActionMap::getIntValue(void)
     return 0;
 }
 
+int CompActionMap::getCount(void)
+{
+	return actions.size();
+}
+
+
+InputType CompActionMap::getInputType(void)
+{
+	return inputType;
+}
+
+ActionMap* CompActionMap::getMap(int index)
+{
+	std::list<ActionMap*>::iterator lit(actions.begin()), lend(actions.end());
+	
+	ActionMap *amap = 0;
+	
+	int i = 0;
+	for(;lit!=lend;++lit)
+	{
+		if(i == index)
+		{
+			amap = (*lit);
+			break;
+		}
+	
+		i++;
+	}
+	
+	return amap;
+}
+
 bool CompActionMap::isInput(InputType it)
 {
+	if(it == IT_COMP)
+	{
+		return true;
+	}
+
+
     std::list<ActionMap*>::iterator lit(actions.begin()), lend(actions.end());
     for(;lit!=lend;++lit)
     {

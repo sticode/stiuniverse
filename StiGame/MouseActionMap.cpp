@@ -44,6 +44,11 @@ namespace StiGame
         return (int)button;
     }
 
+	InputType MouseActionMap::getInputType(void)
+	{
+		return inputType;
+	}
+	
 	void MouseActionMap::fromString(std::string str)
 	{
 		std::string action = str;

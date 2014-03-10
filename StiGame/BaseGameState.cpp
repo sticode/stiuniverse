@@ -134,20 +134,23 @@ void BaseGameState::onEvent(SDL_Event *evt)
     {
         KeyEventArgs *args = new KeyEventArgs(evt);
         keyDowns.push_back(evt->key.keysym.sym);
-        publish(this, args);
+        KeyEventThrower::publish(this, args);
         delete args;
     }
     else if(evt->type == SDL_KEYUP)
     {
         KeyEventArgs *args = new KeyEventArgs(evt);
         keyDowns.remove(evt->key.keysym.sym);
-        publish(this, args);
+        KeyEventThrower::publish(this, args);
         delete args;
     }
     else if(evt->type == SDL_MOUSEBUTTONDOWN)
     {
         Uint8 mbutton = evt->button.button;
         mouseButtons.push_back(mbutton);
+		
+		MouseButtonEvent mevt = MouseButtonEvent(evt);
+		MouseEventThrower::publish(this, &mevt);
     }
     else if(evt->type == SDL_MOUSEBUTTONUP)
     {
@@ -173,6 +176,9 @@ void BaseGameState::onEvent(SDL_Event *evt)
 
         Uint8 mbutton = evt->button.button;
         mouseButtons.remove(mbutton);
+		
+		MouseButtonEvent mevt = MouseButtonEvent(evt);
+		MouseEventThrower::publish(this, &mevt);
     }
 	else if(evt->type == SDL_MOUSEMOTION)
 	{

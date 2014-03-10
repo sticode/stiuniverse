@@ -58,12 +58,25 @@ OptionMenuState::OptionMenuState() : GuiState()
     lblLeft.setX(20);
     lblLeft.setY(250);
     lblLeft.setCaption("Left : ");
+	
+	acThrowMissile1 = Gui::ActionBind();
+	acThrowMissile1.setX(100);
+	acThrowMissile1.setY(300);
+	acThrowMissile1.setHandleMouse(true);
+	
+	lblThrowMissile1 = Gui::Label();
+	lblThrowMissile1.setX(20);
+	lblThrowMissile1.setY(300);
+	lblThrowMissile1.setCaption("Missile 1 : ");
 
-    subscribe(&keyUp);
-    subscribe(&keyDown);
-    subscribe(&keyRight);
-    subscribe(&keyLeft);
+    KeyEventThrower::subscribe(&keyUp);
+    KeyEventThrower::subscribe(&keyDown);
+    KeyEventThrower::subscribe(&keyRight);
+    KeyEventThrower::subscribe(&keyLeft);
 
+	KeyEventThrower::subscribe(&acThrowMissile1);
+	MouseEventThrower::subscribe(&acThrowMissile1);
+	
     add(&btnBack);
     add(&keyUp);
     add(&lblUp);
@@ -73,6 +86,8 @@ OptionMenuState::OptionMenuState() : GuiState()
     add(&lblRight);
     add(&keyLeft);
     add(&lblLeft);
+	add(&acThrowMissile1);
+	add(&lblThrowMissile1);
 }
 
 void OptionMenuState::saveBindings(void)

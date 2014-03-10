@@ -36,6 +36,9 @@ namespace StiGame
 			bool inputEquals(InputType it, int input);
 
 			int getIntValue(void);
+			
+			InputType getInputType(void);
+			
 		protected:
 			/// \brief Key Code
 			SDL_Keycode keycode;
