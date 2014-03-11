@@ -12,7 +12,7 @@ namespace Gui
 const int ActionBind::DefaultWidth = 100;
 const int ActionBind::DefaultHeight = 20;
 
-ActionBind::ActionBind() 
+ActionBind::ActionBind()
 	: HighlightItem("ActionBind")
 {
 	font = style->getNormalFont();
@@ -75,15 +75,15 @@ void ActionBind::fromActionMap(ActionMap *amap)
 void ActionBind::fromActionMap(CompActionMap *cmap, int index)
 {
 	ActionMap *amap = cmap->getMap(index);
-	
+
 	fromActionMap(amap);
-	
+
 }
 
 Surface* ActionBind::render(void)
 {
 	Surface *buffer = new Surface(width, height);
-	
+
 	if(focus)
 	{
 		buffer->fill(highlightBackground);
@@ -92,34 +92,34 @@ Surface* ActionBind::render(void)
 	{
 		buffer->fill(background);
 	}
-	
+
 	SDL_Rect src = SDL_Rect();
 	SDL_Rect dst = SDL_Rect();
-	
+
 	stringBuffer->updateSDLRect(&src);
 	stringBuffer->updateSDLRect(&dst);
-	
+
 	dst.x = (width - dst.w) / 2;
 	dst.y = (height - dst.h) / 2;
-	
+
 	buffer->blit(stringBuffer, &src, &dst);
-	
+
 	PRect border = PRect();
-	
+
 	border.setX(0);
 	border.setY(0);
 	border.setWidth(width - 1);
 	border.setHeight(height - 1);
-	
+
 	Color *c_border = foreground;
-	
+
 	if(focus)
 	{
 		c_border = highlightForeground;
 	}
-	
+
 	border.draw(buffer->getSDLSurface(), c_border);
-	
+
 	return buffer;
 }
 
@@ -136,24 +136,31 @@ void ActionBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
 
 void ActionBind::handleEvent(MouseEventThrower *src, MouseButtonEvent *args)
 {
-	if(focus && handleMouse)
-	{
-		mbutton = args->getMouseButton();
-		renderCaption();
-		mouseButton = true;
-		focus = false;
-	}
-	
+    if(contains(args->getX(), args->getY()) && args->isDown())
+    {
+        if(focus && handleMouse)
+        {
+            mbutton = args->getMouseButton();
+            renderCaption();
+            mouseButton = true;
+            focus = false;
+        }
+        else if(!focus)
+        {
+            focus = true;
+        }
+    }
+
 }
 
-void ActionBind::onClick(Point *relpt)
+/*void ActionBind::onClick(Point *relpt)
 {
 	if(!focus)
 	{
 		//need to test the behaviour on this when a MouseButtonEvent is launched
 		focus = true;
 	}
-}
+}*/
 
 SDL_Keycode ActionBind::getKey(void)
 {
@@ -208,9 +215,9 @@ void ActionBind::renderCaption(void)
 	{
 		delete stringBuffer;
 	}
-	
+
 	std::string txt = "";
-	
+
 	if(mouseButton)
 	{
 		txt = GetMouseString(mbutton);
@@ -219,14 +226,14 @@ void ActionBind::renderCaption(void)
 	{
 		txt = SDL_GetKeyName(keycode);
 	}
-	
+
 	stringBuffer = font->renderText(txt, foreground);
 }
 
 std::string ActionBind::GetMouseString(MouseButton mbutton)
 {
 	std::string m_str = "NONE";
-	
+
 	if(mbutton == MB_LEFT)
 	{
 		m_str = "MB LEFT";
@@ -247,7 +254,7 @@ std::string ActionBind::GetMouseString(MouseButton mbutton)
 	{
 		m_str = "MB X2";
 	}
-	
+
 	return m_str;
 }
 

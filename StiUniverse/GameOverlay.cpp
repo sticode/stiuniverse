@@ -5,7 +5,8 @@ using namespace StiGame;
 namespace StiUniverse
 {
 
-GameOverlay::GameOverlay() : Gui::OverlayMenu()
+GameOverlay::GameOverlay()
+    : Gui::OverlayMenu()
 {
     //ctor
     state = 0;

@@ -25,7 +25,7 @@ public:
 	Surface* render(void);
 	void handleEvent(KeyEventThrower *src, KeyEventArgs *args);
 	void handleEvent(MouseEventThrower *src, MouseButtonEvent *args);
-	void onClick(Point *relpt);
+	//void onClick(Point *relpt);
 	SDL_Keycode getKey(void);
 	void setKey(SDL_Keycode m_keycode);
 	MouseButton getMouseButton(void);
@@ -48,7 +48,7 @@ protected:
 	Font *font;
 	Surface *stringBuffer;
 	void renderCaption(void);
-	
+
 };
 
 }

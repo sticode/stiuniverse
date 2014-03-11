@@ -106,10 +106,7 @@ Surface *KeyBind::render(void)
 
 void KeyBind::onClick(Point *relp)
 {
-    if(!focus)
-    {
-        focus = true;
-    }
+    focus = !focus;
 }
 
 void KeyBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)

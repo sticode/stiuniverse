@@ -298,6 +298,7 @@ void MainState::onPaint(SDL_Renderer *renderer)
     vessel->tick();
 
     }
+
     //vessel_sprite.setX((width - vessel_sprite.getWidth()) / 2);
     //vessel_sprite.setY(height - vessel_sprite.getHeight() - 50);
     //sprite testing
