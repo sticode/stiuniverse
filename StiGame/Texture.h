@@ -104,6 +104,10 @@ class Texture :
 		/// \param center Center of rotation
 		/// \param flip Desired Flip
         void renderCopyEx(SDL_Rect *src, SDL_Rect *dst, double angle, SDL_Point *center, SDL_RendererFlip flip);
+		
+		
+		Surface* getSurface(void);
+		
     protected:
 		/// \brief Pointer to SDL_Texture
         SDL_Texture *sdlTexture;
@@ -116,6 +120,9 @@ class Texture :
 
 		/// \brief Error handling method
         void handleError(void);
+		
+		Surface *surface;
+		
     private:
 
 		/// \brief Texture initializer

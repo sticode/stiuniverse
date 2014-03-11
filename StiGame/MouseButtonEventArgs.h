@@ -1,5 +1,5 @@
-#ifndef MOUSEBUTTONEVENT_H
-#define MOUSEBUTTONEVENT_H
+#ifndef MOUSEBUTTONEVENTARGS_H
+#define MOUSEBUTTONEVENTARGS_H
 
 #include "EventArgs.h"
 
@@ -14,13 +14,13 @@ enum MouseButton {
 	MB_X2 = 5
 };
 
-class MouseButtonEvent
+class MouseButtonEventArgs
     : public EventArgs
 {
     public:
-        MouseButtonEvent();
-        MouseButtonEvent(SDL_Event *m_sdlEvent);
-        virtual ~MouseButtonEvent();
+        MouseButtonEventArgs();
+        MouseButtonEventArgs(SDL_Event *m_sdlEvent);
+        virtual ~MouseButtonEventArgs();
 
         Sint32 getX(void);
         Sint32 getY(void);
@@ -38,4 +38,4 @@ class MouseButtonEvent
 };
 
 }
-#endif // MOUSEBUTTONEVENT_H
+#endif // MOUSEBUTTONEVENTARGS_H

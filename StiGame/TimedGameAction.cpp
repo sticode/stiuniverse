@@ -38,7 +38,7 @@ void TimedGameAction::testKeycode(SDL_Keycode keycode)
 }
 
 
-void TimedGameAction::testMouseButton(MouseButtonEvent *mbEvt)
+void TimedGameAction::testMouseButton(MouseButtonEventArgs *mbEvt)
 {
     if(actionMap->isPositionChecked())
     {

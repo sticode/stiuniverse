@@ -57,6 +57,30 @@ SDL_Rect *Rectangle::getSDLRect(void)
 	return rect;
 }
 
+bool Rectangle::equals(int r_x, int r_y, int r_w, int r_h)
+{
+	return ( 
+		x == r_x && y == r_y &&
+		width == r_w && height == r_h
+	);
+}
+
+bool Rectangle::equals(Rectangle *rect)
+{
+	return (
+		x == rect->getX() && y == rect->getY() &&
+		width == rect->getWidth() && height == rect->getHeight()
+	);
+}
+
+bool Rectangle::equals(SDL_Rect *rect)
+{
+	return (
+		x == rect->x && y == rect->y &&
+		width == rect->w && height == rect->h
+	);
+}
+
 bool Rectangle::contains(Point *pt)
 {
 	return contains(pt->getX(), pt->getY());

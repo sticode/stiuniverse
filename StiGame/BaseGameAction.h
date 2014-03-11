@@ -16,7 +16,7 @@ class BaseGameAction
 
         virtual void testKeycode(SDL_Keycode keycode);
         virtual void testMouse(Uint8 button);
-        virtual void testMouseButton(MouseButtonEvent *mbEvt);
+        virtual void testMouseButton(MouseButtonEventArgs *mbEvt);
         std::string getName(void);
         ActionMap* getActionMap(void);
         void setActionMap(ActionMap *m_actionMap);

@@ -1,20 +1,20 @@
-#include "MouseButtonEvent.h"
+#include "MouseButtonEventArgs.h"
 namespace StiGame
 {
 
-MouseButtonEvent::MouseButtonEvent()
+MouseButtonEventArgs::MouseButtonEventArgs()
     : EventArgs()
 {
     //ctor
 }
 
-MouseButtonEvent::MouseButtonEvent(SDL_Event *m_sdlEvent)
+MouseButtonEventArgs::MouseButtonEventArgs(SDL_Event *m_sdlEvent)
     : EventArgs(m_sdlEvent)
 {
 
 }
 
-Uint8 MouseButtonEvent::GetSDLButton(MouseButton mbutton)
+Uint8 MouseButtonEventArgs::GetSDLButton(MouseButton mbutton)
 {
 	if(mbutton == MB_LEFT)
 	{
@@ -40,7 +40,7 @@ Uint8 MouseButtonEvent::GetSDLButton(MouseButton mbutton)
 	return SDL_BUTTON_LEFT;
 }
 
-MouseButton MouseButtonEvent::GetMouseButtonFromSDL(Uint8 mbutton)
+MouseButton MouseButtonEventArgs::GetMouseButtonFromSDL(Uint8 mbutton)
 {
 	if(mbutton == SDL_BUTTON_LEFT)
 	{
@@ -66,22 +66,22 @@ MouseButton MouseButtonEvent::GetMouseButtonFromSDL(Uint8 mbutton)
 	return MB_LEFT;
 }
 
-Sint32 MouseButtonEvent::getX(void)
+Sint32 MouseButtonEventArgs::getX(void)
 {
     return sdlEvent->button.x;
 }
 
-Sint32 MouseButtonEvent::getY(void)
+Sint32 MouseButtonEventArgs::getY(void)
 {
     return sdlEvent->button.y;
 }
 
-Uint8 MouseButtonEvent::getButton(void)
+Uint8 MouseButtonEventArgs::getButton(void)
 {
     return sdlEvent->button.button;
 }
 
-MouseButton MouseButtonEvent::getMouseButton(void)
+MouseButton MouseButtonEventArgs::getMouseButton(void)
 {
 	Uint8 button = sdlEvent->button.button;
 	
@@ -109,17 +109,17 @@ MouseButton MouseButtonEvent::getMouseButton(void)
 	return MB_LEFT;
 }
 
-Uint32 MouseButtonEvent::getWindowID(void)
+Uint32 MouseButtonEventArgs::getWindowID(void)
 {
     return sdlEvent->button.windowID;
 }
 
-bool MouseButtonEvent::isDown(void)
+bool MouseButtonEventArgs::isDown(void)
 {
     return (sdlEvent->button.state == SDL_PRESSED);
 }
 
-MouseButtonEvent::~MouseButtonEvent()
+MouseButtonEventArgs::~MouseButtonEventArgs()
 {
     //dtor
 }

@@ -51,7 +51,7 @@ namespace StiGame
         return (inputType == it);
 	}
 
-	bool ActionMap::inputMouseEquals(MouseButtonEvent *mbEvt)
+	bool ActionMap::inputMouseEquals(MouseButtonEventArgs *mbEvt)
 	{
 	    return false;
 	}

@@ -1,4 +1,5 @@
 #include "Texture.h"
+#include "MathTK.h"
 #include <iostream>
 
 namespace StiGame
@@ -11,6 +12,7 @@ namespace StiGame
         sdlTexture = 0;
         format = SDL_PIXELFORMAT_ABGR8888;
         access = SDL_TEXTUREACCESS_STATIC;
+		surface = 0;
     }
 
     Texture::Texture(void)
@@ -52,33 +54,39 @@ namespace StiGame
         initialize();
 
         renderer = m_renderer;
-        SDL_Surface *tmp_sur = IMG_Load(img_path);
+        //SDL_Surface *tmp_sur = IMG_Load(img_path);
 
-        width = tmp_sur->w;
-        height = tmp_sur->h;
-
-        sdlTexture = SDL_CreateTextureFromSurface(renderer, tmp_sur);
-
-        SDL_FreeSurface(tmp_sur);
-    }
-
-    Texture::Texture(SDL_Renderer *m_renderer, SDL_Surface *surface)
-    {
-        initialize();
-        renderer = m_renderer;
-        width = surface->w;
-        height = surface->h;
-
-        sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
-    }
-
-    Texture::Texture(SDL_Renderer *m_renderer, Surface *surface)
-    {
-        initialize();
-        renderer = m_renderer;
+		surface = new Surface(img_path);
+		
         width = surface->getWidth();
         height = surface->getHeight();
 
+        sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
+
+        //SDL_FreeSurface(tmp_sur);
+    }
+
+    Texture::Texture(SDL_Renderer *m_renderer, SDL_Surface *m_surface)
+    {
+        initialize();
+        renderer = m_renderer;
+		surface = new Surface(m_surface);
+        width = surface->getWidth();
+        height = surface->getHeight();
+
+		surface->setReleaseSurface(true);
+		
+        sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
+    }
+
+    Texture::Texture(SDL_Renderer *m_renderer, Surface *m_surface)
+    {
+        initialize();
+        renderer = m_renderer;
+		surface = m_surface;
+        width = surface->getWidth();
+        height = surface->getHeight();
+		
         sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
     }
 
@@ -155,10 +163,10 @@ namespace StiGame
             handleError();
         }
     }
-
+																// use angle class ? or just use Math:: static method
     void Texture::renderCopyEx(SDL_Rect *src, SDL_Rect *dst, double angle, SDL_Point *center, SDL_RendererFlip flip)
     {
-        if(SDL_RenderCopyEx(renderer, sdlTexture, src, dst, (angle*180)/3.1416, center, flip) != 0)
+        if(SDL_RenderCopyEx(renderer, sdlTexture, src, dst, Math::TK::rad_to_degree(angle), center, flip) != 0)
         {
             handleError();
         }
@@ -171,9 +179,19 @@ namespace StiGame
         std::cout << sdl_error << std::endl;
     }
 
+	Surface* Texture::getSurface(void)
+	{
+		return surface;
+	}
+	
     Texture::~Texture()
     {
         //dtor
+		if(surface != 0)
+		{
+			delete surface;
+		}
+		
         SDL_DestroyTexture(sdlTexture);
     }
 

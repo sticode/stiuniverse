@@ -70,6 +70,10 @@ public:
 	/// \brief Get Right Bottom point
 	/// \return Point
 	Point *getRightBottom(void);
+	
+	virtual bool equals(int r_x, int r_y, int r_w, int r_h);
+	virtual bool equals(Rectangle *rect);
+	virtual bool equals(SDL_Rect *rect);
 };
 }
 

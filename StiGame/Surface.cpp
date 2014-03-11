@@ -328,6 +328,15 @@ namespace StiGame {
         return Pixel(px, sdlSurface->format);
     }
 
+	void Surface::saveBmp(std::string dest)
+	{
+		if(SDL_SaveBMP(sdlSurface, dest.c_str()) != 0)
+		{
+			//error handling
+			//SDL_GetError();
+		}
+	}
+	
 	Surface::~Surface(void)
 	{
 		freeSurface();

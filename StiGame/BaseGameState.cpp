@@ -149,8 +149,8 @@ void BaseGameState::onEvent(SDL_Event *evt)
         Uint8 mbutton = evt->button.button;
         mouseButtons.push_back(mbutton);
 		
-		MouseButtonEvent mevt = MouseButtonEvent(evt);
-		MouseEventThrower::publish(this, &mevt);
+		MouseButtonEventArgs mevt = MouseButtonEventArgs(evt);
+		MouseButtonEventThrower::publish(this, &mevt);
     }
     else if(evt->type == SDL_MOUSEBUTTONUP)
     {
@@ -177,8 +177,8 @@ void BaseGameState::onEvent(SDL_Event *evt)
         Uint8 mbutton = evt->button.button;
         mouseButtons.remove(mbutton);
 		
-		MouseButtonEvent mevt = MouseButtonEvent(evt);
-		MouseEventThrower::publish(this, &mevt);
+		MouseButtonEventArgs mevt = MouseButtonEventArgs(evt);
+		MouseButtonEventThrower::publish(this, &mevt);
     }
 	else if(evt->type == SDL_MOUSEMOTION)
 	{
@@ -201,6 +201,14 @@ void BaseGameState::onEvent(SDL_Event *evt)
             }
 
         }
+		
+		MouseMotionEventArgs moevt = MouseMotionEventArgs(evt);
+		MouseMotionEventThrower::publish(this, &moevt);
+	}
+	else if(evt->type == SDL_MOUSEWHEEL)
+	{
+		MouseWheelEventArgs mwevt = MouseWheelEventArgs(evt);
+		MouseWheelEventThrower::publish(this, &mwevt);
 	}
 
     if(handleQuit && evt->type == SDL_QUIT)

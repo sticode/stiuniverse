@@ -124,7 +124,7 @@ namespace StiGame
         return positionChecked;
     }
 
-    bool MouseActionMap::inputMouseEquals(MouseButtonEvent *mbEvt)
+    bool MouseActionMap::inputMouseEquals(MouseButtonEventArgs *mbEvt)
     {
         if(positionChecked)
         {

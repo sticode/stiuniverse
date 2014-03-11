@@ -38,7 +38,7 @@ ActionMap* ActionBind::createActionMap(std::string a_name)
 {
 	if(mouseButton)
 	{
-		Uint8 mb = MouseButtonEvent::GetSDLButton(mbutton);
+		Uint8 mb = MouseButtonEventArgs::GetSDLButton(mbutton);
 		MouseActionMap *mmap = new MouseActionMap(a_name, mb);
 		return mmap;
 	}
@@ -66,7 +66,7 @@ void ActionBind::fromActionMap(ActionMap *amap)
 	else if(amap->getInputType() == IT_MOUSE)
 	{
 		Uint8 sdl_mb = static_cast<Uint8>(amap->getIntValue());
-		mbutton = MouseButtonEvent::GetMouseButtonFromSDL(sdl_mb);
+		mbutton = MouseButtonEventArgs::GetMouseButtonFromSDL(sdl_mb);
 		mouseButton = true;
 		renderCaption();
 	}
@@ -134,7 +134,7 @@ void ActionBind::handleEvent(KeyEventThrower *src, KeyEventArgs *args)
 	}
 }
 
-void ActionBind::handleEvent(MouseEventThrower *src, MouseButtonEvent *args)
+void ActionBind::handleEvent(MouseButtonEventThrower *src, MouseButtonEventArgs *args)
 {
     if(contains(args->getX(), args->getY()) && args->isDown())
     {

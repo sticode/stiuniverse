@@ -30,7 +30,7 @@ void BaseGameAction::setActionMap(ActionMap *m_actionMap)
     actionMap = m_actionMap;
 }
 
-void BaseGameAction::testMouseButton(MouseButtonEvent *mbEvt)
+void BaseGameAction::testMouseButton(MouseButtonEventArgs *mbEvt)
 {
     if(actionMap->isPositionChecked())
     {

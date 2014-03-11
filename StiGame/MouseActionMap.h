@@ -44,7 +44,7 @@ namespace StiGame
 			static Uint8 GetIntValue(std::string m_str);
 
 			bool inputEquals(InputType it, int input);
-            bool inputMouseEquals(MouseButtonEvent *mbEvt);
+            bool inputMouseEquals(MouseButtonEventArgs *mbEvt);
 
 			void setX(int r_x);
 			void setY(int r_y);

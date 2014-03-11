@@ -68,4 +68,12 @@ bool Point::equals(Point *pt)
     return equals(pt->getX(), pt->getY());
 }
 
+bool Point::equals(SDL_Point *pt)
+{
+	return (
+		x == pt->x &&
+		y == pt->y
+	);
+}
+
 }

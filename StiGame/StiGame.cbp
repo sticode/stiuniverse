@@ -348,22 +348,58 @@
 		<Unit filename="MouseActionMap.h">
 			<Option virtualFolder="headers/bindings/" />
 		</Unit>
-		<Unit filename="MouseButtonEvent.cpp">
+		<Unit filename="MouseButtonEventArgs.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="MouseButtonEvent.h">
+		<Unit filename="MouseButtonEventArgs.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="MouseEventListener.cpp">
+		<Unit filename="MouseButtonEventListener.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="MouseEventListener.h">
+		<Unit filename="MouseButtonEventListener.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		<Unit filename="MouseEventThrower.cpp">
+		<Unit filename="MouseButtonEventThrower.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="MouseEventThrower.h">
+		<Unit filename="MouseButtonEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseMotionEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseMotionEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseMotionEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseMotionEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseMotionEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseMotionEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseWheelEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseWheelEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseWheelEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseWheelEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="MouseWheelEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="MouseWheelEventThrower.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="MultiRect.cpp">

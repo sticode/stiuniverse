@@ -9,6 +9,15 @@ int main(int argc, char** argv)
     std::string option = "empty";
     std::string var1 = "empty";
 
+	std::cout << "StiGame Asset Tools" << std::endl;
+	std::cout << "-------------------" << std::endl;
+	
+	if(argc < 2)
+	{
+		std::cout << "Missing arguments !" << std::endl;
+		
+	}
+	
     for(int i=0; i<argc; i++)
     {
         if(i == 1)

@@ -15,7 +15,7 @@ public:
     /// \brief Constructor
 	EventListener(void);
 	/// \brief Destructor
-	~EventListener(void);
+	virtual ~EventListener(void);
 	/// \brief Method to override to handle your event
 	/// \param src Event source
 	/// \param evt Event args

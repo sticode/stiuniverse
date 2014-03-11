@@ -15,7 +15,7 @@ class TimedGameAction :
 
         void testKeycode(SDL_Keycode keycode);
         void testMouse(Uint8 button);
-        void testMouseButton(MouseButtonEvent *mbEvt);
+        void testMouseButton(MouseButtonEventArgs *mbEvt);
 
         int getCooldown(void);
         unsigned long long getLastAction(void);

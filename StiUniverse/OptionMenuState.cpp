@@ -95,13 +95,13 @@ OptionMenuState::OptionMenuState() : GuiState()
     KeyEventThrower::subscribe(&keyLeft);
 
 	KeyEventThrower::subscribe(&acThrowMissile1);
-	MouseEventThrower::subscribe(&acThrowMissile1);
+	MouseButtonEventThrower::subscribe(&acThrowMissile1);
 	
 	KeyEventThrower::subscribe(&acThrowMissile2);
-	MouseEventThrower::subscribe(&acThrowMissile2);
+	MouseButtonEventThrower::subscribe(&acThrowMissile2);
 	
 	KeyEventThrower::subscribe(&acThrowMissile3);
-	MouseEventThrower::subscribe(&acThrowMissile3);
+	MouseButtonEventThrower::subscribe(&acThrowMissile3);
 	
     add(&btnBack);
     add(&keyUp);

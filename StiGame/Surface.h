@@ -5,7 +5,7 @@
 #include "Pixel.h"
 #include "Primitive.h"
 #include "Rectangle.h"
-
+#include <string>
 /// \namespace StiGame
 /// \brief Namespace that contains all classes to work with SDLEngine
 ///
@@ -139,6 +139,8 @@ public:
 	void updateSDLRect(SDL_Rect *rect);
 	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);
 	void updateSDLRect(SDL_Rect *rect, Point *pt);
+	
+	void saveBmp(std::string dest);
 };
 
 }
