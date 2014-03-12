@@ -4,6 +4,9 @@
 #include "MouseButtonEventThrower.h"
 #include "MouseMotionEventThrower.h"
 #include "MouseWheelEventThrower.h"
+#include "ControllerAxisEventThrower.h"
+#include "ControllerButtonEventThrower.h"
+#include "ControllerDeviceEventThrower.h"
 #include "BaseGameAction.h"
 #include "ActionBinding.h"
 #include "OverlayMenu.h"
@@ -20,7 +23,10 @@ class BaseGameState :
     public KeyEventThrower,
 	public MouseButtonEventThrower,
 	public MouseMotionEventThrower,
-	public MouseWheelEventThrower
+	public MouseWheelEventThrower,
+	public ControllerAxisEventThrower,
+	public ControllerButtonEventThrower,
+	public ControllerDeviceEventThrower
 {
 public:
 	/// \brief Create a new GameState

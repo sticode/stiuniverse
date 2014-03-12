@@ -210,6 +210,24 @@ void BaseGameState::onEvent(SDL_Event *evt)
 		MouseWheelEventArgs mwevt = MouseWheelEventArgs(evt);
 		MouseWheelEventThrower::publish(this, &mwevt);
 	}
+	else if(evt->type == SDL_CONTROLLERAXISMOTION)
+	{
+		ControllerAxisEventArgs args = ControllerAxisEventArgs(evt);
+		ControllerAxisEventThrower::publish(this, &args);
+	}
+	else if(evt->type == SDL_CONTROLLERBUTTONUP || evt->type == SDL_CONTROLLERBUTTONDOWN)
+	{
+		ControllerButtonEventArgs args = ControllerButtonEventArgs(evt);
+		ControllerButtonEventThrower::publish(this, &args);
+	}
+	else if(evt->type == SDL_CONTROLLERDEVICEADDED ||
+			evt->type == SDL_CONTROLLERDEVICEREMOVED ||
+			evt->type == SDL_CONTROLLERDEVICEREMAPPED 
+			)
+	{
+		ControllerDeviceEventArgs args = ControllerDeviceEventArgs(evt);
+		ControllerDeviceEventThrower::publish(this, &args);
+	}
 
     if(handleQuit && evt->type == SDL_QUIT)
     {

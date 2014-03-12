@@ -156,6 +156,66 @@
 		<Unit filename="CompActionMap.h">
 			<Option virtualFolder="headers/bindings/" />
 		</Unit>
+		<Unit filename="Controller.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Controller.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerAxisEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerButtonEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="ControllerDeviceEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="Cursor.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
