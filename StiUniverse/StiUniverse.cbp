@@ -87,10 +87,16 @@
 		<Unit filename="SpaceHud.h" />
 		<Unit filename="SpaceMapFile.cpp" />
 		<Unit filename="SpaceMapFile.h" />
+		<Unit filename="SpaceObject.cpp" />
+		<Unit filename="SpaceObject.h" />
 		<Unit filename="SpaceVessel.cpp" />
 		<Unit filename="SpaceVessel.h" />
 		<Unit filename="UnitMovementAction.cpp" />
 		<Unit filename="UnitMovementAction.h" />
+		<Unit filename="UDefinition.cpp" />
+		<Unit filename="UDefinition.h" />
+		<Unit filename="UObject.cpp" />
+		<Unit filename="UObject.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
