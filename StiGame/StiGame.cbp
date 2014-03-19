@@ -720,6 +720,24 @@
 		<Unit filename="ViewportArea.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="WindowEventArgs.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="WindowEventArgs.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="WindowEventListener.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="WindowEventListener.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="WindowEventThrower.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="WindowEventThrower.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

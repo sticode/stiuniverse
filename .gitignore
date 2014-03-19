@@ -11,6 +11,7 @@
 *.obj
 */bin/*
 */obj/*
+*.hash
 #bin/*
 obj/*
 deploy/*
