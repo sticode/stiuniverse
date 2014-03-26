@@ -642,6 +642,19 @@
 		<Unit filename="Surface.h">
 			<Option virtualFolder="headers/core/" />
 		</Unit>
+		<Unit filename="TabItem.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="TabItem.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		
+		<Unit filename="TabPanel.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="TabPanel.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="Table.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>

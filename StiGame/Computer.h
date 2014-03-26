@@ -16,7 +16,9 @@ public:
 	static std::string CurrentAudioDriver(void);
 	static std::list<std::string> GetAudioDrivers(void);
 	static std::list<std::string> GetVideoDrivers(void);
-
+	static std::string GetPlatform(void);
+	static int GetCPUCacheSize(void);
+	static int GetCPUCount(void);
 protected:
 	Computer();
 	virtual ~Computer();

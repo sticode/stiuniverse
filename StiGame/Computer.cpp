@@ -51,6 +51,23 @@ std::list<std::string> Computer::GetVideoDrivers(void)
 }
 
 
+std::string Computer::GetPlatform(void)
+{
+	std::string platform = "";
+	platform = SDL_GetPlatform();
+	return platform;
+}
+
+int Computer::GetCPUCacheSize(void)
+{
+	return SDL_GetCPUCacheLineSize();
+}
+
+int Computer::GetCPUCount(void)
+{
+	return SDL_GetCPUCount();
+}
+
 Computer::Computer() {}
 Computer::~Computer() {}
 
