@@ -95,17 +95,20 @@ void Viewport::resize(int m_width, int m_height)
 	}
 }
 
-void Viewport::handleWindowEvent(SDL_WindowEvent evt)
+void Viewport::handleWindowEvent(SDL_Event *evt)
 {
-    switch(evt.event)
+    switch(evt->window.event)
     {
         case SDL_WINDOWEVENT_RESIZED:
-            resize(evt.data1, evt.data2);
+            resize(evt->window.data1, evt->window.data2);
             break;
         case SDL_WINDOWEVENT_MOVED:
             updateWindowPosition();
             break;
     }
+	
+	WindowEventArgs wargs = WindowEventArgs(evt);
+	publish(this, &wargs);
 
 }
 
@@ -134,7 +137,7 @@ void Viewport::tick(void)
 
 				break;
             case SDL_WINDOWEVENT:
-                handleWindowEvent(evt.window);
+                handleWindowEvent(&evt);
                 break;
 
 			default:

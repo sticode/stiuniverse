@@ -4,12 +4,14 @@
 #include "BaseGameState.h"
 #include "Dimension.h"
 #include "Cursor.h"
+#include "WindowEventThrower.h"
 
 namespace StiGame
 {
 /// \class Viewport
 /// \brief Engine Screen Viewport, handling the screen output
-class Viewport
+class Viewport :
+	public WindowEventThrower
 {
 private:
 	/// \brief List availabe video resolution
@@ -69,8 +71,7 @@ protected:
 	bool isModePresent(Dimension *dimension);
 	/// \brief Handle window event
 	/// \param evt SDL_WindowEvent
-	void handleWindowEvent(SDL_WindowEvent evt);
-
+	void handleWindowEvent(SDL_Event *evt);
 
     Cursor* cursor;
 public:

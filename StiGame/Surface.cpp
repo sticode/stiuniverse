@@ -337,6 +337,16 @@ namespace StiGame {
 		}
 	}
 	
+	void Surface::setClipRect(SDL_Rect *rect)
+	{
+		SDL_SetClipRect(sdlSurface, rect);
+	}
+	
+	void Surface::updateClipRect(SDL_Rect *rect)
+	{
+		SDL_GetClipRect(sdlSurface, rect);
+	}
+	
 	Surface::~Surface(void)
 	{
 		freeSurface();

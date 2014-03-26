@@ -153,6 +153,12 @@
 		<Unit filename="CompActionMap.cpp">
 			<Option virtualFolder="src/bindings/" />
 		</Unit>
+		<Unit filename="Computer.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="Computer.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
 		<Unit filename="CompActionMap.h">
 			<Option virtualFolder="headers/bindings/" />
 		</Unit>

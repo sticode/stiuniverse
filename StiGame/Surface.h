@@ -140,6 +140,9 @@ public:
 	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);
 	void updateSDLRect(SDL_Rect *rect, Point *pt);
 	
+	void setClipRect(SDL_Rect *rect);
+	void updateClipRect(SDL_Rect *rect);
+	
 	void saveBmp(std::string dest);
 };
 
