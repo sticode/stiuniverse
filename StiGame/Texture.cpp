@@ -57,7 +57,7 @@ namespace StiGame
         //SDL_Surface *tmp_sur = IMG_Load(img_path);
 
 		surface = new Surface(img_path);
-		
+
         width = surface->getWidth();
         height = surface->getHeight();
 
@@ -74,8 +74,8 @@ namespace StiGame
         width = surface->getWidth();
         height = surface->getHeight();
 
-		surface->setReleaseSurface(true);
-		
+		//surface->setReleaseSurface(true);
+
         sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
     }
 
@@ -86,7 +86,7 @@ namespace StiGame
 		surface = m_surface;
         width = surface->getWidth();
         height = surface->getHeight();
-		
+
         sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
     }
 
@@ -183,16 +183,18 @@ namespace StiGame
 	{
 		return surface;
 	}
-	
+
     Texture::~Texture()
     {
         //dtor
-		if(surface != 0)
+		SDL_DestroyTexture(sdlTexture);
+
+        //surface->setReleaseSurface(true);
+        //bug here cause SEGFAULT
+		if(surface != 0 && surface->getReleaseSurface())
 		{
 			delete surface;
 		}
-		
-        SDL_DestroyTexture(sdlTexture);
     }
 
 }

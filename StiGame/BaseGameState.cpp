@@ -96,7 +96,7 @@ void BaseGameState::renderOverlayFrames(SDL_Renderer *renderer)
 
             texture.renderCopy(src, dst);
 
-            delete sur;
+            //delete sur; possible SEGFAULT cause
         }
     }
 
@@ -148,7 +148,7 @@ void BaseGameState::onEvent(SDL_Event *evt)
     {
         Uint8 mbutton = evt->button.button;
         mouseButtons.push_back(mbutton);
-		
+
 		MouseButtonEventArgs mevt = MouseButtonEventArgs(evt);
 		MouseButtonEventThrower::publish(this, &mevt);
     }
@@ -176,7 +176,7 @@ void BaseGameState::onEvent(SDL_Event *evt)
 
         Uint8 mbutton = evt->button.button;
         mouseButtons.remove(mbutton);
-		
+
 		MouseButtonEventArgs mevt = MouseButtonEventArgs(evt);
 		MouseButtonEventThrower::publish(this, &mevt);
     }
@@ -201,7 +201,7 @@ void BaseGameState::onEvent(SDL_Event *evt)
             }
 
         }
-		
+
 		MouseMotionEventArgs moevt = MouseMotionEventArgs(evt);
 		MouseMotionEventThrower::publish(this, &moevt);
 	}
@@ -222,7 +222,7 @@ void BaseGameState::onEvent(SDL_Event *evt)
 	}
 	else if(evt->type == SDL_CONTROLLERDEVICEADDED ||
 			evt->type == SDL_CONTROLLERDEVICEREMOVED ||
-			evt->type == SDL_CONTROLLERDEVICEREMAPPED 
+			evt->type == SDL_CONTROLLERDEVICEREMAPPED
 			)
 	{
 		ControllerDeviceEventArgs args = ControllerDeviceEventArgs(evt);
@@ -271,7 +271,7 @@ void BaseGameState::renderGameMenu(SDL_Renderer *renderer)
 
 			tex->renderCopy(src, dst);
 
-			delete sur;
+			//delete sur; //texture will deleted the surface itself
 			delete tex;
 			delete src;
 			delete dst;
