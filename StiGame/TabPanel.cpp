@@ -105,20 +105,23 @@ void TabPanel::onClick(Point *relpt)
 	}
 
 	std::vector<TabItem*>::iterator lit(tabs.begin()), lend(tabs.end());
-	
+	int index = 0;
 	for(;lit!=lend;++lit)
 	{
-		MPoint mpt = MPoint();
-		
-		if((*lit)->contains(relpt))
+		if(index == selectedTab)
 		{
-			mpt.setX(relpt->getX() - (*lit)->getX());
-			mpt.setY(relpt->getY() - (*lit)->getY());
+			MPoint mpt = MPoint();
 			
-			(*lit)->onClick(&mpt);
+			if((*lit)->contains(relpt))
+			{
+				mpt.setX(relpt->getX() - (*lit)->getX());
+				mpt.setY(relpt->getY() - (*lit)->getY());
+				
+				(*lit)->onClick(&mpt);
+			}
 		}
 		
-		
+		index++;
 	}
 }
 
@@ -130,19 +133,23 @@ void TabPanel::onMouseMotion(Point *relpt)
 	}*/
 
 	std::vector<TabItem*>::iterator lit(tabs.begin()), lend(tabs.end());
-	
+	int index = 0;
 	for(;lit!=lend;++lit)
 	{
-		MPoint mpt = MPoint();
-		
-		if((*lit)->contains(relpt))
+		if(index == selectedTab)
 		{
-			mpt.setX(relpt->getX() - (*lit)->getX());
-			mpt.setY(relpt->getY() - (*lit)->getY());
+			MPoint mpt = MPoint();
 			
-			(*lit)->onMouseMotion(&mpt);
+			if((*lit)->contains(relpt))
+			{
+				mpt.setX(relpt->getX() - (*lit)->getX());
+				mpt.setY(relpt->getY() - (*lit)->getY());
+				
+				(*lit)->onMouseMotion(&mpt);
+			}
 		}
 		
+		index++;
 	}
 }
 
@@ -165,6 +172,28 @@ Surface* TabPanel::render(void)
 	int index = 0;
 	SDL_Rect src = SDL_Rect();
 	SDL_Rect dst = SDL_Rect();
+	
+		
+	//drawing current tab
+	
+	if(selectedTab != NONE_SELECTED)
+	{
+		TabItem *tab = tabs[selectedTab];
+		Surface *tab_sur = tab->render();
+		
+		src.x = 0;
+		src.y = 0;
+		src.w = tab->getWidth();
+		src.h = tab->getHeight();
+		
+		Rectangle::Copy(&src, &dst);
+			
+		buffer->blit(tab_sur, &src, &dst);
+		
+		delete tab_sur;
+	}
+	
+	
 	for(;tit!=tend;++tit)
 	{
 		src.w = (*tit)->getWidth();
@@ -188,15 +217,6 @@ Surface* TabPanel::render(void)
 		buffer->blit((*tit), &src, &dst);
 		
 		index++;
-	}
-	
-	
-	//drawing current tab
-	
-	if(selectedTab != NONE_SELECTED)
-	{
-		TabItem *tab = tabs[selectedTab];
-	
 	}
 	
 	return buffer;

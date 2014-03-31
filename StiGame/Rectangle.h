@@ -74,6 +74,11 @@ public:
 	virtual bool equals(int r_x, int r_y, int r_w, int r_h);
 	virtual bool equals(Rectangle *rect);
 	virtual bool equals(SDL_Rect *rect);
+	
+	//Utils
+	
+	static void Copy(SDL_Rect *src, SDL_Rect *copy);
+	static void Copy(Rectangle *src, Rectangle *copy);
 };
 }
 

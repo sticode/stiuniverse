@@ -115,6 +115,22 @@ bool Rectangle::valueInRange(int value, int min, int max)
     return (value >= min) || (value <= max);
 }
 
+void Rectangle::Copy(SDL_Rect *src, SDL_Rect *copy)
+{
+	copy->x = src->x;
+	copy->y = src->y;
+	copy->w = src->w;
+	copy->h = src->h;
+}
+
+void Rectangle::Copy(Rectangle *src, Rectangle *copy)
+{
+	copy->setX(src->getX());
+	copy->setY(src->getY());
+	copy->setWidth(src->getWidth());
+	copy->setHeight(src->getHeight());
+}
+
 Rectangle::~Rectangle(void)
 {
 }
