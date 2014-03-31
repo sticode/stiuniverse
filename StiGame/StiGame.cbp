@@ -366,6 +366,12 @@
 		<Unit filename="List.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
+		<Unit filename="Logger.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Logger.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
 		<Unit filename="MDimension.cpp">
 			<Option virtualFolder="src/core/" />
 		</Unit>
@@ -737,6 +743,12 @@
 			<Option virtualFolder="src/" />
 		</Unit>
 		<Unit filename="ViewportArea.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="Window.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="Window.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="WindowEventArgs.cpp">

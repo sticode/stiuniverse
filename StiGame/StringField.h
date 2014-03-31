@@ -10,7 +10,7 @@ namespace Serialization
 {
 
 class StringField :
-	public ObjectField
+	public Field
 {
 public:
 	const static int STRING_FIELD;

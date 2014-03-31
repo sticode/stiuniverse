@@ -1,7 +1,7 @@
 #ifndef FIELDRESOLVER_H
 #define FIELDRESOLVER_H
 
-#include "ObjectField.h"
+#include "Field.h"
 
 namespace StiGame
 {
@@ -12,7 +12,7 @@ namespace Serialization
 class FieldResolver
 {
 public:
-	virtual ObjectField* createField(int type, std::string name, char* data, int length) = 0;
+	virtual Field* createField(int type, std::string name, char* data, int length) = 0;
 protected:
 	FieldResolver();
 	virtual ~FieldResolver();

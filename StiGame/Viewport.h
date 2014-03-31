@@ -5,6 +5,7 @@
 #include "Dimension.h"
 #include "Cursor.h"
 #include "WindowEventThrower.h"
+#include "Window.h"
 
 namespace StiGame
 {
@@ -47,8 +48,10 @@ protected:
 	/// \brief initilization
 	void initialize(void);
 	/// \brief SDL_Window Structure
-	SDL_Window *window;
-	/// \brief SD
+	SDL_Window *sdlWindow;
+	Window *window;
+	
+	/// \brief SDL_Renderer
 	SDL_Renderer *renderer;
 	/// \brief SDL_Surface pointer to the screen surface
 	SDL_Surface *screen;
@@ -148,7 +151,7 @@ public:
 
 	/// \brief Get SDL_Window pointer
 	/// \return SDL_Window pointer
-	SDL_Window* getWindow(void);
+	SDL_Window* getSDLWindow(void);
 	/// \brief Get SDL_Renderer pointer
 	/// \return SDL_Renderer pointer
 	SDL_Renderer* getRenderer(void);
@@ -163,6 +166,8 @@ public:
     Cursor* getCursor(void);
     void setCursor(Cursor *m_cursor);
     void showCursor(bool m_show);
+	
+	Window* getWindow(void);
 };
 
 }

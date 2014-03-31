@@ -15,12 +15,12 @@ struct FieldMarker {
 	int type;
 };
 
-class ObjectField
+class Field
 {
 public:
 	const static int UNDEFINED;
-	ObjectField();
-	ObjectField(std::string m_name);
+	Field();
+	Field(std::string m_name);
 	virtual ~ObjectField();
 	
 	std::string getName(void);

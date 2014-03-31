@@ -1,6 +1,7 @@
 #include "Texture.h"
 #include "MathTK.h"
 #include <iostream>
+#include "Logger.h"
 
 namespace StiGame
 {
@@ -117,12 +118,17 @@ namespace StiGame
             format = m_format;
             access = m_access;
         }
+		else
+		{
+			Logger::Error(SDL_GetError());
+		}
     }
 
 
     void Texture::lock(SDL_Rect *rect, void **pixels, int *pitch)
     {
         SDL_LockTexture(sdlTexture, rect, pixels, pitch);
+
     }
 
     void Texture::unlock(void)
@@ -137,7 +143,10 @@ namespace StiGame
 
     void Texture::setBlendMode(SDL_BlendMode blendMode)
     {
-        SDL_SetTextureBlendMode(sdlTexture, blendMode);
+        if(SDL_SetTextureBlendMode(sdlTexture, blendMode) != 0)
+		{
+			Logger::Error(SDL_GetError());
+		}
     }
 
     void Texture::setAlphaMod(Uint8 alpha)
@@ -176,7 +185,8 @@ namespace StiGame
     {
         const char* sdl_error = SDL_GetError();
         //temporary need an error handler
-        std::cout << sdl_error << std::endl;
+        //std::cout << sdl_error << std::endl;
+		Logger::Error(sdl_error);
     }
 
 	Surface* Texture::getSurface(void)

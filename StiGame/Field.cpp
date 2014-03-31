@@ -1,4 +1,4 @@
-#include "ObjectField.h"
+#include "Field.h"
 
 namespace StiGame
 {
@@ -6,39 +6,39 @@ namespace StiGame
 namespace Serialization
 {
 
-const int ObjectField::UNDEFINED = -1;
+const int Field::UNDEFINED = -1;
 
-ObjectField::ObjectField()
+Field::Field()
 {
 	name = ""
 	type = UNDEFINED
 	length = 0;
 }
-ObjectField::ObjectField(std::string m_name)
+Field::Field(std::string m_name)
 {
 	name = m_name
 	type = UNDEFINED;
 	length = 0;
 }
 
-ObjectField::~ObjectField() {}
+Field::~Field() {}
 	
-std::string ObjectField::getName(void)
+std::string Field::getName(void)
 {
 	return name;
 }
 	
-int ObjectField::getLength(void)
+int Field::getLength(void)
 {
 	return length;
 }
 
-int ObjectField::getType(void)
+int Field::getType(void)
 {
 	return type;
 }
 
-void ObjectField::updateMarker(FieldMarker *marker)
+void Field::updateMarker(FieldMarker *marker)
 {
 	marker->dataLength = length;
 	marker->nameLength = name.size();

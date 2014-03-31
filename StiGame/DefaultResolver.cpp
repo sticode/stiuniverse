@@ -12,9 +12,9 @@ namespace Serialization
 DefaultResolver::DefaultResolver() {}
 DefaultResolver::~DefaultResolver() {}
 
-ObjectField* DefaultResolver::createField(int type, std::string name, char* data, int length)
+Field* DefaultResolver::createField(int type, std::string name, char* data, int length)
 {
-	ObjectField *field = 0;
+	Field *field = 0;
 	
 	if(type == StringField::STRING_FIELD)
 	{

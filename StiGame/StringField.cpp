@@ -8,7 +8,7 @@ namespace Serialization
 
 const int StringField::STRING_FIELD = 1;
 
-StringField::StringField(std::string m_name) : ObjectField(m_name)
+StringField::StringField(std::string m_name) : Field(m_name)
 {
 	type = STRING_FIELD;
 	str_data = "";

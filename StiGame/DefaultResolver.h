@@ -15,7 +15,7 @@ class DefautResolver :
 public:
 	DefaultResolver();
 	virtual ~DefaultResolver();
-	virtual ObjectField* createField(int type, std::string name, char* data, int length);
+	virtual Field* createField(int type, std::string name, char* data, int length);
 };
 
 }

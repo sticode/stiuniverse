@@ -9,11 +9,16 @@
 #include "KeyActionMap.h"
 #include "MathTK.h"
 #include <string>
+#include "Logger.h"
 using namespace StiUniverse;
 using namespace StiGame;
 
 int main(int argc, char** argv)
 {
+#if DEBUG
+	Logger::SetVerbosity(VL_ALL);
+#endif
+
     AssetGenerator gen = AssetGenerator();
     gen.generateBindings();
     Viewport *viewport = new Viewport(1000, 650);

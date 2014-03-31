@@ -8,7 +8,7 @@ namespace Serialization
 
 const int IntField::INT_FIELD = 2;
 
-IntField::IntField(std::string m_name) : ObjectField(m_name)
+IntField::IntField(std::string m_name) : Field(m_name)
 {
 	type = INT_FIELD;
 	value = 0;

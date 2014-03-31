@@ -18,7 +18,7 @@ Viewport::Viewport(void)
 	msWaitTime = 0;
 	screen = 0;
 	window = 0;
-
+	sdlWindow = 0;
 	width = 640;
 	height = 480;
 	fullscreen = false;
@@ -34,7 +34,7 @@ Viewport::Viewport(int v_width, int v_height)
 	msWaitTime = 0;
 	screen = 0;
 	window = 0;
-
+	sdlWindow = 0;
 	width = v_width;
 	height = v_height;
 	fullscreen = false;
@@ -50,7 +50,8 @@ Viewport::Viewport(int v_width, int v_height, bool v_fullscreen)
 	error = "";
 	msWaitTime = 0;
 	screen = 0;
-
+	sdlWindow = 0;
+	window = 0;
 	width = v_width;
 	height = v_height;
 	fullscreen = v_fullscreen;
@@ -303,10 +304,11 @@ void Viewport::initialize(void)
         window_y = SDL_WINDOWPOS_CENTERED;
     }
 
-	window = SDL_CreateWindow(title, window_x, window_y, width, height, videoFlags);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	sdlWindow = SDL_CreateWindow(title, window_x, window_y, width, height, videoFlags);
+	window = new Window(sdlWindow);
+    renderer = SDL_CreateRenderer(sdlWindow, -1, SDL_RENDERER_ACCELERATED);
     cursor = new Cursor();
-    SDL_SetWindowTitle(window, title);
+    SDL_SetWindowTitle(sdlWindow, title);
 
     updateWindowPosition();
 
@@ -348,10 +350,10 @@ bool Viewport::isFullscreen(void)
 
 Viewport::~Viewport(void)
 {
-    if(window != 0)
+    if(sdlWindow != 0)
     {
         SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
+        SDL_DestroyWindow(sdlWindow);
     }
 }
 
@@ -367,9 +369,9 @@ int Viewport::getWidth(void)
 void Viewport::setTitle(const char* m_title)
 {
     title = m_title;
-    if(window != 0)
+    if(sdlWindow != 0)
     {
-        SDL_SetWindowTitle(window, title);
+        SDL_SetWindowTitle(sdlWindow, title);
     }
 }
 
@@ -432,14 +434,14 @@ void Viewport::setWindowPosition(int m_window_x, int m_window_y)
     window_x = m_window_x;
     window_y = m_window_y;
 
-    SDL_SetWindowPosition(window, window_x, window_y);
+    SDL_SetWindowPosition(sdlWindow, window_x, window_y);
 }
 
 void Viewport::updateWindowPosition(void)
 {
     int m_window_x, m_window_y;
 
-    SDL_GetWindowPosition(window, &m_window_x, &m_window_y);
+    SDL_GetWindowPosition(sdlWindow, &m_window_x, &m_window_y);
 
     window_x = m_window_x;
     window_y = m_window_y;
@@ -449,24 +451,29 @@ void Viewport::setGrab(bool grab)
 {
     if(grab)
     {
-        SDL_SetWindowGrab(window, SDL_TRUE);
+        SDL_SetWindowGrab(sdlWindow, SDL_TRUE);
     }
     else
     {
-        SDL_SetWindowGrab(window, SDL_FALSE);
+        SDL_SetWindowGrab(sdlWindow, SDL_FALSE);
     }
 }
 
 bool Viewport::isGrabbed(void)
 {
-	SDL_bool grabbed = SDL_GetWindowGrab(window);
+	SDL_bool grabbed = SDL_GetWindowGrab(sdlWindow);
 
 	return (grabbed == SDL_TRUE);
 }
 
-SDL_Window* Viewport::getWindow(void)
+SDL_Window* Viewport::getSDLWindow(void)
 {
-    return window;
+    return sdlWindow;
+}
+
+Window* Viewport::getWindow(void)
+{
+	return window;
 }
 
 SDL_Renderer* Viewport::getRenderer(void)
@@ -476,42 +483,46 @@ SDL_Renderer* Viewport::getRenderer(void)
 
 void Viewport::show(void)
 {
-	if(window != 0)
+	if(sdlWindow != 0)
 	{
-		SDL_ShowWindow(window);
+		SDL_ShowWindow(sdlWindow);
 	}
 }
 
 void Viewport::hide(void)
 {
-	if(window != 0)
+	/*if(sdlWindow != 0)
 	{
-		SDL_HideWindow(window);
-	}
+		SDL_HideWindow(sdlWindow);
+	}*/
+	window->hide();
 }
 
 void Viewport::restore(void)
 {
-	if(window != 0)
+	/*if(sdlWindow != 0)
 	{
-		SDL_RestoreWindow(window);
-	}
+		SDL_RestoreWindow(sdlWindow);
+	}*/
+	window->restore();
 }
 
 void Viewport::minimize(void)
 {
-	if(window != 0)
+	/*if(sdlWindow != 0)
 	{
-		SDL_MinimizeWindow(window);
-	}
+		SDL_MinimizeWindow(sdlWindow);
+	}*/
+	window->minimize();
 }
 
 void Viewport::maximize(void)
 {
-	if(window != 0)
+	/*if(sdlWindow != 0)
 	{
-		SDL_MaximizeWindow(window);
-	}
+		SDL_MaximizeWindow(sdlWindow);
+	}*/
+	window->maximize();
 }
 
 

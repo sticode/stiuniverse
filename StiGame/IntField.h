@@ -1,7 +1,7 @@
 #ifndef INTFIELD_H
 #define INTFIELD_H
 
-#include "ObjectField.h"
+#include "Field.h"
 
 namespace StiGame
 {
@@ -10,7 +10,7 @@ namespace Serialization
 {
 
 class IntField :
-	public ObjectField
+	public Field
 {
 public:
 	const static int INT_FIELD;
