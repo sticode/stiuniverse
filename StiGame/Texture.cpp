@@ -74,7 +74,7 @@ namespace StiGame
         width = surface->getWidth();
         height = surface->getHeight();
 
-		//surface->setReleaseSurface(true);
+		surface->setReleaseSurface(true);
 
         sdlTexture = SDL_CreateTextureFromSurface(renderer, surface->getSDLSurface());
     }
@@ -190,8 +190,8 @@ namespace StiGame
 		SDL_DestroyTexture(sdlTexture);
 
         //surface->setReleaseSurface(true);
-        //bug here cause SEGFAULT
-		if(surface != 0 && surface->getReleaseSurface())
+        //bug here cause SEGFAULT -> fixed
+		if(surface != 0)
 		{
 			delete surface;
 		}
