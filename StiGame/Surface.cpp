@@ -6,6 +6,7 @@
 #include "Primitive.h"
 #include <string>
 #include <iostream>
+#include "Logger.h"
 
 namespace StiGame {
 
@@ -200,8 +201,7 @@ namespace StiGame {
 	void Surface::fill(Color *c)
 	{
 		if(!c->isMapped())
-		{	void updateSDLRect(SDL_Rect *rect);
-	void updateSDLRect(SDL_Rect *rect, int m_x, int m_y);
+		{	
 			c->mapColor(sdlSurface->format);
 		}
 
@@ -216,6 +216,7 @@ namespace StiGame {
 		{
 			//shit happens
 			//error
+			Logger::Error(SDL_GetError());
 		}
 	}
 
@@ -247,6 +248,7 @@ namespace StiGame {
 		if(rs != 0)
 		{
 			//error
+			Logger::Error(SDL_GetError());
 		}
 	}
 
@@ -256,8 +258,9 @@ namespace StiGame {
 		if(rs != 0)
 		{
 			//error
-			std::cout << "Blit Error" << std::endl;
-			std::cout << SDL_GetError() << std::endl;
+			//std::cout << "Blit Error" << std::endl;
+			//std::cout << SDL_GetError() << std::endl;
+			Logger::Error(SDL_GetError());
 		}
 	}
 
@@ -334,6 +337,7 @@ namespace StiGame {
 		{
 			//error handling
 			//SDL_GetError();
+			Logger::Error(SDL_GetError());
 		}
 	}
 	
