@@ -8,6 +8,7 @@
 #include "Time.h"
 #include "GameOverlay.h"
 #include "OverlayGameAction.h"
+#include <cstdlib>
 
 
 using namespace StiGame;

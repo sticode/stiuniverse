@@ -1,4 +1,5 @@
 #include "SpaceHud.h"
+#include "String.h"
 
 using namespace StiGame;
 using namespace StiGame::Gui;
@@ -38,7 +39,7 @@ SpaceHud::SpaceHud() : OverlayFrame()
     lblHpBar->setCaption("HP");
 
     lblHpBar->set(90, 12);
-	
+
 	lblTxtHp = new Label();
 	lblTxtHp->setForeground(hpBarTextColor);
 	lblTxtHp->setCaption("0/0");
@@ -61,14 +62,14 @@ void SpaceHud::setVessel(SpaceVessel *m_vessel)
 {
     vessel = m_vessel;
     label1->setCaption(vessel->getVesselName());
-	lblTxtHp->setCaption(std::to_string(vessel->getCurrentHp()) + "/" + std::to_string(vessel->getMaxHp()));
+	lblTxtHp->setCaption(String::to_string(vessel->getCurrentHp()) + "/" + String::to_string(vessel->getMaxHp()));
 }
 
 void SpaceHud::tick(void)
 {
-    lblX->setCaption("X : " + std::to_string(vessel->getX()));
-    lblY->setCaption("Y : " + std::to_string(vessel->getY()));
-	lblTxtHp->setCaption(std::to_string(vessel->getCurrentHp()) + "/" + std::to_string(vessel->getMaxHp()));
+    lblX->setCaption("X : " + String::to_string(vessel->getX()));
+    lblY->setCaption("Y : " + String::to_string(vessel->getY()));
+	lblTxtHp->setCaption(String::to_string(vessel->getCurrentHp()) + "/" + String::to_string(vessel->getMaxHp()));
 }
 
 

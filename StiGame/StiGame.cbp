@@ -4,14 +4,14 @@
 	<Project>
 		<Option title="StiGame" />
 		<Option pch_mode="2" />
-		<Option compiler="mingww64i686" />
+		<Option compiler="gcc" />
 		<Option virtualFolders="src\;src\sprites\;headers\;headers\gui\;src\gui\;headers\sprites\;src\bindings\;headers\bindings\;headers\core\;src\core\;headers\math\;src\math\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/StiGame" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="3" />
-				<Option compiler="mingww64i686" />
+				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
 				<Compiler>
@@ -23,12 +23,10 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/StiGame" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/StiGame" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="3" />
-				<Option compiler="mingww64i686" />
-				<Option createDefFile="1" />
-				<Option createStaticLib="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-DRELEASE" />
@@ -42,8 +40,8 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add directory="../include/SDL2" />
 		</Compiler>
 		<Linker>
@@ -52,7 +50,7 @@
 			<Add option="-lSDL2_image" />
 			<Add option="-lSDL2_ttf" />
 			<Add option="-lSDL2_gfx" />
-			<Add directory="../lib/" />
+			<Add directory="../lib" />
 		</Linker>
 		<Unit filename="ActionBind.cpp">
 			<Option virtualFolder="src/gui/" />
@@ -153,14 +151,14 @@
 		<Unit filename="CompActionMap.cpp">
 			<Option virtualFolder="src/bindings/" />
 		</Unit>
-		<Unit filename="Computer.h">
-			<Option virtualFolder="headers/" />
+		<Unit filename="CompActionMap.h">
+			<Option virtualFolder="headers/bindings/" />
 		</Unit>
 		<Unit filename="Computer.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="CompActionMap.h">
-			<Option virtualFolder="headers/bindings/" />
+		<Unit filename="Computer.h">
+			<Option virtualFolder="headers/" />
 		</Unit>
 		<Unit filename="Controller.cpp">
 			<Option virtualFolder="src/" />
@@ -654,7 +652,6 @@
 		<Unit filename="TabItem.h">
 			<Option virtualFolder="headers/" />
 		</Unit>
-		
 		<Unit filename="TabPanel.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
