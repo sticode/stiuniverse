@@ -26,7 +26,7 @@ void SpaceVessel::tick(void)
     _tick++;
 	int diffy = 0;
 	int diffx = 0;
-	
+
     if(( direction & SD_UP ) == SD_UP)
     {
         //y -= speed;
@@ -50,14 +50,14 @@ void SpaceVessel::tick(void)
         //x += speed;
 		diffx = 1;
     }
-	
+
 	int dspeed = speed;
-	
+
 	if(diffx != 0 && diffy != 0)
 	{
 		dspeed = speed / 2;
 	}
-	
+
 	x += (dspeed * diffx);
 	y += (dspeed * diffy);
 
@@ -105,7 +105,7 @@ void SpaceVessel::spawnVessel(int v_width, int v_height)
     sprite->set(x,y);*/
     x = v_width;
     y = v_height;
-    sprite->set(x, y);
+    sprite->setPoint(x, y);
 }
 
 void SpaceVessel::moveUnit(SDirection m_direction)
@@ -150,12 +150,13 @@ std::string SpaceVessel::getVesselName(void)
 
 void SpaceVessel::loadSprite(SDL_Renderer *renderer)
 {
-    DirectionSpriteFile *sprfile = new DirectionSpriteFile(GamePath::getFilepath(AssetSprite, gfxName + DirectionSpriteFile::FILE_EXTENSION));
-    sprite = new DirectionSprite(sprfile, renderer);
+    //DirectionSpriteFile *sprfile = new DirectionSpriteFile(GamePath::getFilepath(AssetSprite, gfxName + DirectionSpriteFile::FILE_EXTENSION));
+
+    sprite = new DirectionSprite(renderer, GamePath::getFilepath(AssetSprite, "vessel0.dspr").c_str());
 
     width = sprite->getWidth();
     height = sprite->getHeight();
-    delete sprfile;
+    //delete sprfile;
 }
 
 }

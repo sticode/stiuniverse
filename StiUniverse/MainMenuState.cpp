@@ -16,20 +16,20 @@ MainMenuState::MainMenuState() : GuiState()
 
     btnStart.subscribe(this);
 
-    btnStart.set(100,100);
+    btnStart.setPoint(100,100);
 
 
     btnOption = Gui::Button();
     btnOption.setCaption("Option");
 
     btnOption.subscribe(this);
-    btnOption.set(100,150);
+    btnOption.setPoint(100,150);
 
     btnQuit = Gui::Button();
     btnQuit.setCaption("Quit");
 
     btnQuit.subscribe(this);
-    btnQuit.set(100,200);
+    btnQuit.setPoint(100,200);
 
     add(&btnStart);
     add(&btnOption);

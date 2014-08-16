@@ -5,7 +5,7 @@
 #include "DirectionSpriteFile.h"
 #include "BatVessel.h"
 #include "GameActionFactory.h"
-#include "Time.h"
+#include "TimeTools.h"
 #include "GameOverlay.h"
 #include "OverlayGameAction.h"
 #include <cstdlib>
@@ -30,6 +30,7 @@ MainState::MainState() : BaseGameState()
 	rel_y = 0;
 	vessel = new BatVessel();
 	hud = SpaceHud();
+	srand(Time::GenerateSeed());
 }
 
 void MainState::quit(void)
@@ -363,9 +364,9 @@ void MainState::onPaint(SDL_Renderer *renderer)
             }
 
             //swaping coord
-            (*nlit)->set(s_x, s_y);
+            (*nlit)->setPoint(s_x, s_y);
             (*nlit)->render();
-            (*nlit)->set(tmp_x, tmp_y);
+            (*nlit)->setPoint(tmp_x, tmp_y);
         }
     }
 
@@ -400,9 +401,9 @@ void MainState::onPaint(SDL_Renderer *renderer)
             }
 
             //swaping coord
-            (*lit)->set(s_x, s_y);
+            (*lit)->setPoint(s_x, s_y);
             (*lit)->render();
-            (*lit)->set(tmp_x, tmp_y);
+            (*lit)->setPoint(tmp_x, tmp_y);
 
         }
     }
@@ -414,7 +415,7 @@ void MainState::onPaint(SDL_Renderer *renderer)
 
     //vessel_sprite.render();
     DirectionSprite *vessel_spr = vessel->getSprite();
-    vessel_spr->set(vessel->getX() - real_x, vessel->getY() - real_y);
+    vessel_spr->setPoint(vessel->getX() - real_x, vessel->getY() - real_y);
     vessel_spr->render();
 
 
@@ -448,7 +449,7 @@ void MainState::generateStars(void)
             spr = sprites.clone("nebula0");
         }
 
-        spr->set(x, y);
+        spr->setPoint(x, y);
         nebula_sprites.push_back(spr);
     }
 
@@ -548,21 +549,21 @@ void MainState::loadSprites(void)
     sprites.load("nebula0");
     sprites.load("nebula1");
 
-    sprites.load("a0", ST_SPRITEFILE);
-    sprites.load("a1", ST_SPRITEFILE);
-    sprites.load("a2", ST_SPRITEFILE);
-    sprites.load("a3", ST_SPRITEFILE);
-    sprites.load("a4", ST_SPRITEFILE);
-    sprites.load("a5", ST_SPRITEFILE);
-    sprites.load("a6", ST_SPRITEFILE);
-    sprites.load("a7", ST_SPRITEFILE);
-    sprites.load("d0", ST_SPRITEFILE);
-    sprites.load("d1", ST_SPRITEFILE);
+    sprites.load("a0");
+    sprites.load("a1");
+    sprites.load("a2");
+    sprites.load("a3");
+    sprites.load("a4");
+    sprites.load("a5");
+    sprites.load("a6");
+    sprites.load("a7");
+    sprites.load("d0");
+    sprites.load("d1");
 }
 
 void MainState::onStart(void)
 {
-    unsigned long long load_time = Time::GetMsTimestamp();
+    long long load_time = Time::GetMsTimestamp();
     bindings = ActionBinding(ActionBinding::FILENAME.c_str());
     bindings.read();
 
