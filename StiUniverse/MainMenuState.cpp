@@ -36,7 +36,7 @@ MainMenuState::MainMenuState() : GuiState()
     add(&btnQuit);
 }
 
-void MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
+bool MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
 {
 
     if(src == &btnStart)
@@ -52,7 +52,10 @@ void MainMenuState::handleEvent(EventThrower *src, EventArgs *evt)
     else if(src == &btnQuit)
     {
         running = false;
+        return true;
     }
+
+    return false;
 }
 
 MainMenuState::~MainMenuState()

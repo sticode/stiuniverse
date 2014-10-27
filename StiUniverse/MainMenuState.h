@@ -15,7 +15,7 @@ class MainMenuState :
     public:
         MainMenuState();
         virtual ~MainMenuState();
-        void handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *evt);
+        bool handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *evt);
     protected:
         StiGame::Gui::Button btnStart;
         StiGame::Gui::Button btnOption;

@@ -15,7 +15,7 @@ class GameOverlay :
     public:
         GameOverlay();
         virtual ~GameOverlay();
-        void handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *evt);
+        bool handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *evt);
         void setState(MainState *m_state);
     protected:
         StiGame::Gui::Button resumeButton;

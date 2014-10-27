@@ -12,6 +12,8 @@ We strongly recommend to add your python path to the Env_Path.
 
 how to build stiuniverse
 ========
+THIS NEED SECTION A REVISION, CURRENTLY CONVERTING BUILDING TO CMAKE
+
 We currently develop with i686-w64-mingw32-g++ that is available through CygWin. So we suggest that you download this compiler. Because we use c++11 flag, for std::chrono.
 We also use python script to build without an IDE. These script are tested with Python-2.7
 

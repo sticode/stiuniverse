@@ -21,7 +21,7 @@ class OptionMenuState :
         void onStart(void);
     protected:
     void saveBindings(void);
-    void handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *args);
+    bool handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *args);
     StiGame::Gui::KeyBind keyUp;
     StiGame::Gui::KeyBind keyDown;
     StiGame::Gui::KeyBind keyLeft;

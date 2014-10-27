@@ -569,7 +569,7 @@ void MainState::onStart(void)
 
     GameOverlay *overlay = new GameOverlay();
     overlay->setState(this);
-    KeyEventThrower::subscribe(overlay);
+   // KeyEventThrower::subscribe(overlay);
 
     gameMenu = overlay;
 

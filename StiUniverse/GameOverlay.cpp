@@ -24,7 +24,7 @@ GameOverlay::GameOverlay()
     add(&quitButton);
 }
 
-void GameOverlay::handleEvent(EventThrower *src, EventArgs *evt)
+bool GameOverlay::handleEvent(EventThrower *src, EventArgs *evt)
 {
     if(src == &resumeButton)
     {

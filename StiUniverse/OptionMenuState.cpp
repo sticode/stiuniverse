@@ -149,13 +149,15 @@ void OptionMenuState::saveBindings(void)
     bindings.write();
 }
 
-void OptionMenuState::handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *args)
+bool OptionMenuState::handleEvent(StiGame::EventThrower *src, StiGame::EventArgs *args)
 {
     if(src == &btnBack)
     {
         saveBindings();
         viewport->push(new MainMenuState());
     }
+
+    return false;
 }
 
 void OptionMenuState::onStart(void)

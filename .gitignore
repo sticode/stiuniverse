@@ -25,6 +25,7 @@ doxygen/*
 lib/*
 bin/*
 include/*
+build/*
 *.stackdump
 assets/sprites/*.bspr
 assets/sprites/*.bdspr
